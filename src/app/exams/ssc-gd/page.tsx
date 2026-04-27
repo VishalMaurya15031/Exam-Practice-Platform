@@ -1,7 +1,16 @@
 "use client";
 import React from 'react';
 
-const syllabusData = [
+type SyllabusSection = {
+  title: string;
+  subSections?: {
+    subtitle: string;
+    topics: string[];
+  }[];
+  topics?: string[];
+};
+
+const syllabusData: SyllabusSection[] = [
   {
     title: "1. Hindi (हिंदी)",
     topics: [
@@ -93,7 +102,7 @@ export default function SscGdPage() {
               {section.title}
             </h2>
             <div className="flex flex-wrap gap-3">
-              {section.topics.map((topic, tIdx) => (
+              {section.topics?.map((topic, tIdx) => (
                 <div 
                   key={tIdx} 
                   className="px-4 py-2 bg-[#0f172a]/60 border border-white/5 rounded-lg text-slate-300 text-sm hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:text-cyan-300 transition-all duration-300 cursor-default"

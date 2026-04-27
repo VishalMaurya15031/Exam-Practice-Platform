@@ -1,7 +1,16 @@
 "use client";
 import React from 'react';
 
-const syllabusData = [
+type SyllabusSection = {
+  title: string;
+  subSections?: {
+    subtitle: string;
+    topics: string[];
+  }[];
+  topics?: string[];
+};
+
+const syllabusData: SyllabusSection[] = [
   {
     title: "1. सामान्य हिन्दी (General Hindi)",
     topics: [
