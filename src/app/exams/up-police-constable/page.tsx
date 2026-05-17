@@ -13,6 +13,11 @@ import HumanRightsSecurityNotes from '@/components/HumanRightsSecurityNotes';
 import CurrentAffairsOrganizationsNotes from '@/components/CurrentAffairsOrganizationsNotes';
 import EconomyMiscNotes from '@/components/EconomyMiscNotes';
 import StaticGKPrizesNotes from '@/components/StaticGKPrizesNotes';
+import HindiLanguageGrammarAlphabetNotes from '@/components/HindiLanguageGrammarAlphabetNotes';
+import HindiVocabularyNotes from '@/components/HindiVocabularyNotes';
+import HindiVyakaranNotes from '@/components/HindiVyakaranNotes';
+import HindiSandhiSamasPunctuationNotes from '@/components/HindiSandhiSamasPunctuationNotes';
+import HindiLiteraturePoeticsNotes from '@/components/HindiLiteraturePoeticsNotes';
 
 type SyllabusSection = {
   title: string;
@@ -48,7 +53,7 @@ const syllabusData: SyllabusSection[] = [
       "समरूपी भिन्नार्थक शब्द", "अशुद्ध वाक्यों को शुद्ध करना", "लिंग", 
       "वचन", "कारक", "सर्वनाम", "विशेषण", "क्रिया", "काल", "वाच्य", 
       "अव्यय", "उपसर्ग", "प्रत्यय", "सन्धि", "समास", "विराम-चिन्ह", 
-      "मुहावरे एवं लोкоक्तियां", "रस", "छन्द", "अलंकार",
+      "मुहावरे एवं लोकोक्तियां", "रस", "छन्द", "अलंकार",
       "अपठित बोध",
       "प्रसिद्ध कवि, लेखक एवं उनकी प्रसिद्ध रचनायें",
       "हिन्दी भाषा में पुरस्कार",
@@ -64,7 +69,7 @@ const syllabusData: SyllabusSection[] = [
       "Ratio and Proportion - अनुपात और समानुपात", "Percentage - प्रतिशतता", 
       "Profit and Loss - लाभ और हानि", "Discount - छूट", 
       "Simple interest - साधारण ब्याज", "Compound interest - चक्रवृद्धि ब्याज",
-      "Partnership - भागीदारी", "Average - औसत", "Time and Work - समय और कार्य",
+      "Partnership - भागीदारी", "Average - औसत", "Time and Work - समय and कार्य",
       "Time and Distance - समय और दूरी", "Use of Tables and Graphs - सारणी और ग्राफ का प्रयोग",
       "Mensuration - मेन्सुरेशन", "Arithmetical computations and other analytical functions", 
       "Miscellaneous - विविध", "Logical Diagrams - तार्किक आरेख", 
@@ -103,8 +108,9 @@ const syllabusData: SyllabusSection[] = [
 export default function UPPoliceConstablePage() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
 
-  // List of all GK topics that have detailed interactive study notes
+  // List of all GK and Hindi topics that have detailed interactive study notes
   const topicsWithNotes = [
+    // --- General Knowledge ---
     "सामान्य विज्ञान", "भारत का इतिहास", "भारतीय संविधान", "भारतीय अर्थव्यवस्था एवं संस्कृति",
     "भारतीय कृषि, वाणिज्य एवं व्यापार", "जनसंख्या, पर्यावरण एवं नगरीकरण", 
     "भारत का भूगोल तथा विश्व भूगोल और प्राकृतिक संसाधन", 
@@ -114,11 +120,21 @@ export default function UPPoliceConstablePage() {
     "राष्ट्रीय तथा अन्तर्राष्ट्रीय महत्व के समसामयिक विषय", "राष्ट्रीय तथा अन्तर्राष्ट्रीय संगठन",
     "विमुद्रीकरण और उसका प्रभाव", "साइबर क्राइम", "वस्तु एवं सेवा कर",
     "पुरस्कार और सम्मान", "देश / राजधानी / मुद्रायें", "महत्वपूर्ण दिवस",
-    "अनुसंधान एवं खोज", "पुस्तक और उनके लेखक", "सोशल मीडिया संचार"
+    "अनुसंधान एवं खोज", "पुस्तक और उनके लेखक", "सोशल मीडिया संचार",
+
+    // --- General Hindi ---
+    "हिन्दी और अन्य भारतीय भाषायें", "हिन्दी व्याकरण का मौलिक ज्ञान", "हिन्दी वर्णमाला",
+    "तद्भव तत्सम", "पर्यायवाची", "विलोम", "अनेकार्थक",
+    "वाक्यांशों के स्थान पर एक शब्द", "समरूपी भिन्नार्थक शब्द", "अशुद्ध वाक्यों को शुद्ध करना",
+    "लिंग", "वचन", "कारक", "सर्वनाम", "विशेषण", "क्रिया", "काल", "वाच्य", "अव्यय",
+    "उपसर्ग", "प्रत्यय", "सन्धि", "समास", "विराम-चिन्ह", "मुहावरे एवं लोकोक्तियां",
+    "रस", "छन्द", "अलंकार", "अपठित बोध", "प्रसिद्ध कवि, लेखक एवं उनकी प्रसिद्ध रचनायें",
+    "हिन्दी भाषा में पुरस्कार", "विविध"
   ];
 
   const renderNotes = (topic: string) => {
     switch (topic) {
+      // --- General Knowledge Notes ---
       case "सामान्य विज्ञान":
         return <GeneralScienceNotes />;
       case "भारत का इतिहास":
@@ -154,6 +170,45 @@ export default function UPPoliceConstablePage() {
       case "पुस्तक और उनके लेखक":
       case "सोशल मीडिया संचार":
         return <StaticGKPrizesNotes />;
+
+      // --- General Hindi Notes ---
+      case "हिन्दी और अन्य भारतीय भाषायें":
+      case "हिन्दी व्याकरण का मौलिक ज्ञान":
+      case "हिन्दी वर्णमाला":
+        return <HindiLanguageGrammarAlphabetNotes />;
+      case "तद्भव तत्सम":
+      case "पर्यायवाची":
+      case "विलोम":
+      case "अनेकार्थक":
+      case "वाक्यांशों के स्थान पर एक शब्द":
+      case "समरूपी भिन्नार्थक शब्द":
+      case "विविध":
+        return <HindiVocabularyNotes />;
+      case "अशुद्ध वाक्यों को शुद्ध करना":
+      case "लिंग":
+      case "वचन":
+      case "कारक":
+      case "सर्वनाम":
+      case "विशेषण":
+      case "क्रिया":
+      case "काल":
+      case "वाच्य":
+      case "अव्यय":
+      case "उपसर्ग":
+      case "प्रत्यय":
+        return <HindiVyakaranNotes />;
+      case "सन्धि":
+      case "समास":
+      case "विराम-चिन्ह":
+      case "अपठित बोध":
+        return <HindiSandhiSamasPunctuationNotes />;
+      case "मुहावरे एवं लोकोक्तियां":
+      case "रस":
+      case "छन्द":
+      case "अलंकार":
+      case "प्रसिद्ध कवि, लेखक एवं उनकी प्रसिद्ध रचनायें":
+      case "हिन्दी भाषा में पुरस्कार":
+        return <HindiLiteraturePoeticsNotes />;
       default:
         return null;
     }
