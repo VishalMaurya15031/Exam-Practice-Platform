@@ -12,12 +12,9 @@ export default function TopNav() {
       </div>
       
       <div className="flex items-center gap-4">
-        <Link href="/login" className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
-          Log in
-        </Link>
-        <Link href="/signup" className="px-4 py-2 text-sm font-medium bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg transition-colors shadow-[0_0_15px_rgba(99,102,241,0.3)]">
-          Sign up
-        </Link>
+        <div className="px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold text-xs border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+          🟢 All Tests Unlocked
+        </div>
       </div>
     </nav>
   );
