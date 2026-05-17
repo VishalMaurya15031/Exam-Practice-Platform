@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { examsData } from '@/lib/examsData';
 
@@ -9,6 +9,12 @@ export default function TopNav() {
   const [openGroups, setOpenGroups] = useState<Record<number, boolean>>({
     0: true, // SSC Exams open by default
   });
+
+  useEffect(() => {
+    const handleOpen = () => setIsMobileMenuOpen(true);
+    window.addEventListener('open-mobile-menu', handleOpen);
+    return () => window.removeEventListener('open-mobile-menu', handleOpen);
+  }, []);
 
   const toggleGroup = (idx: number) => {
     setOpenGroups(prev => ({

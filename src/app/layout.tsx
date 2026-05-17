@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import TopNav from "@/components/TopNav";
 import Sidebar from "@/components/Sidebar";
+import MobileFAB from "@/components/MobileFAB";
 
 export const metadata: Metadata = {
   title: "ExamPro - Premium Mock Tests",
@@ -23,6 +24,7 @@ export default function RootLayout({
             {children}
           </main>
         </div>
+        <MobileFAB />
       </body>
     </html>
   );
