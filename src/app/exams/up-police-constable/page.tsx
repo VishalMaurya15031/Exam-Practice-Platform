@@ -18,6 +18,8 @@ import HindiVocabularyNotes from '@/components/HindiVocabularyNotes';
 import HindiVyakaranNotes from '@/components/HindiVyakaranNotes';
 import HindiSandhiSamasPunctuationNotes from '@/components/HindiSandhiSamasPunctuationNotes';
 import HindiLiteraturePoeticsNotes from '@/components/HindiLiteraturePoeticsNotes';
+import NumericalAbilityNotes from '@/components/NumericalAbilityNotes';
+import ReasoningNotes from '@/components/ReasoningNotes';
 
 type SyllabusSection = {
   title: string;
@@ -108,7 +110,7 @@ const syllabusData: SyllabusSection[] = [
 export default function UPPoliceConstablePage() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
 
-  // List of all GK and Hindi topics that have detailed interactive study notes
+  // List of all GK, Hindi, Maths and Reasoning topics that have detailed interactive study notes
   const topicsWithNotes = [
     // --- General Knowledge ---
     "सामान्य विज्ञान", "भारत का इतिहास", "भारतीय संविधान", "भारतीय अर्थव्यवस्था एवं संस्कृति",
@@ -129,7 +131,44 @@ export default function UPPoliceConstablePage() {
     "लिंग", "वचन", "कारक", "सर्वनाम", "विशेषण", "क्रिया", "काल", "वाच्य", "अव्यय",
     "उपसर्ग", "प्रत्यय", "सन्धि", "समास", "विराम-चिन्ह", "मुहावरे एवं लोकोक्तियां",
     "रस", "छन्द", "अलंकार", "अपठित बोध", "प्रसिद्ध कवि, लेखक एवं उनकी प्रसिद्ध रचनायें",
-    "हिन्दी भाषा में पुरस्कार", "विविध"
+    "हिन्दी भाषा में पुरस्कार", "विविध",
+
+    // --- Numerical and Mental Ability ---
+    "Number System - संख्या पद्धति", "Simplification - सरलीकरण", 
+    "Decimals and Fraction - दशमलव और भिन्न", 
+    "Highest common factor and lowest common multiple - महत्तम समापवर्तक और लघुत्तम समापवर्तक",
+    "Ratio and Proportion - अनुपात और समानुपात", "Percentage - प्रतिशतता", 
+    "Profit and Loss - लाभ और हानि", "Discount - छूट", 
+    "Simple interest - साधारण ब्याज", "Compound interest - चक्रवृद्धि ब्याज",
+    "Partnership - भागीदारी", "Average - औसत", "Time and Work - समय and कार्य",
+    "Time and Distance - समय और दूरी", "Use of Tables and Graphs - सारणी और ग्राफ का प्रयोग",
+    "Mensuration - मेन्सुरेशन", "Arithmetical computations and other analytical functions", 
+    "Miscellaneous - विविध", "Logical Diagrams - तार्किक आरेख", 
+    "Symbol-Relationship Interpretation - संकेत सम्बन्ध विश्लेषण", "Perception Test - प्रत्यक्ष ज्ञान बोध",
+    "Word formation Test - शब्द रचना परीक्षण", "Letter and number series - अक्षर और संख्या श्रृंखला",
+    "Word and alphabet Analogy - शब्द और वर्णमाला में आंशिक समरूपता", "Common Sense Test - व्यावहारिक ज्ञान",
+    "Direction sense Test - दिशा ज्ञान परीक्षण", "Logical interpretation of data - आंकड़ों का तार्किक विश्लेषण",
+    "Forcefulness of argument - प्रभावी तर्क", "Determining implied meanings - अंतर्निहित भावों का विनिश्चय करना",
+
+    // --- Mental Aptitude, I.Q. and Reasoning ---
+    "Relationship and Analogy Test - सम्बन्ध व आंशिक समानता परीक्षण",
+    "Spotting out the dissimilar - असमान को चिन्हित करना",
+    "Series Completion Test - श्रृंखला पूरी करने का परीक्षण",
+    "Coding and Decoding Test - संकेत लिपि और सांकेतिक लिपि को समझना",
+    "Direction Sense Test - दिशा ज्ञान परीक्षण", "Blood Relation - रक्त सम्बन्ध",
+    "Problems based on alphabet - वर्णमाला पर आधारित प्रश्न",
+    "Time sequence test - समय क्रम परीक्षण",
+    "Venn Diagram and chart type test - वेन आरेख और चार्ट सदृश परीक्षण",
+    "Mathematical ability Test - गणितीय योग्यता परीक्षण",
+    "Arranging in order - क्रम में व्यवस्थित करना",
+    "Analogies - समरूपता", "Similarities - समानता", "Differences - भिन्नता",
+    "Space visualization - खाली स्थान भरना", "Problem solving - समस्या को सुलझाना",
+    "Analysis judgement - विश्लेषण निर्णय", "Decision-making - निर्णायक क्षमता",
+    "Visual memory - दृश्य स्मृति", "Discrimination - विभेदन क्षमता",
+    "Observation - पर्यवेक्षण", "Relationship - सम्बन्ध", "Concepts - अवधारणा",
+    "Arithmetical reasoning - अंकगणितीय तर्क", "Verbal and figure classification - शब्द और आकृति वर्गीकरण",
+    "Arithmetical number series - अंकगणितीय संख्या श्रृंखला",
+    "Abilities to deal with abstract ideas and symbols and their relationships"
   ];
 
   const renderNotes = (topic: string) => {
@@ -209,6 +248,68 @@ export default function UPPoliceConstablePage() {
       case "प्रसिद्ध कवि, लेखक एवं उनकी प्रसिद्ध रचनायें":
       case "हिन्दी भाषा में पुरस्कार":
         return <HindiLiteraturePoeticsNotes />;
+
+      // --- Numerical and Mental Ability ---
+      case "Number System - संख्या पद्धति":
+      case "Simplification - सरलीकरण":
+      case "Decimals and Fraction - दशमलव और भिन्न":
+      case "Highest common factor and lowest common multiple - महत्तम समापवर्तक और लघुत्तम समापवर्तक":
+      case "Ratio and Proportion - अनुपात और समानुपात":
+      case "Percentage - प्रतिशतता":
+      case "Profit and Loss - लाभ और हानि":
+      case "Discount - छूट":
+      case "Simple interest - साधारण ब्याज":
+      case "Compound interest - चक्रवृद्धि ब्याज":
+      case "Partnership - भागीदारी":
+      case "Average - औसत":
+      case "Time and Work - समय and कार्य":
+      case "Time and Distance - समय और दूरी":
+      case "Use of Tables and Graphs - सारणी और ग्राफ का प्रयोग":
+      case "Mensuration - मेन्सुरेशन":
+      case "Arithmetical computations and other analytical functions":
+      case "Miscellaneous - विविध":
+      case "Logical Diagrams - तार्किक आरेख":
+      case "Symbol-Relationship Interpretation - संकेत सम्बन्ध विश्लेषण":
+      case "Perception Test - प्रत्यक्ष ज्ञान बोध":
+      case "Word formation Test - शब्द रचना परीक्षण":
+      case "Letter and number series - अक्षर और संख्या श्रृंखला":
+      case "Word and alphabet Analogy - शब्द और वर्णमाला में आंशिक समरूपता":
+      case "Common Sense Test - व्यावहारिक ज्ञान":
+      case "Direction sense Test - दिशा ज्ञान परीक्षण":
+      case "Logical interpretation of data - आंकड़ों का तार्किक विश्लेषण":
+      case "Forcefulness of argument - प्रभावी तर्क":
+      case "Determining implied meanings - अंतर्निहित भावों का विनिश्चय करना":
+        return <NumericalAbilityNotes />;
+
+      // --- Mental Aptitude, I.Q. and Reasoning ---
+      case "Relationship and Analogy Test - सम्बन्ध व आंशिक समानता परीक्षण":
+      case "Spotting out the dissimilar - असमान को चिन्हित करना":
+      case "Series Completion Test - श्रृंखला पूरी करने का परीक्षण":
+      case "Coding and Decoding Test - संकेत लिपि और सांकेतिक लिपि को समझना":
+      case "Direction Sense Test - दिशा ज्ञान परीक्षण":
+      case "Blood Relation - रक्त सम्बन्ध":
+      case "Problems based on alphabet - वर्णमाला पर आधारित प्रश्न":
+      case "Time sequence test - समय क्रम परीक्षण":
+      case "Venn Diagram and chart type test - वेन आरेख और चार्ट सदृश परीक्षण":
+      case "Mathematical ability Test - गणितीय योग्यता परीक्षण":
+      case "Arranging in order - क्रम में व्यवस्थित करना":
+      case "Analogies - समरूपता":
+      case "Similarities - समानता":
+      case "Differences - भिन्नता":
+      case "Space visualization - खाली स्थान भरना":
+      case "Problem solving - समस्या को सुलझाना":
+      case "Analysis judgement - विश्लेषण निर्णय":
+      case "Decision-making - निर्णायक क्षमता":
+      case "Visual memory - दृश्य स्मृति":
+      case "Discrimination - विभेदन क्षमता":
+      case "Observation - पर्यवेक्षण":
+      case "Relationship - सम्बन्ध":
+      case "Concepts - अवधारणा":
+      case "Arithmetical reasoning - अंकगणितीय तर्क":
+      case "Verbal and figure classification - शब्द और आकृति वर्गीकरण":
+      case "Arithmetical number series - अंकगणितीय संख्या श्रृंखला":
+      case "Abilities to deal with abstract ideas and symbols and their relationships":
+        return <ReasoningNotes />;
       default:
         return null;
     }
