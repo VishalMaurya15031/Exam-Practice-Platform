@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import GeneralScienceNotes from '@/components/GeneralScienceNotes';
+import HistoryNotes from '@/components/HistoryNotes';
+import ConstitutionNotes from '@/components/ConstitutionNotes';
 
 type SyllabusSection = {
   title: string;
@@ -91,6 +93,8 @@ const syllabusData: SyllabusSection[] = [
 
 export default function UPPoliceConstablePage() {
   const [isScienceExpanded, setIsScienceExpanded] = useState(false);
+  const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);
+  const [isConstitutionExpanded, setIsConstitutionExpanded] = useState(false);
 
   return (
     <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
@@ -131,36 +135,60 @@ export default function UPPoliceConstablePage() {
             <ul className="space-y-3">
               {section.topics?.map((topic, tIdx) => {
                 const isScience = topic === "सामान्य विज्ञान";
+                const isHistory = topic === "भारत का इतिहास";
+                const isConstitution = topic === "भारतीय संविधान";
+                const hasNotes = isScience || isHistory || isConstitution;
+
+                // Determine dynamic states
+                const isExpanded = 
+                  (isScience && isScienceExpanded) || 
+                  (isHistory && isHistoryExpanded) || 
+                  (isConstitution && isConstitutionExpanded);
+
+                const toggleExpand = () => {
+                  if (isScience) setIsScienceExpanded(!isScienceExpanded);
+                  if (isHistory) setIsHistoryExpanded(!isHistoryExpanded);
+                  if (isConstitution) setIsConstitutionExpanded(!isConstitutionExpanded);
+                };
+
                 return (
                   <div key={tIdx} className="space-y-3">
                     <li 
-                      onClick={() => isScience && setIsScienceExpanded(!isScienceExpanded)}
+                      onClick={toggleExpand}
                       className={`flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-indigo-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group ${
-                        isScience 
+                        hasNotes 
                           ? 'cursor-pointer bg-indigo-500/5 hover:bg-indigo-500/10 border-indigo-500/25 hover:border-indigo-500/40 text-indigo-200' 
                           : 'cursor-default hover:bg-indigo-500/5 hover:translate-x-1'
                       }`}
                     >
                       <div className={`flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300 ${
-                        isScience 
+                        hasNotes 
                           ? 'bg-indigo-500 text-white shadow-[0_0_10px_rgba(99,102,241,0.4)]' 
                           : 'bg-indigo-500/10 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white'
                       }`}>
                         {(tIdx + 1).toString().padStart(2, '0')}
                       </div>
                       <span className={`font-medium transition-colors ${
-                        isScience ? 'text-indigo-200 group-hover:text-slate-50 font-semibold' : 'group-hover:text-slate-100'
+                        hasNotes ? 'text-indigo-200 group-hover:text-slate-50 font-semibold' : 'group-hover:text-slate-100'
                       }`}>{topic}</span>
                       
-                      {isScience && (
+                      {hasNotes && (
                         <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 shadow-[0_0_10px_rgba(99,102,241,0.15)] font-semibold select-none group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
-                          {isScienceExpanded ? "📖 हाइड नोट्स" : "✨ नोट्स उपलब्ध"}
+                          {isExpanded ? "📖 हाइड नोट्स" : "✨ नोट्स उपलब्ध"}
                         </span>
                       )}
                     </li>
                     
                     {isScience && isScienceExpanded && (
                       <GeneralScienceNotes />
+                    )}
+
+                    {isHistory && isHistoryExpanded && (
+                      <HistoryNotes />
+                    )}
+
+                    {isConstitution && isConstitutionExpanded && (
+                      <ConstitutionNotes />
                     )}
                   </div>
                 );
