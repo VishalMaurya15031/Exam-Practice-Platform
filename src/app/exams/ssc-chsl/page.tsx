@@ -1,5 +1,12 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+// Import SSC Specific Study Notes components
+import SscEnglishNotes from '@/components/SscEnglishNotes';
+import SscQuantitativeAptitudeNotes from '@/components/SscQuantitativeAptitudeNotes';
+import SscReasoningNotes from '@/components/SscReasoningNotes';
+import SscGeneralAwarenessNotes from '@/components/SscGeneralAwarenessNotes';
 
 type SyllabusSection = {
   title: string;
@@ -126,8 +133,57 @@ const syllabusData: SyllabusSection[] = [
 ];
 
 export default function SscChslPage() {
+  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
+
+  // Mapped topics for study notes matching
+  const hasNotes = (topic: string) => {
+    return true; // Map all topics to corresponding notes
+  };
+
+  const renderNotes = (topic: string) => {
+    const topicLower = topic.toLowerCase();
+    
+    const isEnglish = [
+      "reading comprehension", "cloze test", "para jumbles", "miscellaneous", 
+      "fill in the blanks", "multiple meaning/error spotting", "paragraph completion", 
+      "one word substitution", "active and passive voice", "vocabulary", "grammar", 
+      "sentence structure", "synonyms/homonyms", "antonyms", "spot the error", 
+      "spellings/ detecting mis-spelt words", "idioms and phrases", "one-word substitution", 
+      "improvement of sentences", "active/ passive voice of verbs", 
+      "conversion into direct/ indirect narration", "shuffling of sentence parts", 
+      "shuffling of sentences in a passage", "cloze passage", "comprehension passage"
+    ].some(keyword => topicLower.includes(keyword));
+
+    const isReasoning = [
+      "reasoning", "general intelligence", "logical", "alphanumeric", "ranking", 
+      "direction", "alphabet test", "data sufficiency", "coded inequalities", 
+      "seating arrangement", "puzzle", "tabulation", "syllogism", "blood relations", 
+      "input-output", "coding-decoding", "verbal and non-verbal", "analogy", 
+      "symbolic operations", "trends", "classification", "venn diagrams", 
+      "drawing inferences", "punched hole", "series", "embedded", "critical thinking", 
+      "problem solving", "emotional intelligence", "word building", "social intelligence"
+    ].some(keyword => topicLower.includes(keyword));
+
+    const isMathsOrStats = [
+      "simplification", "profit and loss", "mixtures & allegations", "mixture", 
+      "interest", "work & time", "time & distance", "time and work", "time and distance", 
+      "mensuration", "data interpretation", "ratio", "proportion", "percentage", 
+      "number systems", "number system", "sequence", "series", "permutation", 
+      "probability", "fundamental arithmetical operations", "percentages", 
+      "square roots", "averages", "discount", "partnership", "algebra", 
+      "graphs of linear equations", "geometric", "trigonometry", "statistics"
+    ].some(keyword => topicLower.includes(keyword));
+
+    if (isEnglish) return <SscEnglishNotes />;
+    if (isReasoning) return <SscReasoningNotes />;
+    if (isMathsOrStats) return <SscQuantitativeAptitudeNotes />;
+    
+    // Everything else maps to General Awareness / Computer Basics
+    return <SscGeneralAwarenessNotes />;
+  };
+
   return (
-    <div className="max-w-5xl mx-auto pb-12">
+    <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
       {/* Header */}
       <div className="mb-10">
         <div className="inline-block px-4 py-1.5 rounded-full bg-pink-500/10 text-pink-400 font-semibold text-sm mb-4 border border-pink-500/20">
@@ -138,6 +194,7 @@ export default function SscChslPage() {
         </h1>
         <p className="text-lg text-slate-400 leading-relaxed">
           Complete bilingual (English & Hindi) syllabus for Staff Selection Commission Combined Higher Secondary Level (SSC CHSL) Exam.
+          Tap on any syllabus topic to access premium interactive study notes!
         </p>
       </div>
 
@@ -163,38 +220,70 @@ export default function SscChslPage() {
             {section.subSections ? (
               <div className="space-y-8">
                 {section.subSections.map((sub, sIdx) => (
-                  <div key={sIdx}>
-                    <h3 className="text-lg font-medium text-pink-300 mb-4">{sub.subtitle}</h3>
-                    <ul className="space-y-2.5">
-                      {sub.topics.map((topic, tIdx) => (
-                        <li 
-                          key={tIdx} 
-                          className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-pink-500/5 border border-white/5 hover:border-pink-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                        >
-                          <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
-                            {(tIdx + 1).toString().padStart(2, '0')}
+                  <div key={sIdx} className="space-y-4">
+                    <h3 className="text-lg font-medium text-pink-300 border-l-2 border-pink-500 pl-3">{sub.subtitle}</h3>
+                    <ul className="space-y-3">
+                      {sub.topics.map((topic, tIdx) => {
+                        const isExpanded = expandedTopic === topic;
+
+                        return (
+                          <div key={tIdx} className="space-y-3">
+                            <li 
+                              onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                              className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-pink-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-pink-500/5 hover:bg-pink-500/10 border-pink-500/25 hover:border-pink-500/40 text-pink-200 font-medium"
+                            >
+                              <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-pink-500 text-white shadow-[0_0_10px_rgba(236,72,153,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                                {(tIdx + 1).toString().padStart(2, '0')}
+                              </div>
+                              <span className="font-semibold text-pink-200 group-hover:text-slate-50 transition-colors">{topic}</span>
+                              
+                              <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 shadow-[0_0_10px_rgba(236,72,153,0.15)] font-semibold select-none group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                                {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                              </span>
+                            </li>
+                            
+                            {isExpanded && (
+                              <div className="w-full">
+                                {renderNotes(topic)}
+                              </div>
+                            )}
                           </div>
-                          <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                        </li>
-                      ))}
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
               </div>
             ) : (
               /* Handle Normal Flat Topics */
-              <ul className="space-y-2.5">
-                {section.topics?.map((topic, tIdx) => (
-                  <li 
-                    key={tIdx} 
-                    className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-pink-500/5 border border-white/5 hover:border-pink-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-pink-500/10 text-pink-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
-                      {(tIdx + 1).toString().padStart(2, '0')}
+              <ul className="space-y-3">
+                {section.topics?.map((topic, tIdx) => {
+                  const isExpanded = expandedTopic === topic;
+
+                  return (
+                    <div key={tIdx} className="space-y-3">
+                      <li 
+                        onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                        className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-pink-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-pink-500/5 hover:bg-pink-500/10 border-pink-500/25 hover:border-pink-500/40 text-pink-200 font-medium"
+                      >
+                        <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-pink-500 text-white shadow-[0_0_10px_rgba(236,72,153,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                          {(tIdx + 1).toString().padStart(2, '0')}
+                        </div>
+                        <span className="font-semibold text-pink-200 group-hover:text-slate-50 transition-colors">{topic}</span>
+                        
+                        <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30 shadow-[0_0_10px_rgba(236,72,153,0.15)] font-semibold select-none group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                          {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                        </span>
+                      </li>
+                      
+                      {isExpanded && (
+                        <div className="w-full">
+                          {renderNotes(topic)}
+                        </div>
+                      )}
                     </div>
-                    <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                  </li>
-                ))}
+                  );
+                })}
               </ul>
             )}
           </div>

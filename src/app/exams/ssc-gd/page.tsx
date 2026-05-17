@@ -1,5 +1,18 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+// Import SSC Specific Study Notes components
+import SscEnglishNotes from '@/components/SscEnglishNotes';
+import SscQuantitativeAptitudeNotes from '@/components/SscQuantitativeAptitudeNotes';
+import SscReasoningNotes from '@/components/SscReasoningNotes';
+import SscGeneralAwarenessNotes from '@/components/SscGeneralAwarenessNotes';
+
+// Import Hindi Specific Study Notes components
+import HindiLanguageGrammarAlphabetNotes from '@/components/HindiLanguageGrammarAlphabetNotes';
+import HindiVocabularyNotes from '@/components/HindiVocabularyNotes';
+import HindiSandhiSamasPunctuationNotes from '@/components/HindiSandhiSamasPunctuationNotes';
+import HindiVyakaranNotes from '@/components/HindiVyakaranNotes';
 
 type SyllabusSection = {
   title: string;
@@ -68,8 +81,44 @@ const syllabusData: SyllabusSection[] = [
 ];
 
 export default function SscGdPage() {
+  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
+
+  const renderNotes = (sectionIdx: number, topic: string) => {
+    // Section 1: Hindi
+    if (sectionIdx === 0) {
+      if (topic.includes("संधि") || topic.includes("समास")) {
+        return <HindiSandhiSamasPunctuationNotes />;
+      }
+      if (topic.includes("पर्यायवाची") || topic.includes("विलोम") || topic.includes("मुहावरे") || topic.includes("अनेकार्थक") || topic.includes("शब्द-युग्म") || topic.includes("वाक्यांश")) {
+        return <HindiVocabularyNotes />;
+      }
+      if (topic.includes("वाक्य") || topic.includes("वाच्य") || topic.includes("क्रिया") || topic.includes("संज्ञा")) {
+        return <HindiVyakaranNotes />;
+      }
+      return <HindiLanguageGrammarAlphabetNotes />;
+    }
+
+    // Section 2: English
+    if (sectionIdx === 1) {
+      return <SscEnglishNotes />;
+    }
+
+    // Section 3: Reasoning
+    if (sectionIdx === 2) {
+      return <SscReasoningNotes />;
+    }
+
+    // Section 4: GK/GS
+    if (sectionIdx === 3) {
+      return <SscGeneralAwarenessNotes />;
+    }
+
+    // Section 5: Mathematics
+    return <SscQuantitativeAptitudeNotes />;
+  };
+
   return (
-    <div className="max-w-5xl mx-auto pb-12">
+    <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
       {/* Header */}
       <div className="mb-10">
         <div className="inline-block px-4 py-1.5 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold text-sm mb-4 border border-cyan-500/20">
@@ -80,7 +129,7 @@ export default function SscGdPage() {
         </h1>
         <p className="text-lg text-slate-400 leading-relaxed">
           Complete topic-wise syllabus for Staff Selection Commission General Duty (SSC GD) Constable Exam. 
-          Prepare systematically with our structured modules.
+          Prepare systematically with our structured interactive study notes.
         </p>
       </div>
 
@@ -101,18 +150,34 @@ export default function SscGdPage() {
             <h2 className="text-2xl font-semibold text-slate-50 mb-6 border-b border-white/10 pb-4">
               {section.title}
             </h2>
-            <ul className="space-y-2.5">
-              {section.topics?.map((topic, tIdx) => (
-                <li 
-                  key={tIdx} 
-                  className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-cyan-500/5 border border-white/5 hover:border-cyan-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                >
-                  <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
-                    {(tIdx + 1).toString().padStart(2, '0')}
+            <ul className="space-y-3">
+              {section.topics?.map((topic, tIdx) => {
+                const isExpanded = expandedTopic === topic;
+
+                return (
+                  <div key={tIdx} className="space-y-3">
+                    <li 
+                      onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                      className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-cyan-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-cyan-500/5 hover:bg-cyan-500/10 border-cyan-500/25 hover:border-cyan-500/40 text-cyan-200 font-medium"
+                    >
+                      <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-cyan-500 text-white shadow-[0_0_10px_rgba(6,182,212,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                        {(tIdx + 1).toString().padStart(2, '0')}
+                      </div>
+                      <span className="font-semibold text-cyan-250 group-hover:text-slate-50 transition-colors">{topic}</span>
+                      
+                      <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shadow-[0_0_10px_rgba(6,182,212,0.15)] font-semibold select-none group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
+                        {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                      </span>
+                    </li>
+                    
+                    {isExpanded && (
+                      <div className="w-full">
+                        {renderNotes(idx, topic)}
+                      </div>
+                    )}
                   </div>
-                  <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                </li>
-              ))}
+                );
+              })}
             </ul>
           </div>
         ))}

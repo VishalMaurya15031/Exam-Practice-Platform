@@ -1,5 +1,12 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+// Import SSC Specific Study Notes components
+import SscEnglishNotes from '@/components/SscEnglishNotes';
+import SscQuantitativeAptitudeNotes from '@/components/SscQuantitativeAptitudeNotes';
+import SscReasoningNotes from '@/components/SscReasoningNotes';
+import SscGeneralAwarenessNotes from '@/components/SscGeneralAwarenessNotes';
 
 type SyllabusSection = {
   title: string;
@@ -59,8 +66,18 @@ const syllabusData: SyllabusSection[] = [
 ];
 
 export default function SscMtsPage() {
+  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
+
+  const renderNotes = (subSectionIdx: number) => {
+    // 0: Numerical, 1: English, 2: Reasoning, 3: GA
+    if (subSectionIdx === 0) return <SscQuantitativeAptitudeNotes />;
+    if (subSectionIdx === 1) return <SscEnglishNotes />;
+    if (subSectionIdx === 2) return <SscReasoningNotes />;
+    return <SscGeneralAwarenessNotes />;
+  };
+
   return (
-    <div className="max-w-5xl mx-auto pb-12">
+    <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
       {/* Header */}
       <div className="mb-10">
         <div className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-500 font-semibold text-sm mb-4 border border-amber-500/20">
@@ -71,6 +88,7 @@ export default function SscMtsPage() {
         </h1>
         <p className="text-lg text-slate-400 leading-relaxed">
           Complete bilingual (English & Hindi) syllabus for Staff Selection Commission Multi Tasking Staff (SSC MTS) Exam.
+          Tap on any syllabus topic to load premium study guides instantly!
         </p>
       </div>
 
@@ -93,42 +111,43 @@ export default function SscMtsPage() {
             </h2>
             
             {/* Handle Sections with Subtopics */}
-            {section.subSections ? (
+            {section.subSections && (
               <div className="space-y-8">
                 {section.subSections.map((sub, sIdx) => (
-                  <div key={sIdx}>
-                    <h3 className="text-lg font-medium text-amber-400 mb-4">{sub.subtitle}</h3>
-                    <ul className="space-y-2.5">
-                      {sub.topics.map((topic, tIdx) => (
-                        <li 
-                          key={tIdx} 
-                          className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-amber-500/5 border border-white/5 hover:border-amber-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                        >
-                          <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-                            {(tIdx + 1).toString().padStart(2, '0')}
+                  <div key={sIdx} className="space-y-4">
+                    <h3 className="text-lg font-medium text-amber-400 border-l-2 border-amber-500 pl-3">{sub.subtitle}</h3>
+                    <ul className="space-y-3">
+                      {sub.topics.map((topic, tIdx) => {
+                        const isExpanded = expandedTopic === topic;
+
+                        return (
+                          <div key={tIdx} className="space-y-3">
+                            <li 
+                              onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                              className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-amber-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-amber-500/5 hover:bg-amber-500/10 border-amber-500/25 hover:border-amber-500/40 text-amber-200 font-medium"
+                            >
+                              <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-500 text-white shadow-[0_0_10px_rgba(245,158,11,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                                {(tIdx + 1).toString().padStart(2, '0')}
+                              </div>
+                              <span className="font-semibold text-amber-200 group-hover:text-slate-50 transition-colors">{topic}</span>
+                              
+                              <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 shadow-[0_0_10px_rgba(245,158,11,0.15)] font-semibold select-none group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                                {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                              </span>
+                            </li>
+                            
+                            {isExpanded && (
+                              <div className="w-full">
+                                {renderNotes(sIdx)}
+                              </div>
+                            )}
                           </div>
-                          <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                        </li>
-                      ))}
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
               </div>
-            ) : (
-              /* Handle Normal Flat Topics */
-              <ul className="space-y-2.5">
-                {section.topics?.map((topic, tIdx) => (
-                  <li 
-                    key={tIdx} 
-                    className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-amber-500/5 border border-white/5 hover:border-amber-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
-                      {(tIdx + 1).toString().padStart(2, '0')}
-                    </div>
-                    <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                  </li>
-                ))}
-              </ul>
             )}
           </div>
         ))}
