@@ -98,31 +98,37 @@ export default function SscMtsPage() {
                 {section.subSections.map((sub, sIdx) => (
                   <div key={sIdx}>
                     <h3 className="text-lg font-medium text-amber-400 mb-4">{sub.subtitle}</h3>
-                    <div className="flex flex-wrap gap-3">
+                    <ul className="space-y-2.5">
                       {sub.topics.map((topic, tIdx) => (
-                        <div 
+                        <li 
                           key={tIdx} 
-                          className="px-4 py-2 bg-[#0f172a]/60 border border-white/5 rounded-lg text-slate-300 text-sm hover:bg-amber-500/10 hover:border-amber-500/30 hover:text-amber-300 transition-all duration-300 cursor-default"
+                          className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-amber-500/5 border border-white/5 hover:border-amber-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
                         >
-                          {topic}
-                        </div>
+                          <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                            {(tIdx + 1).toString().padStart(2, '0')}
+                          </div>
+                          <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
+                        </li>
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ))}
               </div>
             ) : (
               /* Handle Normal Flat Topics */
-              <div className="flex flex-wrap gap-3">
+              <ul className="space-y-2.5">
                 {section.topics?.map((topic, tIdx) => (
-                  <div 
+                  <li 
                     key={tIdx} 
-                    className="px-4 py-2 bg-[#0f172a]/60 border border-white/5 rounded-lg text-slate-300 text-sm hover:bg-amber-500/10 hover:border-amber-500/30 hover:text-amber-300 transition-all duration-300 cursor-default"
+                    className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-amber-500/5 border border-white/5 hover:border-amber-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
                   >
-                    {topic}
-                  </div>
+                    <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                      {(tIdx + 1).toString().padStart(2, '0')}
+                    </div>
+                    <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             )}
           </div>
         ))}

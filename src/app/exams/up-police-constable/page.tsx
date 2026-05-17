@@ -125,16 +125,19 @@ export default function UPPoliceConstablePage() {
             <h2 className="text-2xl font-semibold text-slate-50 mb-6 border-b border-white/10 pb-4">
               {section.title}
             </h2>
-            <div className="flex flex-wrap gap-3">
+            <ul className="space-y-2.5">
               {section.topics?.map((topic, tIdx) => (
-                <div 
+                <li 
                   key={tIdx} 
-                  className="px-4 py-2 bg-[#0f172a]/60 border border-white/5 rounded-lg text-slate-300 text-sm hover:bg-indigo-500/10 hover:border-indigo-500/30 hover:text-indigo-300 transition-all duration-300 cursor-default"
+                  className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-indigo-500/5 border border-white/5 hover:border-indigo-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
                 >
-                  {topic}
-                </div>
+                  <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                    {(tIdx + 1).toString().padStart(2, '0')}
+                  </div>
+                  <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>
