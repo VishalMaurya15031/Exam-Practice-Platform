@@ -4,6 +4,8 @@ import Link from 'next/link';
 import GeneralScienceNotes from '@/components/GeneralScienceNotes';
 import HistoryNotes from '@/components/HistoryNotes';
 import ConstitutionNotes from '@/components/ConstitutionNotes';
+import EconomyCultureNotes from '@/components/EconomyCultureNotes';
+import AgricultureTradeNotes from '@/components/AgricultureTradeNotes';
 
 type SyllabusSection = {
   title: string;
@@ -22,7 +24,7 @@ const syllabusData: SyllabusSection[] = [
       "भारतीय कृषि, वाणिज्य एवं व्यापार", "जनसंख्या, पर्यावरण एवं नगरीकरण", 
       "भारत का भूगोल तथा विश्व भूगोल और प्राकृतिक संसाधन", 
       "उ0प्र0 की शिक्षा संस्कृति and सामाजिक परिवेश के सम्बन्ध विशिष्ट जानकारी",
-      "उ0प्र0 में राजस्व, पुलिस व सामान्य प्रशासनिक व्यवस्था", "मानवाधिकार",
+      "उ0प्र0 में राजस्व, police व सामान्य प्रशासनिक व्यवस्था", "मानवाधिकार",
       "आंतरिक सुरक्षा तथा आतंकवाद", "भारत और उसके पड़ोसी देशों के बीच सम्बन्ध",
       "राष्ट्रीय तथा अन्तर्राष्ट्रीय महत्व के समसामयिक विषय", "राष्ट्रीय तथा अन्तर्राष्ट्रीय संगठन",
       "विमुद्रीकरण और उसका प्रभाव", "साइबर क्राइम", "वस्तु एवं सेवा कर",
@@ -95,6 +97,8 @@ export default function UPPoliceConstablePage() {
   const [isScienceExpanded, setIsScienceExpanded] = useState(false);
   const [isHistoryExpanded, setIsHistoryExpanded] = useState(false);
   const [isConstitutionExpanded, setIsConstitutionExpanded] = useState(false);
+  const [isEconomyCultureExpanded, setIsEconomyCultureExpanded] = useState(false);
+  const [isAgricultureTradeExpanded, setIsAgricultureTradeExpanded] = useState(false);
 
   return (
     <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
@@ -137,18 +141,25 @@ export default function UPPoliceConstablePage() {
                 const isScience = topic === "सामान्य विज्ञान";
                 const isHistory = topic === "भारत का इतिहास";
                 const isConstitution = topic === "भारतीय संविधान";
-                const hasNotes = isScience || isHistory || isConstitution;
+                const isEconomyCulture = topic === "भारतीय अर्थव्यवस्था एवं संस्कृति";
+                const isAgricultureTrade = topic === "भारतीय कृषि, वाणिज्य एवं व्यापार";
+                
+                const hasNotes = isScience || isHistory || isConstitution || isEconomyCulture || isAgricultureTrade;
 
                 // Determine dynamic states
                 const isExpanded = 
                   (isScience && isScienceExpanded) || 
                   (isHistory && isHistoryExpanded) || 
-                  (isConstitution && isConstitutionExpanded);
+                  (isConstitution && isConstitutionExpanded) ||
+                  (isEconomyCulture && isEconomyCultureExpanded) ||
+                  (isAgricultureTrade && isAgricultureTradeExpanded);
 
                 const toggleExpand = () => {
                   if (isScience) setIsScienceExpanded(!isScienceExpanded);
                   if (isHistory) setIsHistoryExpanded(!isHistoryExpanded);
                   if (isConstitution) setIsConstitutionExpanded(!isConstitutionExpanded);
+                  if (isEconomyCulture) setIsEconomyCultureExpanded(!isEconomyCultureExpanded);
+                  if (isAgricultureTrade) setIsAgricultureTradeExpanded(!isAgricultureTradeExpanded);
                 };
 
                 return (
@@ -189,6 +200,14 @@ export default function UPPoliceConstablePage() {
 
                     {isConstitution && isConstitutionExpanded && (
                       <ConstitutionNotes />
+                    )}
+
+                    {isEconomyCulture && isEconomyCultureExpanded && (
+                      <EconomyCultureNotes />
+                    )}
+
+                    {isAgricultureTrade && isAgricultureTradeExpanded && (
+                      <AgricultureTradeNotes />
                     )}
                   </div>
                 );
