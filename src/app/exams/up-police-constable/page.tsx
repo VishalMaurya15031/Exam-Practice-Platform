@@ -6,6 +6,7 @@ import HistoryNotes from '@/components/HistoryNotes';
 import ConstitutionNotes from '@/components/ConstitutionNotes';
 import EconomyCultureNotes from '@/components/EconomyCultureNotes';
 import AgricultureTradeNotes from '@/components/AgricultureTradeNotes';
+import DemographyEnvironmentNotes from '@/components/DemographyEnvironmentNotes';
 
 type SyllabusSection = {
   title: string;
@@ -99,6 +100,7 @@ export default function UPPoliceConstablePage() {
   const [isConstitutionExpanded, setIsConstitutionExpanded] = useState(false);
   const [isEconomyCultureExpanded, setIsEconomyCultureExpanded] = useState(false);
   const [isAgricultureTradeExpanded, setIsAgricultureTradeExpanded] = useState(false);
+  const [isDemographyEnvironmentExpanded, setIsDemographyEnvironmentExpanded] = useState(false);
 
   return (
     <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
@@ -143,8 +145,9 @@ export default function UPPoliceConstablePage() {
                 const isConstitution = topic === "भारतीय संविधान";
                 const isEconomyCulture = topic === "भारतीय अर्थव्यवस्था एवं संस्कृति";
                 const isAgricultureTrade = topic === "भारतीय कृषि, वाणिज्य एवं व्यापार";
+                const isDemographyEnvironment = topic === "जनसंख्या, पर्यावरण एवं नगरीकरण";
                 
-                const hasNotes = isScience || isHistory || isConstitution || isEconomyCulture || isAgricultureTrade;
+                const hasNotes = isScience || isHistory || isConstitution || isEconomyCulture || isAgricultureTrade || isDemographyEnvironment;
 
                 // Determine dynamic states
                 const isExpanded = 
@@ -152,7 +155,8 @@ export default function UPPoliceConstablePage() {
                   (isHistory && isHistoryExpanded) || 
                   (isConstitution && isConstitutionExpanded) ||
                   (isEconomyCulture && isEconomyCultureExpanded) ||
-                  (isAgricultureTrade && isAgricultureTradeExpanded);
+                  (isAgricultureTrade && isAgricultureTradeExpanded) ||
+                  (isDemographyEnvironment && isDemographyEnvironmentExpanded);
 
                 const toggleExpand = () => {
                   if (isScience) setIsScienceExpanded(!isScienceExpanded);
@@ -160,6 +164,7 @@ export default function UPPoliceConstablePage() {
                   if (isConstitution) setIsConstitutionExpanded(!isConstitutionExpanded);
                   if (isEconomyCulture) setIsEconomyCultureExpanded(!isEconomyCultureExpanded);
                   if (isAgricultureTrade) setIsAgricultureTradeExpanded(!isAgricultureTradeExpanded);
+                  if (isDemographyEnvironment) setIsDemographyEnvironmentExpanded(!isDemographyEnvironmentExpanded);
                 };
 
                 return (
@@ -208,6 +213,10 @@ export default function UPPoliceConstablePage() {
 
                     {isAgricultureTrade && isAgricultureTradeExpanded && (
                       <AgricultureTradeNotes />
+                    )}
+
+                    {isDemographyEnvironment && isDemographyEnvironmentExpanded && (
+                      <DemographyEnvironmentNotes />
                     )}
                   </div>
                 );
