@@ -511,6 +511,45 @@ export default function RrbGroupDPage() {
                 &rArr; LCM(2,4,5) / HCF(3,9,6) = <b>20/3</b> or <b>6 &frac23;</b>.
               </div>
             </div>
+
+            <!-- Special Appendix: Ratio & Proportion notes built-in -->
+            <div class="highlight-card" style="border-color: #e9d5ff; background-color: #faf5ff; margin-top: 15px;">
+              <div class="highlight-title" style="color: #7c3aed; border-color: #e9d5ff;">📖 Topic 04 Special Booklet: Ratio & Proportion (अनुपात और समानुपात हस्तलिखित नोट्स)</div>
+              
+              <h3 style="font-size: 12px; color: #7c3aed; margin: 10px 0 5px 0;">A. Basic Concepts (बुनियादी अवधारणाएं)</h3>
+              <ul style="padding-left: 15px; margin: 0 0 10px 0;">
+                <li style="font-size: 10px;"><b>Ratio (अनुपात):</b> दो समान राशियों के बीच तुलना. (e.g. ₹20 और ₹30 का अनुपात = 20:30 = <b>2:3</b>. यह हमेशा अपने सरलतम रूप में होता है)</li>
+                <li style="font-size: 10px;"><b>Proportion (समानुपात):</b> जब दो अनुपात बराबर हों. $a:b = c:d \implies \mathbf{a/b = c/d}$ &rArr; <b>a &times; d = b &times; c</b> (बाहरी पदों का गुणनफल = मध्य पदों का गुणनफल)</li>
+              </ul>
+
+              <h3 style="font-size: 12px; color: #7c3aed; margin: 10px 0 5px 0;">B. Proportion Rules (समानुपात के नियम)</h3>
+              <div class="formula-box" style="background: #ffffff; border: 1px solid #e9d5ff; margin-bottom: 10px;">
+                • <b>प्रथमानुपाती (First Proportional):</b> a और b का = <b>a&sup2; / b</b>
+                • <b>द्वितीयानुपाती / मध्यानुपाती (Mean Proportional):</b> a और b का = <b>&radic;(ab)</b>
+                • <b>तृतीयानुपाती (Third Proportional):</b> a और b का = <b>b&sup2; / a</b>
+                • <b>चतुर्थानुपाती (Fourth Proportional):</b> a, b, c का = <b>(b &times; c) / a</b>
+              </div>
+
+              <h3 style="font-size: 12px; color: #7c3aed; margin: 10px 0 5px 0;">C. Shortcuts & Tricks (शॉर्ट ट्रिक्स)</h3>
+              <ul style="padding-left: 15px; margin: 0 0 10px 0;">
+                <li style="font-size: 10px;"><b>Combining Ratios (पड़ोसी विधि):</b> यदि A:B = 2:3 और B:C = 4:5, तो खाली जगह में पड़ोसी की संख्या लिखकर गुणा करें:
+                  <pre style="font-family: monospace; font-size: 9px; background: #ffffff; border: 1px solid #e9d5ff; padding: 4px; margin: 4px 0 0 0; display: inline-block;">
+A  :  B  :  C
+2  :  3  : [3]  &lt;-- पड़ोसी
+[4]:  4  :  5   &lt;-- पड़ोसी
+----------------
+8  :  12 :  15  (गुणा करने पर) &rArr; A:B:C = 8:12:15</pre>
+                </li>
+                <li style="font-size: 10px; margin-top: 5px;"><b>Coins Based Problems:</b> सिक्कों की संख्या को मूल्य में बदलने के लिए हमेशा व्यक्तिगत सिक्के की कीमत से गुणा करें (e.g. 50 पैसे के सिक्कों के लिए &frac12; से गुणा करें).</li>
+              </ul>
+
+              <h3 style="font-size: 12px; color: #7c3aed; margin: 10px 0 5px 0;">D. Solved Examples (हल सहित उदाहरण)</h3>
+              <div class="example-box" style="background: #ffffff; border-color: #e9d5ff; margin-bottom: 5px;">
+                <b>Example 1 (Mean Proportional):</b> 4 और 64 का मध्यानुपाती (Mean Proportional) = &radic;(4 &times; 64) = &radic;256 = <b>16</b>.<br/>
+                <b>Example 2 (Income & Savings):</b> A और B की आय का अनुपात 3:2 है और खर्च का अनुपात 5:3 है। यदि प्रत्येक ₹2000 बचाता है, तो A की आय कितनी है?<br/>
+                &rArr; (3x - 2000)/(2x - 2000) = 5/3 &rArr; 9x - 6000 = 10x - 10000 &rArr; x = 4000 &rArr; A की आय = 3x = 3 &times; 4000 = <b>₹12,000</b>.
+              </div>
+            </div>
           </div>
 
           <!-- Section 2: Reasoning, Science, Awareness -->

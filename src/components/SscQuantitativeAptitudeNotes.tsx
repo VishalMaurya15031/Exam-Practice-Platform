@@ -10,6 +10,7 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
   const [numSystemTab, setNumSystemTab] = useState<'classification' | 'divisibility' | 'formulas' | 'remainder'>('classification');
   const [simplificationTab, setSimplificationTab] = useState<'vbodmas' | 'formulas' | 'tricks' | 'examples'>('vbodmas');
   const [hcfLcmTab, setHcfLcmTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [ratioTab, setRatioTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
 
 
   const tabs = [
@@ -1535,15 +1536,442 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
       );
     }
 
-    // 2. Percentage, Ratio, Partnership, Unitary Method
+    // 2a. Exclusive Ratio & Proportion (अनुपात और समानुपात)
+    if (topicLower.includes("ratio") || topicLower.includes("proportion") || topicLower.includes("अनुपात")) {
+      const handleDownloadRatioPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+          alert("Please allow popups to download/print the PDF.");
+          return;
+        }
+        const content = `
+          <html>
+            <head>
+              <title>Ratio & Proportion - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body {
+                  font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
+                  color: #1e293b;
+                  line-height: 1.6;
+                  margin: 0;
+                  padding: 35px;
+                  background-color: #ffffff;
+                }
+                .header {
+                  text-align: center;
+                  border-bottom: 3px double #a855f7;
+                  padding-bottom: 15px;
+                  margin-bottom: 25px;
+                }
+                .header h1 {
+                  color: #0f172a;
+                  margin: 0;
+                  font-size: 26px;
+                  font-weight: 700;
+                }
+                .header h2 {
+                  color: #7c3aed;
+                  margin: 5px 0 0 0;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+                .header p {
+                  margin: 8px 0 0 0;
+                  color: #4b5563;
+                  font-size: 13px;
+                  font-weight: 500;
+                }
+                .badge {
+                  background-color: #f3e8ff;
+                  color: #6b21a8;
+                  padding: 4px 12px;
+                  border-radius: 12px;
+                  font-size: 11px;
+                  font-weight: 600;
+                  border: 1px solid #e9d5ff;
+                  display: inline-block;
+                  margin-bottom: 8px;
+                }
+                .section {
+                  margin-bottom: 25px;
+                  page-break-inside: avoid;
+                }
+                .section-title {
+                  color: #6b21a8;
+                  font-size: 16px;
+                  font-weight: 600;
+                  border-left: 4px solid #a855f7;
+                  padding-left: 10px;
+                  margin-bottom: 12px;
+                  background-color: #f3e8ff;
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+                }
+                .grid {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 15px;
+                }
+                @media (max-width: 600px) {
+                  .grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
+                .card {
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 12px;
+                  background-color: #fafafa;
+                }
+                .card-title {
+                  font-weight: 600;
+                  color: #0f172a;
+                  font-size: 13px;
+                  margin-bottom: 6px;
+                  border-bottom: 1px solid #e2e8f0;
+                  padding-bottom: 4px;
+                }
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-bottom: 15px;
+                }
+                th, td {
+                  border: 1px solid #cbd5e1;
+                  padding: 8px 10px;
+                  text-align: left;
+                  font-size: 12px;
+                }
+                th {
+                  background-color: #f1f5f9;
+                  color: #334155;
+                  font-weight: 600;
+                }
+                .formula-box {
+                  background-color: #f8fafc;
+                  border-left: 3px solid #a855f7;
+                  padding: 10px;
+                  margin: 10px 0;
+                  font-family: monospace;
+                  font-size: 12px;
+                  border-radius: 0 6px 6px 0;
+                  white-space: pre-line;
+                }
+                .example-box {
+                  background-color: #fdf4ff;
+                  border: 1px dashed #d946ef;
+                  padding: 12px;
+                  margin: 10px 0;
+                  border-radius: 6px;
+                  font-size: 12px;
+                }
+                .example-title {
+                  font-weight: 600;
+                  color: #6b21a8;
+                  margin-bottom: 4px;
+                }
+                .footer {
+                  text-align: center;
+                  margin-top: 30px;
+                  font-size: 10px;
+                  color: #94a3b8;
+                  border-top: 1px solid #e2e8f0;
+                  padding-top: 10px;
+                }
+                ul {
+                  margin: 5px 0;
+                  padding-left: 20px;
+                }
+                li {
+                  margin-bottom: 4px;
+                  font-size: 12px;
+                }
+                strong {
+                  color: #0f172a;
+                }
+                @media print {
+                  body {
+                    padding: 0;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Ratio & Proportion</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: अनुपात और समानुपात</h2>
+                <p>Designed for Excellence in Railway Exams | सर्वोत्तम अनुपात व समानुपात ट्रिक्स संकलन</p>
+              </div>
+
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Ratio (अनुपात)</div>
+                    <p>दो समान प्रकार की राशियों के बीच तुलना को अनुपात कहते हैं। इसे ':' चिन्ह से दर्शाया जाता है।</p>
+                    <p><b>Example:</b> A के पास ₹20 और B के पास ₹30 हैं, तो अनुपात = 20 : 30 = <b>2 : 3</b> (अनुपात हमेशा अपने सरलतम रूप में होता है)।</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Proportion (समानुपात)</div>
+                    <p>जब दो अनुपात आपस में बराबर हों, तो उन्हें समानुपात कहा जाता है। इसे '::' चिन्ह से दर्शाया जाता है।</p>
+                    <p><b>Example:</b> a : b = c : d &rArr; a : b :: c : d &rArr; <b>a/b = c/d</b>.<br/>
+                       (बाहरी पदों का गुणनफल = मध्य पदों का गुणनफल: <b>a &times; d = b &times; c</b>)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">2. Types & Formulas (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>First Proportional (प्रथमानुपाती):</b> a और b का = <b>a&sup2; / b</b>
+                  • <b>Mean Proportional (द्वितीयानुपाती / मध्यानुपाती):</b> a और b का = <b>&radic;(ab)</b>
+                  • <b>Third Proportional (तृतीयानुपाती):</b> a और b का = <b>b&sup2; / a</b>
+                  • <b>Fourth Proportional (चतुर्थानुपाती):</b> a, b, c का = <b>(b &times; c) / a</b>
+                </div>
+              </div>
+
+              <div class="section" style="page-break-before: always;">
+                <div class="section-title">3. Time-Saving Tricks (समय बचाने वाली शॉर्ट ट्रिक्स)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Trick 1: Combining Ratios (अनुपातों को जोड़ना) - पड़ोसी विधि</div>
+                    <p>यदि A : B = 2 : 3 और B : C = 4 : 5 हो, तो खाली जगह में उसके बगल वाली संख्या लिख दें:</p>
+                    <pre style="font-family: monospace; font-size: 11px; background: #e2e8f0; padding: 8px; border-radius: 4px;">
+  A  :  B  :  C
+  2  :  3  : [3]   (पड़ोसी 3 आया)
+ [4] :  4  :  5   (पड़ोसी 4 आया)
+----------------
+  8  :  12 :  15   (ऊपर-नीचे गुणा करने पर)
+                    </pre>
+                    <p>अतः, A : B : C = <b>8 : 12 : 15</b>.</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Trick 2: Coins Based Problems (सिक्कों वाले प्रश्न)</div>
+                    <p>अगर थैले में सिक्कों की संख्या का अनुपात दिया हो, तो उन्हें मूल्य (Value) के अनुपात में बदलने के लिए सिक्कों की कीमत से गुणा करें (₹1 के लिए 1 से, 50 पैसे के लिए &frac12; से, 25 पैसे के लिए &frac14; से)।</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">4. Solved Examples (हल सहित उदाहरण)</div>
+                
+                <div class="example-box">
+                  <div class="example-title">📝 Example 1: Mean Proportional (मध्यानुपाती)</div>
+                  <b>Question:</b> 4 और 64 का मध्यानुपाती (Mean Proportional) ज्ञात कीजिए।<br/>
+                  <b>Solution:</b><br/>
+                  1. Formula: मध्यानुपाती = &radic;(ab)<br/>
+                  2. मध्यानुपाती = &radic;(4 &times; 64)<br/>
+                  3. मध्यानुपाती = &radic;256 = <b>16</b>.<br/>
+                  <b>Answer:</b> <b>16</b>
+                </div>
+
+                <div class="example-box">
+                  <div class="example-title">📝 Example 2: Income & Expenditure (आय और व्यय आधारित)</div>
+                  <b>Question:</b> A और B की आय का अनुपात 3 : 2 है और उनके खर्च का अनुपात 5 : 3 है। यदि दोनों में से प्रत्येक ₹2000 बचाता है, तो A की आय कितनी है?<br/>
+                  <b>Solution:</b><br/>
+                  1. Let incomes be 3x and 2x. Since Income - Savings = Expenditure:<br/>
+                     &bull; (3x - 2000) / (2x - 2000) = 5 / 3<br/>
+                  2. Cross Multiply:<br/>
+                     &bull; 3(3x - 2000) = 5(2x - 2000)<br/>
+                     &bull; 9x - 6000 = 10x - 10000<br/>
+                     &bull; 10x - 9x = 10000 - 6000 &rArr; x = 4000.<br/>
+                  3. A's Income = 3x = 3 &times; 4000 = <b>12000</b>.<br/>
+                  <b>Answer:</b> <b>₹12,000</b>
+                </div>
+              </div>
+
+              <div class="footer">
+                <p>Downloaded from Exam Practice Platform. Practicing daily guarantees success!</p>
+                <p>&copy; 2026 Exam Practice Platform. All rights reserved. Print only for personal learning.</p>
+              </div>
+
+              <script>
+                window.onload = function() {
+                  window.print();
+                  setTimeout(function() {
+                    window.close();
+                  }, 500);
+                }
+              </script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content);
+        printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          {/* Decorative Glowing Element */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+          {/* Header with Title and Download Button */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                <Layers className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">
+                  Ratio & Proportion Study Notes <Sparkles className="w-4 h-4 text-emerald-350" />
+                </h4>
+                <p className="text-slate-400 text-[11px] md:text-xs">अनुपात और समानुपात - RRB Group D Special Bilingual Notes</p>
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleDownloadRatioPDF}
+              className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] self-start sm:self-center font-semibold"
+            >
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+
+          {/* Interactive Navigation for sub-topics */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            <button 
+              onClick={() => setRatioTab('basics')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'basics' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📊 Basic Concepts (अवधारणाएं)
+            </button>
+            <button 
+              onClick={() => setRatioTab('formulas')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'formulas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📐 Types & Formulas (महत्वपूर्ण सूत्र)
+            </button>
+            <button 
+              onClick={() => setRatioTab('tricks')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'tricks' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              ⚡ Time-Saving Tricks (शॉर्ट ट्रिक्स)
+            </button>
+            <button 
+              onClick={() => setRatioTab('examples')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'examples' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📝 Solved Examples (उदाहरण)
+            </button>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="space-y-4 animate-fadeIn">
+            {ratioTab === 'basics' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🧮 Ratio (अनुपात):</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    दो समान प्रकार की राशियों के बीच तुलना को अनुपात कहते हैं। इसे ':' (colons) चिन्ह से दर्शाया जाता है।
+                  </p>
+                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
+                    e.g., A के पास ₹20 और B के पास ₹30 हैं, तो अनुपात = 20 : 30 = <b>2 : 3</b> (सरलतम रूप में)।
+                  </p>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-355 text-[13px] block border-b border-white/5 pb-1">🎯 Proportion (समानुपात):</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    जब दो अनुपात आपस में बराबर हों, तो उन्हें समानुपात कहा जाता है। इसे '::' चिन्ह से दर्शाया जाता है।
+                  </p>
+                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
+                    e.g., a : b = c : d &rArr; a : b :: c : d &rArr; <b>a/b = c/d</b> (बाहरी पदों का गुणनफल = मध्य पदों का गुणनफल: <b>a &times; d = b &times; c</b>)।
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {ratioTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-3">
+                <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📐 Proportion Formulas (समानुपात के सूत्र):</span>
+                <div className="grid sm:grid-cols-2 gap-4 text-[12px]">
+                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1">
+                    <p>• <b>प्रथमानुपाती (First Proportional):</b> a और b का = <b className="text-slate-100">a² / b</b></p>
+                    <p>• <b>मध्यानुपाती (Mean Proportional):</b> a और b का = <b className="text-slate-100">√(ab)</b></p>
+                  </div>
+                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1">
+                    <p>• <b>तृतीयानुपाती (Third Proportional):</b> a और b का = <b className="text-slate-100">b² / a</b></p>
+                    <p>• <b>चतुर्थानुपाती (Fourth Proportional):</b> a, b, c का = <b className="text-slate-100">(b &times; c) / a</b></p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {ratioTab === 'tricks' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⚡ ट्रिक 1: पड़ोसी (Blank Space) विधि</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    यदि A : B = 2 : 3 और B : C = 4 : 5 हो, तो खाली जगह में उसके बगल वाली संख्या लिखकर गुणा करें:
+                  </p>
+                  <pre className="p-2.5 bg-slate-950/60 rounded font-mono text-[11px] text-emerald-400">
+                    A  :  B  :  C{'\n'}
+                    2  :  3  : [3]{'\n'}
+                   [4] :  4  :  5{'\n'}
+                   --------------{'\n'}
+                    8  :  12 :  15  &rArr;  <b>A:B:C = 8:12:15</b>
+                  </pre>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🪙 ट्रिक 2: सिक्कों वाले प्रश्न</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    सिक्कों की संख्या के अनुपात को मूल्य (Value) के अनुपात में बदलने के लिए हमेशा उनके व्यक्तिगत सिक्का मूल्य (Face Value) से गुणा करें।
+                  </p>
+                  <p className="text-[11px] text-slate-400">
+                    (जैसे ₹1 के लिए 1 से, 50 पैसे के लिए 1/2 से, 25 पैसे के लिए 1/4 से)।
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {ratioTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 1: मध्यानुपाती पर आधारित</span>
+                  <p className="text-slate-300 font-semibold text-[11.5px]">
+                    4 और 64 का मध्यानुपाती (Mean Proportional) ज्ञात कीजिए।
+                  </p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded">
+                    <p>• सूत्र: मध्यानुपाती = &radic;(ab)</p>
+                    <p>• मध्यानुपाती = &radic;(4 &times; 64)</p>
+                    <p>• मध्यानुपाती = &radic;256 = <b>16</b></p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 2: आय और व्यय पर आधारित (RRB पसंदीदा)</span>
+                  <p className="text-slate-300 font-semibold text-[11.5px]">
+                    A और B की आय का अनुपात 3:2 है और खर्च का अनुपात 5:3 है। यदि प्रत्येक ₹2000 बचाता है, तो A की आय क्या है?
+                  </p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded leading-relaxed">
+                    <p>• माना आय 3x और 2x है। (आय &minus; बचत = खर्च)</p>
+                    <p>• (3x &minus; 2000) / (2x &minus; 2000) = 5 / 3</p>
+                    <p>• 3(3x &minus; 2000) = 5(2x &minus; 2000) &rArr; 9x &minus; 6000 = 10x &minus; 10000</p>
+                    <p>• x = 4000 &rArr; A की आय = 3x = 3 &times; 4000 = <b>₹12,000</b></p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-emerald-400" /> Topic 4/17 RRB Maths</span>
+            <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadRatioPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 2b. Fallback Percentage, Ratio, Partnership, Unitary Method
     if (
       topicLower.includes("percent") || 
-      topicLower.includes("ratio") || 
-      topicLower.includes("proportion") || 
       topicLower.includes("partnership") || 
       topicLower.includes("unitary") ||
       topicLower.includes("प्रतिशत") ||
-      topicLower.includes("अनुपात") ||
       topicLower.includes("साझेदारी")
     ) {
       return (
