@@ -1,9 +1,15 @@
 "use client";
 import React, { useState } from 'react';
-import { Percent, Ruler, BarChart2, Hash, Percent as PercentIcon, RefreshCw, Layers, Calculator } from 'lucide-react';
+import { 
+  Percent, Ruler, BarChart2, Hash, Percent as PercentIcon, RefreshCw, 
+  Layers, Calculator, FileText, Printer, Download, BookOpen, AlertCircle, Sparkles, ChevronRight
+} from 'lucide-react';
 
 export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string }) {
   const [activeTab, setActiveTab] = useState<'arithmetic' | 'advanced' | 'stats'>('arithmetic');
+  const [numSystemTab, setNumSystemTab] = useState<'classification' | 'divisibility' | 'formulas' | 'remainder'>('classification');
+  const [simplificationTab, setSimplificationTab] = useState<'vbodmas' | 'formulas' | 'tricks' | 'examples'>('vbodmas');
+
 
   const tabs = [
     { id: 'arithmetic', label: '🧮 Arithmetic Tricks (अंकगणित)', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },
@@ -15,22 +21,1052 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
   if (topic) {
     const topicLower = topic.toLowerCase();
 
-    // 1. Number System, Simplification, HCF/LCM, Decimal Fractions, Square/Cube Roots
+    // 1a. Exclusive Number System (संख्या पद्धति)
+    if (topicLower.includes("number system") || topicLower.includes("संख्या पद्धति")) {
+      const handleDownloadNumberSystemPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+          alert("Please allow popups to download/print the PDF.");
+          return;
+        }
+        const content = `
+          <html>
+            <head>
+              <title>Number System - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body {
+                  font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
+                  color: #1e293b;
+                  line-height: 1.6;
+                  margin: 0;
+                  padding: 35px;
+                  background-color: #ffffff;
+                }
+                .header {
+                  text-align: center;
+                  border-bottom: 3px double #10b981;
+                  padding-bottom: 15px;
+                  margin-bottom: 25px;
+                }
+                .header h1 {
+                  color: #0f172a;
+                  margin: 0;
+                  font-size: 26px;
+                  font-weight: 700;
+                }
+                .header h2 {
+                  color: #047857;
+                  margin: 5px 0 0 0;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+                .header p {
+                  margin: 8px 0 0 0;
+                  color: #4b5563;
+                  font-size: 13px;
+                  font-weight: 500;
+                }
+                .badge {
+                  background-color: #ecfdf5;
+                  color: #047857;
+                  padding: 4px 12px;
+                  border-radius: 12px;
+                  font-size: 11px;
+                  font-weight: 600;
+                  border: 1px solid #a7f3d0;
+                  display: inline-block;
+                  margin-bottom: 8px;
+                }
+                .section {
+                  margin-bottom: 25px;
+                  page-break-inside: avoid;
+                }
+                .section-title {
+                  color: #047857;
+                  font-size: 16px;
+                  font-weight: 600;
+                  border-left: 4px solid #10b981;
+                  padding-left: 10px;
+                  margin-bottom: 12px;
+                  background-color: #f0fdf4;
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+                }
+                .grid {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 15px;
+                }
+                @media (max-width: 600px) {
+                  .grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
+                .card {
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 12px;
+                  background-color: #fafafa;
+                }
+                .card-title {
+                  font-weight: 600;
+                  color: #0f172a;
+                  font-size: 13px;
+                  margin-bottom: 6px;
+                  border-bottom: 1px solid #e2e8f0;
+                  padding-bottom: 4px;
+                }
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-bottom: 15px;
+                }
+                th, td {
+                  border: 1px solid #cbd5e1;
+                  padding: 8px 10px;
+                  text-align: left;
+                  font-size: 12px;
+                }
+                th {
+                  background-color: #f1f5f9;
+                  color: #334155;
+                  font-weight: 600;
+                }
+                .formula-box {
+                  background-color: #f8fafc;
+                  border-left: 3px solid #10b981;
+                  padding: 10px;
+                  margin: 10px 0;
+                  font-family: monospace;
+                  font-size: 12px;
+                  border-radius: 0 6px 6px 0;
+                  white-space: pre-line;
+                }
+                .example-box {
+                  background-color: #fffbeb;
+                  border: 1px dashed #f59e0b;
+                  padding: 12px;
+                  margin: 10px 0;
+                  border-radius: 6px;
+                  font-size: 12px;
+                }
+                .example-title {
+                  font-weight: 600;
+                  color: #b45309;
+                  margin-bottom: 4px;
+                }
+                .footer {
+                  text-align: center;
+                  margin-top: 30px;
+                  font-size: 10px;
+                  color: #94a3b8;
+                  border-top: 1px solid #e2e8f0;
+                  padding-top: 10px;
+                }
+                ul {
+                  margin: 5px 0;
+                  padding-left: 20px;
+                }
+                li {
+                  margin-bottom: 4px;
+                  font-size: 12px;
+                }
+                strong {
+                  color: #0f172a;
+                }
+                @media print {
+                  body {
+                    padding: 0;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Number System</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: संख्या पद्धति</h2>
+                <p>Designed for Excellence in Railway Exams | सर्वोत्तम शार्टकट ट्रिक्स व सूत्र संकलन</p>
+              </div>
+
+              <div class="section">
+                <div class="section-title">1. Classification of Numbers (संख्याओं का वर्गीकरण)</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Number Type (प्रकार)</th>
+                      <th>Definition & Key Properties (परिभाषा एवं मुख्य विशेषताएं)</th>
+                      <th>Examples (उदाहरण)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Natural (प्राकृतिक)</b></td>
+                      <td>Counting numbers starting from 1 (1 से अनंत तक). Symbol: <b>N</b>.</td>
+                      <td>1, 2, 3, 4, 5, ...</td>
+                    </tr>
+                    <tr>
+                      <td><b>Whole (पूर्ण)</b></td>
+                      <td>Natural numbers including 0 (शून्य सहित प्राकृतिक संख्याएं). Symbol: <b>W</b>.</td>
+                      <td>0, 1, 2, 3, 4, ...</td>
+                    </tr>
+                    <tr>
+                      <td><b>Prime (अभाज्य)</b></td>
+                      <td>Exactly 2 factors: 1 and itself. <b>2 is the only EVEN prime number!</b> (2 एकमात्र सम अभाज्य संख्या है).</td>
+                      <td>2, 3, 5, 7, 11, 13, 17, 19, 23, 29...</td>
+                    </tr>
+                    <tr>
+                      <td><b>Composite (भाज्य)</b></td>
+                      <td>More than 2 factors. <b>1 is NEITHER prime nor composite!</b> (1 न तो अभाज्य है न भाज्य).</td>
+                      <td>4, 6, 8, 9, 10, 12... (Smallest composite is 4)</td>
+                    </tr>
+                    <tr>
+                      <td><b>Co-Prime (सह-अभाज्य)</b></td>
+                      <td>HCF of the pair is 1 (ऐसी संख्याएं जिनका महत्तम समापवर्तक 1 हो).</td>
+                      <td>(2, 3), (5, 9), (8, 15), (21, 22)</td>
+                    </tr>
+                    <tr>
+                      <td><b>Rational (परिमेय)</b></td>
+                      <td>Can be expressed as p/q where q &ne; 0 (p/q रूप की संख्याएं).</td>
+                      <td>3/4, -5, 0, 0.333..., 22/7</td>
+                    </tr>
+                    <tr>
+                      <td><b>Irrational (अपरिमेय)</b></td>
+                      <td>Non-repeating, non-terminating decimals. <b>&pi; (pi) is Irrational!</b></td>
+                      <td>&radic;2, &radic;3, &radic;5, &pi;</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="example-box">
+                  <div class="example-title">💡 Important Facts for RRB Exams (स्मरण रखें):</div>
+                  <ul>
+                    <li>Number of Primes from 1 to 50 = <b>15</b> | Primes from 51 to 100 = <b>10</b> | Primes from 1 to 100 = <b>25</b>.</li>
+                    <li>Twin Primes are pairs of primes with difference of 2, e.g. (3, 5), (5, 7), (11, 13).</li>
+                    <li>Every prime number greater than 3 can be written in the form of <b>6k &plusmn; 1</b> (where k is an integer).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">2. Divisibility Rules (विभाज्यता के नियम)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Divisibility Rules for 3, 9 & 11</div>
+                    <ul>
+                      <li><b>Divisibility by 3:</b> Sum of digits must be divisible by 3 (अंकों का योग 3 से विभाजित हो).</li>
+                      <li><b>Divisibility by 9:</b> Sum of digits must be divisible by 9 (अंकों का योग 9 से विभाजित हो).</li>
+                      <li><b>Divisibility by 11:</b> Sum of odd-place digits &minus; Sum of even-place digits = 0 or a multiple of 11 (विषम स्थानों के अंकों का योग और सम स्थानों के अंकों के योग का अंतर 0 या 11 का गुणज हो).</li>
+                    </ul>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Divisibility Rules for 2, 4, 8 & 5</div>
+                    <ul>
+                      <li><b>Divisibility by 2:</b> Unit digit is even (इकाई का अंक सम हो).</li>
+                      <li><b>Divisibility by 4:</b> Last 2 digits are divisible by 4 (अंतिम दो अंक 4 से कटें).</li>
+                      <li><b>Divisibility by 8:</b> Last 3 digits are divisible by 8 (अंतिम तीन अंक 8 से कटें).</li>
+                      <li><b>Divisibility by 5:</b> Last digit is 0 or 5 (अंतिम अंक 0 या 5 हो).</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="example-box">
+                  <div class="example-title">📝 Solved Example (विभाज्यता):</div>
+                  <b>Question:</b> If 8-digit number <b>5432a17b</b> is completely divisible by 9 and 5, find the maximum value of <b>(a + b)</b>.<br/>
+                  <b>Solution:</b><br/>
+                  1. Since the number is divisible by 5, unit digit <b>b</b> can be either <b>0</b> or <b>5</b>. To maximize (a + b), we take <b>b = 5</b>.<br/>
+                  2. Divisibility by 9: Sum of digits must be a multiple of 9. Sum = 5 + 4 + 3 + 2 + a + 1 + 7 + 5 = 27 + a.<br/>
+                  3. Since 27 is already a multiple of 9, <b>a</b> can be <b>0</b> or <b>9</b>. To maximize, we take <b>a = 9</b>.<br/>
+                  4. Maximum value of (a + b) = 9 + 5 = <b>14</b>. <i>(Correct Answer!)</i>
+                </div>
+              </div>
+
+              <div class="section" style="page-break-before: always;">
+                <div class="section-title">3. Unit Digit Cyclicity Concept (इकाई का अंक)</div>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Cyclicity Group</th>
+                      <th>Digits</th>
+                      <th>Shortcut Rule (शॉर्टकट नियम)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>Cyclicity of 1</b></td>
+                      <td>0, 1, 5, 6</td>
+                      <td>Unit digit remains the same for any positive power (इकाई का अंक समान रहता है चाहे घात कोई भी हो).<br/>e.g., 5<sup>195</sup> &rarr; unit digit is <b>5</b>.</td>
+                    </tr>
+                    <tr>
+                      <td><b>Cyclicity of 2</b></td>
+                      <td>4, 9</td>
+                      <td>
+                        • For <b>4</b>: Power is Odd &rarr; <b>4</b>; Power is Even &rarr; <b>6</b>.<br/>
+                        • For <b>9</b>: Power is Odd &rarr; <b>9</b>; Power is Even &rarr; <b>1</b>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><b>Cyclicity of 4</b></td>
+                      <td>2, 3, 7, 8</td>
+                      <td>
+                        Divide the power by 4 and find the remainder (rem):<br/>
+                        • If rem is 1, 2, 3 &rarr; unit digit is <b>(Base Digit)<sup>rem</sup></b>.<br/>
+                        • If rem is 0 (fully divisible) &rarr; unit digit is <b>(Base Digit)<sup>4</sup></b>.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="example-box">
+                  <div class="example-title">📝 Solved Example (इकाई अंक):</div>
+                  <b>Question:</b> Find the unit digit of <b>(762)<sup>97</sup> &times; (353)<sup>40</sup></b>.<br/>
+                  <b>Solution:</b><br/>
+                  1. (762)<sup>97</sup> &rarr; Base unit digit = 2. Power 97 divided by 4 gives remainder = 1. Unit digit = 2<sup>1</sup> = <b>2</b>.<br/>
+                  2. (353)<sup>40</sup> &rarr; Base unit digit = 3. Power 40 is fully divisible by 4 (rem = 0). Unit digit = 3<sup>4</sup> = 81 &rarr; <b>1</b>.<br/>
+                  3. Net unit digit = 2 &times; 1 = <b>2</b>. <i>(Correct Answer!)</i>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">4. Key Series Sum Formulae (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Sum of first n natural numbers (प्रथम n प्राकृतिक संख्याओं का योग):</b>
+                    Formula: S = n(n + 1) / 2
+                  • <b>Sum of squares of first n natural numbers (प्रथम n प्राकृतिक संख्याओं के वर्गों का योग):</b>
+                    Formula: S = n(n + 1)(2n + 1) / 6
+                  • <b>Sum of cubes of first n natural numbers (प्रथम n प्राकृतिक संख्याओं के घनों का योग):</b>
+                    Formula: S = [n(n + 1) / 2]&sup2;
+                  • <b>Sum of first n EVEN numbers (प्रथम n सम संख्याओं का योग):</b>
+                    Formula: S = n(n + 1)
+                  • <b>Sum of first n ODD numbers (प्रथम n विषम संख्याओं का योग):</b>
+                    Formula: S = n&sup2;
+                </div>
+                <div class="example-box">
+                  <div class="example-title">📝 Solved Example (सूत्र आधारित प्रश्न):</div>
+                  <b>Question:</b> Find the sum of first 20 odd numbers (1 + 3 + 5 + ... up to 20 terms).<br/>
+                  <b>Solution:</b> Here n = 20. Formula: S = n&sup2;.<br/>
+                  Sum = 20&sup2; = <b>400</b>. <i>(Correct Answer!)</i>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">5. Remainder & Recurring Decimals (शेषफल और आवर्ती दशमलव)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Negative Remainder Concept (ऋणात्मक शेषफल)</div>
+                    <p>When numerator is close to denominator, use negative remainder. e.g., <b>(67)<sup>68</sup> / 68</b>.</p>
+                    <p>• 67 divided by 68 gives remainder <b>-1</b>.</p>
+                    <p>• (-1)<sup>68</sup> = <b>1</b>. So, remainder is <b>1</b>.</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Recurring Decimal to Fraction (दशमलव से भिन्न)</div>
+                    <p>• <b>Pure Recurring:</b> 0.4&macr; = 4/9 | 0.47&macr; = 47/99.</p>
+                    <p>• <b>Mixed Recurring:</b> 0.35&macr; = (35 &minus; 3) / 90 = 32/90 = 16/45.</p>
+                    <p>• <b>General Formula:</b> 0.abc&macr;d = (abcd &minus; abc) / 9000 (denominator has 9 for bar digits, 0 for non-bar digits).</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <p>Downloaded from Exam Practice Platform. Interactive mock tests and premium study materials.</p>
+                <p>&copy; 2026 Exam Practice Platform. For personal education only.</p>
+              </div>
+
+              <script>
+                window.onload = function() {
+                  window.print();
+                  setTimeout(function() {
+                    window.close();
+                  }, 500);
+                }
+              </script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content);
+        printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          {/* Decorative Glowing Element */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+          {/* Header with Title and Download Button */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                <Hash className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">
+                  Number System Study Notes <Sparkles className="w-4 h-4 text-emerald-350" />
+                </h4>
+                <p className="text-slate-400 text-[11px] md:text-xs">संख्या पद्धति - RRB Group D Special Bilingual Notes</p>
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleDownloadNumberSystemPDF}
+              className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] self-start sm:self-center font-semibold"
+            >
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+
+          {/* Interactive Navigation for sub-topics */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            <button 
+              onClick={() => setNumSystemTab('classification')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${numSystemTab === 'classification' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              🔢 Classification (वर्गीकरण)
+            </button>
+            <button 
+              onClick={() => setNumSystemTab('divisibility')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${numSystemTab === 'divisibility' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              ⚡ Divisibility & Unit (विभाज्यता)
+            </button>
+            <button 
+              onClick={() => setNumSystemTab('formulas')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${numSystemTab === 'formulas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📐 Series Formulae (सूत्र)
+            </button>
+            <button 
+              onClick={() => setNumSystemTab('remainder')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${numSystemTab === 'remainder' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              💥 Remainder & Decimals
+            </button>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="space-y-4 animate-fadeIn">
+            {numSystemTab === 'classification' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🔢 Numbers Classification (संख्या वर्गीकरण):</span>
+                  <div className="space-y-2 text-slate-350 text-[12px] leading-relaxed">
+                    <p>• <strong>Prime Numbers (अभाज्य संख्या):</strong> Exactly 2 factors (1 & itself). *2 is the only even prime!* (2, 3, 5, 7, 11...)</p>
+                    <p>• <strong>Composite Numbers (भाज्य संख्या):</strong> More than 2 factors. (4, 6, 8, 9, 10...) *Smallest composite is 4.*</p>
+                    <p>• <strong>Co-Prime (सह-अभाज्य):</strong> HCF of both numbers is 1. Example: (2, 3), (8, 15).</p>
+                    <p>• <strong>Rational (परिमेय):</strong> Written as p/q where q &ne; 0. Example: 3/4, 22/7, 0.5.</p>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">💡 Quick RRB Pointers (स्मरण रखें):</span>
+                  <div className="p-3 bg-emerald-500/5 rounded-lg border border-emerald-500/10 space-y-2 text-[12px]">
+                    <p>• Primes from <strong>1 to 50:</strong> 15 primes</p>
+                    <p>• Primes from <strong>51 to 100:</strong> 10 primes</p>
+                    <p>• Primes from <strong>1 to 100:</strong> 25 primes</p>
+                    <p className="text-[11px] text-slate-400 font-semibold">• Note: 1 is NEITHER prime NOR composite!</p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {numSystemTab === 'divisibility' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⚡ Divisibility rules (विभाज्यता के नियम):</span>
+                  <div className="space-y-1.5 text-slate-350 text-[12px]">
+                    <p>• <strong>3 & 9:</strong> अंकों का योग 3 या 9 से विभाजित हो।</p>
+                    <p>• <strong>4 & 8:</strong> अंतिम 2 अंक (for 4) या अंतिम 3 अंक (for 8) विभाजित हों।</p>
+                    <p>• <strong>11:</strong> (विषम स्थानों के अंकों का योग) - (सम स्थानों के अंकों का योग) = 0 या 11 का गुणज हो।</p>
+                    <p>• <strong>Composite (72, 88):</strong> सह-अभाज्य गुणनखंडों (co-prime factors) में तोड़ें। 72 &rarr; 8 × 9. 88 &rarr; 8 × 11.</p>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🎯 Unit Digit Cyclicity (इकाई का अंक):</span>
+                  <div className="space-y-1.5 text-slate-350 text-[12px]">
+                    <p>• <strong>0, 1, 5, 6:</strong> हमेशा समान रहते हैं (Cyclicity = 1).</p>
+                    <p>• <strong>4 & 9:</strong> 4<sup>odd</sup> = 4, 4<sup>even</sup> = 6; 9<sup>odd</sup> = 9, 9<sup>even</sup> = 1.</p>
+                    <p>• <strong>2, 3, 7, 8:</strong> घात (power) को 4 से भाग देकर शेषफल निकालें।</p>
+                    <p className="p-1.5 bg-slate-950/60 rounded font-mono text-[11px] text-emerald-400">
+                      e.g., (274)<sup>135</sup> (odd power) &rarr; Unit digit is 4.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {numSystemTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-3">
+                <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📐 Sum of Series Formulae (श्रेणियों के योग):</span>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2 text-[12px] text-slate-350">
+                    <p>• Sum of first N natural numbers:<br/><b className="text-slate-100">S = N(N + 1) / 2</b></p>
+                    <p>• Sum of squares of first N natural numbers:<br/><b className="text-slate-100">S = N(N + 1)(2N + 1) / 6</b></p>
+                    <p>• Sum of cubes of first N natural numbers:<br/><b className="text-slate-100">S = [N(N + 1) / 2]²</b></p>
+                  </div>
+                  <div className="space-y-2 text-[12px] text-slate-350">
+                    <p>• Sum of first N EVEN numbers:<br/><b className="text-slate-100">S = N(N + 1)</b></p>
+                    <p>• Sum of first N ODD numbers:<br/><b className="text-slate-100">S = N²</b></p>
+                    <p className="p-2 bg-emerald-500/5 rounded border border-emerald-500/10 text-[11px] text-slate-400">
+                      💡 Solved: Sum of 1² + 2² + ... + 10² = 10(11)(21)/6 = <b>385</b>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {numSystemTab === 'remainder' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">💥 Remainder Tricks (शेषफल प्रमेय):</span>
+                  <div className="space-y-1 text-slate-350 text-[12px]">
+                    <p>• <strong>Negative Remainder:</strong> e.g., (67)<sup>67</sup> / 68.</p>
+                    <p>• 67 divided by 68 gives remainder <b>-1</b>.</p>
+                    <p>• (-1)<sup>67</sup> = -1. Actual remainder = 68 - 1 = <b>67</b>.</p>
+                  </div>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🏷️ Recurring Decimal to Fraction:</span>
+                  <div className="space-y-1 text-slate-350 text-[12px]">
+                    <p>• <strong>Pure:</strong> 0.p&macr; = p/9 | 0.pq&macr; = pq/99.</p>
+                    <p>• <strong>Mixed:</strong> 0.pq&macr; = (pq - p)/90.</p>
+                    <p className="p-2 bg-slate-950/60 rounded font-mono text-[11px] text-emerald-400">
+                      e.g., 0.35&macr; = (35 - 3)/90 = 32/90 = 16/45.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-emerald-400" /> Topic 1/17 RRB Maths</span>
+            <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadNumberSystemPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1b. Exclusive Simplification (सरलीकरण)
+    if (topicLower.includes("simplification") || topicLower.includes("सरलीकरण")) {
+      const handleDownloadSimplificationPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+          alert("Please allow popups to download/print the PDF.");
+          return;
+        }
+        const content = `
+          <html>
+            <head>
+              <title>Simplification - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body {
+                  font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
+                  color: #1e293b;
+                  line-height: 1.6;
+                  margin: 0;
+                  padding: 35px;
+                  background-color: #ffffff;
+                }
+                .header {
+                  text-align: center;
+                  border-bottom: 3px double #0284c7;
+                  padding-bottom: 15px;
+                  margin-bottom: 25px;
+                }
+                .header h1 {
+                  color: #0f172a;
+                  margin: 0;
+                  font-size: 26px;
+                  font-weight: 700;
+                }
+                .header h2 {
+                  color: #0284c7;
+                  margin: 5px 0 0 0;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+                .header p {
+                  margin: 8px 0 0 0;
+                  color: #4b5563;
+                  font-size: 13px;
+                  font-weight: 500;
+                }
+                .badge {
+                  background-color: #f0f9ff;
+                  color: #0369a1;
+                  padding: 4px 12px;
+                  border-radius: 12px;
+                  font-size: 11px;
+                  font-weight: 600;
+                  border: 1px solid #bae6fd;
+                  display: inline-block;
+                  margin-bottom: 8px;
+                }
+                .section {
+                  margin-bottom: 25px;
+                  page-break-inside: avoid;
+                }
+                .section-title {
+                  color: #0369a1;
+                  font-size: 16px;
+                  font-weight: 600;
+                  border-left: 4px solid #0284c7;
+                  padding-left: 10px;
+                  margin-bottom: 12px;
+                  background-color: #f0f9ff;
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+                }
+                .grid {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 15px;
+                }
+                @media (max-width: 600px) {
+                  .grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
+                .card {
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 12px;
+                  background-color: #fafafa;
+                }
+                .card-title {
+                  font-weight: 600;
+                  color: #0f172a;
+                  font-size: 13px;
+                  margin-bottom: 6px;
+                  border-bottom: 1px solid #e2e8f0;
+                  padding-bottom: 4px;
+                }
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-bottom: 15px;
+                }
+                th, td {
+                  border: 1px solid #cbd5e1;
+                  padding: 8px 10px;
+                  text-align: left;
+                  font-size: 12px;
+                }
+                th {
+                  background-color: #f1f5f9;
+                  color: #334155;
+                  font-weight: 600;
+                }
+                .formula-box {
+                  background-color: #f8fafc;
+                  border-left: 3px solid #0284c7;
+                  padding: 10px;
+                  margin: 10px 0;
+                  font-family: monospace;
+                  font-size: 12px;
+                  border-radius: 0 6px 6px 0;
+                  white-space: pre-line;
+                }
+                .example-box {
+                  background-color: #fffbeb;
+                  border: 1px dashed #d97706;
+                  padding: 12px;
+                  margin: 10px 0;
+                  border-radius: 6px;
+                  font-size: 12px;
+                }
+                .example-title {
+                  font-weight: 600;
+                  color: #b45309;
+                  margin-bottom: 4px;
+                }
+                .footer {
+                  text-align: center;
+                  margin-top: 30px;
+                  font-size: 10px;
+                  color: #94a3b8;
+                  border-top: 1px solid #e2e8f0;
+                  padding-top: 10px;
+                }
+                ul {
+                  margin: 5px 0;
+                  padding-left: 20px;
+                }
+                li {
+                  margin-bottom: 4px;
+                  font-size: 12px;
+                }
+                strong {
+                  color: #0f172a;
+                }
+                @media print {
+                  body {
+                    padding: 0;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Simplification</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: सरलीकरण</h2>
+                <p>Designed for Excellence in Railway Exams | सर्वोत्तम VBODMAS ट्रिक्स व सूत्र संकलन</p>
+              </div>
+
+              <div class="section">
+                <div class="section-title">1. VBODMAS Rule (VBODMAS का नियम)</div>
+                <p style="font-size: 12px; color: #475569; margin: 0 0 10px 0;">
+                  सरलीकरण के किसी भी प्रश्न को हल करने के लिए VBODMAS नियम का पालन करना अनिवार्य है।
+                </p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Letter</th>
+                      <th>Meaning (मतलब)</th>
+                      <th>Mathematical Sign / Operation (गणितीय चिन्ह / क्रिया)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><b>V</b></td>
+                      <td>Vinculum (बार कोष्ठक / रेखा कोष्ठक)</td>
+                      <td><span style="text-decoration: overline;">x - y</span> (सबसे पहले हल करें)</td>
+                    </tr>
+                    <tr>
+                      <td><b>B</b></td>
+                      <td>Brackets (कोष्ठक)</td>
+                      <td>( ), { }, [ ] (इसी क्रम में हल करें)</td>
+                    </tr>
+                    <tr>
+                      <td><b>O</b></td>
+                      <td>Of (का)</td>
+                      <td>&times; (गुणा, लेकिन भाग से पहले)</td>
+                    </tr>
+                    <tr>
+                      <td><b>D</b></td>
+                      <td>Division (भाग)</td>
+                      <td>&divide;</td>
+                    </tr>
+                    <tr>
+                      <td><b>M</b></td>
+                      <td>Multiplication (गुणा)</td>
+                      <td>&times;</td>
+                    </tr>
+                    <tr>
+                      <td><b>A</b></td>
+                      <td>Addition (जोड़)</td>
+                      <td>+</td>
+                    </tr>
+                    <tr>
+                      <td><b>S</b></td>
+                      <td>Subtraction (घटाव)</td>
+                      <td>-</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="section">
+                <div class="section-title">2. Key Algebraic Formulas (महत्वपूर्ण बीजगणितीय सूत्र)</div>
+                <div class="formula-box">
+                  • <b>(a + b)&sup2; = a&sup2; + 2ab + b&sup2;</b>
+                  • <b>(a &minus; b)&sup2; = a&sup2; &minus; 2ab + b&sup2;</b>
+                  • <b>a&sup2; &minus; b&sup2; = (a &minus; b)(a + b)</b>
+                  • <b>a&sup3; + b&sup3; = (a + b)(a&sup2; &minus; ab + b&sup2;) &rArr; (a&sup3; + b&sup3;) / (a&sup2; &minus; ab + b&sup2;) = a + b</b>
+                  • <b>a&sup3; &minus; b&sup3; = (a &minus; b)(a&sup2; + ab + b&sup2;) &rArr; (a&sup3; &minus; b&sup3;) / (a&sup2; + ab + b&sup2;) = a &minus; b</b>
+                </div>
+              </div>
+
+              <div class="section" style="page-break-before: always;">
+                <div class="section-title">3. Time-Saving Shortcuts & Tricks (शॉर्ट ट्रिक्स)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Trick #1: Mixed Fractions (मिश्रित भिन्न)</div>
+                    <p>पूर्णांकों (integers) को अलग और भिन्नों को अलग जोड़ें/घटाएं।</p>
+                    <div class="example-box" style="margin: 5px 0 0 0; background: #ffffff;">
+                      <b>Example:</b> 5&frac12; + 3&frac14; = (5 + 3) + (&frac12; + &frac14;) = 8 + &frac34; = <b>8&frac34;</b>.
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Trick #2: Digital Sum (अंकों का योग)</div>
+                    <p>गुणा या जोड़ में विकल्पों को जल्दी एलिमिनेट करने के लिए प्रयोग करें (संख्या में 9 को 0 या 9 मानें)।</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">4. Solved Examples (हल सहित उदाहरण)</div>
+                
+                <div class="example-box">
+                  <div class="example-title">📝 Example 1: VBODMAS Based</div>
+                  <b>Question:</b> Find the value of: <b>25 &minus; [20 &minus; {10 &minus; (7 &minus; <span style="text-decoration: overline;">5 &minus; 3</span>)}]</b>.<br/>
+                  <b>Solution:</b><br/>
+                  1. Solve bar first: 5 &minus; 3 = 2.<br/>
+                  2. Small bracket ( ): 7 &minus; 2 = 5.<br/>
+                  3. Curly bracket { }: 10 &minus; 5 = 5.<br/>
+                  4. Square bracket [ ]: 20 &minus; 5 = 15.<br/>
+                  5. Final Step: 25 &minus; 15 = <b>10</b>.<br/>
+                  <b>Answer:</b> <b>10</b>
+                </div>
+
+                <div class="example-box">
+                  <div class="example-title">📝 Example 2: Of (का) and Division</div>
+                  <b>Question:</b> Find the value of: <b>60 &divide; 5 का 2 &times; (1 + 1)</b>.<br/>
+                  <b>Solution:</b><br/>
+                  1. Solve bracket ( ): (1 + 1) = 2. Expression: 60 &divide; 5 का 2 &times; 2.<br/>
+                  2. Solve 'का' (Of): 5 &times; 2 = 10. Expression: 60 &divide; 10 &times; 2.<br/>
+                  3. Solve Division (&divide;): 60 &divide; 10 = 6. Expression: 6 &times; 2.<br/>
+                  4. Multiplication: 6 &times; 2 = <b>12</b>.<br/>
+                  <b>Answer:</b> <b>12</b>
+                </div>
+
+                <div class="example-box">
+                  <div class="example-title">📝 Example 3: Algebraic Formula Pattern</div>
+                  <b>Question:</b> Find the value of: <br/>
+                  <div style="text-align: center; margin: 8px 0;">
+                    <b>(0.73 &times; 0.73 &times; 0.73 + 0.27 &times; 0.27 &times; 0.27) &divide; (0.73 &times; 0.73 &minus; 0.73 &times; 0.27 + 0.27 &times; 0.27)</b>
+                  </div>
+                  <b>Solution:</b><br/>
+                  1. Let a = 0.73, b = 0.27. The expression is: (a&sup3; + b&sup3;) / (a&sup2; &minus; ab + b&sup2;).<br/>
+                  2. We know this simplifies to (a + b).<br/>
+                  3. Sum = 0.73 + 0.27 = <b>1.00</b> = <b>1</b>.<br/>
+                  <b>Answer:</b> <b>1</b>
+                </div>
+              </div>
+
+              <div class="footer">
+                <p>Downloaded from Exam Practice Platform. Interactive mock tests and premium study materials.</p>
+                <p>&copy; 2026 Exam Practice Platform. For personal education only.</p>
+              </div>
+
+              <script>
+                window.onload = function() {
+                  window.print();
+                  setTimeout(function() {
+                    window.close();
+                  }, 500);
+                }
+              </script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content);
+        printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          {/* Decorative Glowing Element */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+          {/* Header with Title and Download Button */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                <Calculator className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">
+                  Simplification Study Notes <Sparkles className="w-4 h-4 text-emerald-350" />
+                </h4>
+                <p className="text-slate-400 text-[11px] md:text-xs">सरलीकरण - RRB Group D Special Bilingual Notes</p>
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleDownloadSimplificationPDF}
+              className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] self-start sm:self-center font-semibold"
+            >
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+
+          {/* Interactive Navigation for sub-topics */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            <button 
+              onClick={() => setSimplificationTab('vbodmas')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${simplificationTab === 'vbodmas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📊 VBODMAS Rule (नियम)
+            </button>
+            <button 
+              onClick={() => setSimplificationTab('formulas')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${simplificationTab === 'formulas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📐 Formulas (बीजगणितीय सूत्र)
+            </button>
+            <button 
+              onClick={() => setSimplificationTab('tricks')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${simplificationTab === 'tricks' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              ⚡ Time-Saving Tricks (शॉर्ट्स)
+            </button>
+            <button 
+              onClick={() => setSimplificationTab('examples')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${simplificationTab === 'examples' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📝 Solved Examples (उदाहरण)
+            </button>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="space-y-4 animate-fadeIn">
+            {simplificationTab === 'vbodmas' && (
+              <div className="space-y-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📊 VBODMAS Rule (The Golden Rule):</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    सरलीकरण के किसी भी प्रश्न को हल करने के लिए <strong>VBODMAS</strong> नियम का पालन करना अनिवार्य है।
+                  </p>
+                  
+                  <div className="overflow-x-auto mt-2">
+                    <table className="w-full text-[11px] md:text-[12px] text-slate-300 border-collapse border border-white/5">
+                      <thead>
+                        <tr className="bg-slate-950/60 text-slate-200">
+                          <th className="border border-white/5 p-2 text-left">Letter</th>
+                          <th className="border border-white/5 p-2 text-left">Meaning (मतलब)</th>
+                          <th className="border border-white/5 p-2 text-left">Sign / Operation</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">V</td>
+                          <td className="border border-white/5 p-2">Vinculum (बार ब्रैकेट)</td>
+                          <td className="border border-white/5 p-2 font-mono">x - y (सबसे पहले)</td>
+                        </tr>
+                        <tr className="bg-slate-900/30">
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">B</td>
+                          <td className="border border-white/5 p-2">Brackets (कोष्ठक)</td>
+                          <td className="border border-white/5 p-2 font-mono">( ), &#123; &#125;, [ ]</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">O</td>
+                          <td className="border border-white/5 p-2">Of (का)</td>
+                          <td className="border border-white/5 p-2 font-mono">&times; (भाग से पहले)</td>
+                        </tr>
+                        <tr className="bg-slate-900/30">
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">D</td>
+                          <td className="border border-white/5 p-2">Division (भाग)</td>
+                          <td className="border border-white/5 p-2 font-mono">&divide;</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">M</td>
+                          <td className="border border-white/5 p-2">Multiplication (गुणा)</td>
+                          <td className="border border-white/5 p-2 font-mono">&times;</td>
+                        </tr>
+                        <tr className="bg-slate-900/30">
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">A</td>
+                          <td className="border border-white/5 p-2">Addition (जोड़)</td>
+                          <td className="border border-white/5 p-2 font-mono">+</td>
+                        </tr>
+                        <tr>
+                          <td className="border border-white/5 p-2 font-bold text-emerald-400">S</td>
+                          <td className="border border-white/5 p-2">Subtraction (घटाव)</td>
+                          <td className="border border-white/5 p-2 font-mono">-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {simplificationTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-3">
+                <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📐 Algebraic Formulas (बीजगणितीय सूत्र):</span>
+                <p className="text-slate-355 text-[12px]">कठिन दिखने वाले कई प्रश्न इन सूत्रों पर आधारित होते हैं। इन्हें अच्छी तरह याद रखें:</p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-2 text-[12px] text-slate-350">
+                    <p>• <b>(a + b)² = a² + 2ab + b²</b></p>
+                    <p>• <b>(a - b)² = a² - 2ab + b²</b></p>
+                    <p>• <b>a² - b² = (a - b)(a + b)</b></p>
+                  </div>
+                  <div className="space-y-2 text-[12px] text-slate-350">
+                    <p>• <b>a³ + b³ = (a + b)(a² - ab + b²)</b> <br/> <span className="text-slate-400 font-semibold">&rArr; (a³ + b³) / (a² - ab + b²) = a + b</span></p>
+                    <p>• <b>a³ - b³ = (a - b)(a² + ab + b²)</b> <br/> <span className="text-slate-400 font-semibold">&rArr; (a³ - b³) / (a² + ab + b²) = a - b</span></p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {simplificationTab === 'tricks' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⚡ Trick #1: Mixed Fractions (मिश्रित भिन्न):</span>
+                  <p className="text-slate-350 text-[12px]">पूर्णांकों (integers) को अलग और भिन्नों को अलग जोड़ें या घटाएं।</p>
+                  <p className="p-2 bg-slate-950/60 rounded font-mono text-[11px] text-emerald-400">
+                    e.g., 5½ + 3¼ = (5 + 3) + (½ + ¼) = 8 + ¾ = <b>8¾</b>
+                  </p>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-355 text-[13px] block border-b border-white/5 pb-1">⚡ Trick #2: Digital Sum (डिजिटल सम):</span>
+                  <p className="text-slate-350 text-[12px]">लंबे गुणा या जोड़ में विकल्पों को जल्दी एलिमिनेट करने के लिए अंकों के योग का प्रयोग करें (नौ को 0 या 9 मानें)।</p>
+                </div>
+              </div>
+            )}
+
+            {simplificationTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 1: VBODMAS पर आधारित</span>
+                  <p className="text-slate-300 font-semibold font-mono text-[12px]">25 - [20 - &#123;10 - (7 - 5 - 3)&#125;] का मान?</p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 leading-relaxed bg-slate-950/40 p-2 rounded">
+                    <p>• बार हल करें: 5 - 3 = 2</p>
+                    <p>• छोटा कोष्ठक: 7 - 2 = 5</p>
+                    <p>• मझला कोष्ठक: 10 - 5 = 5</p>
+                    <p>• बड़ा कोष्ठक: 20 - 5 = 15</p>
+                    <p>• अंतिम मान: 25 - 15 = <b>10</b></p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 2: 'का' (Of) और भाग</span>
+                  <p className="text-slate-300 font-semibold font-mono text-[12px]">60 &divide; 5 का 2 &times; (1 + 1) का मान?</p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 leading-relaxed bg-slate-950/40 p-2 rounded">
+                    <p>• कोष्ठक ( ): (1 + 1) = 2 &rarr; 60 &divide; 5 का 2 &times; 2</p>
+                    <p>• 'का' (Of) पहले: 5 का 2 = 10 &rarr; 60 &divide; 10 &times; 2</p>
+                    <p>• भाग (&divide;): 60 &divide; 10 = 6 &rarr; 6 &times; 2</p>
+                    <p>• गुणा (&times;): 6 &times; 2 = <b>12</b></p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 3: सूत्र आधारित (RRB पसंदीदा पैटर्न)</span>
+                  <p className="text-slate-300 font-semibold font-mono text-[11px]">
+                    (0.73 &times; 0.73 &times; 0.73 + 0.27 &times; 0.27 &times; 0.27) &divide; (0.73 &times; 0.73 - 0.73 &times; 0.27 + 0.27 &times; 0.27) का मान?
+                  </p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 leading-relaxed bg-slate-950/40 p-2 rounded">
+                    <p>• यदि a = 0.73, b = 0.27, तो समीकरण रूप: (a³ + b³) &divide; (a² - ab + b²)</p>
+                    <p>• हम जानते हैं इसका मान हमेशा (a + b) होता है।</p>
+                    <p>• उत्तर: 0.73 + 0.27 = 1.00 = <b>1</b></p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-emerald-400" /> Topic 2/17 RRB Maths</span>
+            <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadSimplificationPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1c. HCF/LCM, Decimal Fractions, Square/Cube Roots
     if (
-      topicLower.includes("number system") || 
-      topicLower.includes("simplification") || 
       topicLower.includes("hcf") || 
       topicLower.includes("lcm") || 
       topicLower.includes("fraction") || 
       topicLower.includes("root") ||
-      topicLower.includes("संख्या पद्धति") ||
-      topicLower.includes("सरलीकरण") ||
       topicLower.includes("भिन्न")
     ) {
       return (
-        <div className="mt-4 p-5 md:p-6 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-xl animate-fadeIn text-xs md:text-sm text-slate-300">
+        <div className="mt-4 p-5 md:p-6 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-xl animate-fadeIn text-xs md:text-sm text-slate-350">
           <h4 className="flex items-center gap-2 font-bold text-emerald-400 text-sm md:text-base mb-4 pb-2 border-b border-white/5">
-            <Hash className="w-5 h-5" /> Number System & Simplification Notes (संख्या पद्धति एवं सरलीकरण)
+            <Hash className="w-5 h-5" /> HCF, LCM & Fractions Notes (HCF/LCM एवं भिन्न)
           </h4>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-slate-900/40 p-4 rounded-xl border border-white/5 space-y-2">
