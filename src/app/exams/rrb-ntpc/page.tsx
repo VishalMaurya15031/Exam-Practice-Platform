@@ -1,5 +1,12 @@
 "use client";
-import React from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+// Import Specific Study Notes components
+import SscQuantitativeAptitudeNotes from '@/components/SscQuantitativeAptitudeNotes';
+import SscReasoningNotes from '@/components/SscReasoningNotes';
+import RrbGeneralScienceNotes from '@/components/RrbGeneralScienceNotes';
+import SscGeneralAwarenessNotes from '@/components/SscGeneralAwarenessNotes';
 
 type SyllabusSection = {
   title: string;
@@ -85,7 +92,7 @@ const syllabusData: SyllabusSection[] = [
           "Important Amendments of the Constitution (संविधान के महत्वपूर्ण संशोधन)", "Some Special features of the Indian Constitution (संविधान की कुछ विशेष विशेषताएं)", 
           "Federal and Unitary features of the Indian Union (भारतीय संघ की संघीय और एकात्मक विशेषताएं)", "The preamble (प्रस्तावना)", 
           "Lapse of Paramountcy (सर्वोच्चता की समाप्ति)", "Integration and Merger of Indian States (भारतीय राज्यों का एकीकरण और विलय)", 
-          "The Union and its Territories (संघ और उसके क्षेत्र)", "Reorganization of States (राज्यों का पुनर्गठन)", "Citizenship (नागरिकता)", 
+          "The Union and its Territories (संघ और उसके क्षेत्र)", "Reorganization of States (राजörungen)", "Citizenship (नागरिकता)", 
           "Fundamental Rights (मौलिक अधिकार)", "Directive Principles of State Policy (राज्य के नीति निदेशक तत्व)", "Fundamental Duties (मौलिक कर्तव्य)", 
           "The procedure of Amending the Constitution (संविधान में संशोधन की प्रक्रिया)", "Executive of the Union (संघ की कार्यपालिका)", 
           "The Parliament of India (भारत की संसद)", "Executive of the States (राज्यों की कार्यपालिका)", "Special Position of J & K (जम्मू और कश्मीर की विशेष स्थिति)", 
@@ -143,8 +150,29 @@ const syllabusData: SyllabusSection[] = [
 ];
 
 export default function RrbNtpcPage() {
+  const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
+
+  const renderNotes = (subtitle: string) => {
+    const subLower = subtitle.toLowerCase();
+
+    // Mathematics
+    if (subLower.includes("math") || subLower.includes("arithmetic")) {
+      return <SscQuantitativeAptitudeNotes />;
+    }
+    // Reasoning
+    if (subLower.includes("intelligence") || subLower.includes("reasoning")) {
+      return <SscReasoningNotes />;
+    }
+    // General Science
+    if (subLower.includes("science") || subLower.includes("biology") || subLower.includes("physics") || subLower.includes("chemistry")) {
+      return <RrbGeneralScienceNotes />;
+    }
+    // General Awareness
+    return <SscGeneralAwarenessNotes />;
+  };
+
   return (
-    <div className="max-w-5xl mx-auto pb-12">
+    <div className="max-w-5xl mx-auto pb-12 animate-fadeIn">
       {/* Header */}
       <div className="mb-10">
         <div className="inline-block px-4 py-1.5 rounded-full bg-sky-500/10 text-sky-400 font-semibold text-sm mb-4 border border-sky-500/20">
@@ -155,6 +183,7 @@ export default function RrbNtpcPage() {
         </h1>
         <p className="text-lg text-slate-400 leading-relaxed">
           Comprehensive bilingual (English & Hindi) syllabus for Railway Recruitment Board Non-Technical Popular Categories (RRB NTPC) CBT 1 & CBT 2.
+          Click on any topic to explore premium, highly structured interactive study notes!
         </p>
       </div>
 
@@ -180,38 +209,70 @@ export default function RrbNtpcPage() {
             {section.subSections ? (
               <div className="space-y-8">
                 {section.subSections.map((sub, sIdx) => (
-                  <div key={sIdx}>
-                    <h3 className="text-lg font-medium text-sky-400 mb-4">{sub.subtitle}</h3>
-                    <ul className="space-y-2.5">
-                      {sub.topics.map((topic, tIdx) => (
-                        <li 
-                          key={tIdx} 
-                          className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-sky-500/5 border border-white/5 hover:border-sky-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                        >
-                          <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
-                            {(tIdx + 1).toString().padStart(2, '0')}
+                  <div key={sIdx} className="space-y-4">
+                    <h3 className="text-lg font-medium text-sky-400 border-l-2 border-sky-500 pl-3">{sub.subtitle}</h3>
+                    <ul className="space-y-3">
+                      {sub.topics.map((topic, tIdx) => {
+                        const isExpanded = expandedTopic === topic;
+
+                        return (
+                          <div key={tIdx} className="space-y-3">
+                            <li 
+                              onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                              className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-sky-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-sky-500/5 hover:bg-sky-500/10 border-sky-500/25 hover:border-sky-500/40 text-sky-200 font-medium"
+                            >
+                              <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-sky-500 text-white shadow-[0_0_10px_rgba(56,189,248,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                                {(tIdx + 1).toString().padStart(2, '0')}
+                              </div>
+                              <span className="font-semibold text-sky-200 group-hover:text-slate-50 transition-colors">{topic}</span>
+                              
+                              <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-[0_0_10px_rgba(56,189,248,0.15)] font-semibold select-none group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                                {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                              </span>
+                            </li>
+                            
+                            {isExpanded && (
+                              <div className="w-full">
+                                {renderNotes(sub.subtitle)}
+                              </div>
+                            )}
                           </div>
-                          <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                        </li>
-                      ))}
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
               </div>
             ) : (
               /* Handle Normal Flat Topics */
-              <ul className="space-y-2.5">
-                {section.topics?.map((topic, tIdx) => (
-                  <li 
-                    key={tIdx} 
-                    className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/40 hover:bg-sky-500/5 border border-white/5 hover:border-sky-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 cursor-default group hover:translate-x-1"
-                  >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-sky-500/10 text-sky-400 flex items-center justify-center font-mono text-xs font-semibold group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
-                      {(tIdx + 1).toString().padStart(2, '0')}
+              <ul className="space-y-3">
+                {section.topics?.map((topic, tIdx) => {
+                  const isExpanded = expandedTopic === topic;
+
+                  return (
+                    <div key={tIdx} className="space-y-3">
+                      <li 
+                        onClick={() => setExpandedTopic(isExpanded ? null : topic)}
+                        className="flex items-center gap-4 px-4 py-3 bg-[#0f172a]/45 border border-white/5 hover:border-sky-500/20 rounded-xl text-slate-300 text-sm md:text-base transition-all duration-300 group cursor-pointer bg-sky-500/5 hover:bg-sky-500/10 border-sky-500/25 hover:border-sky-500/40 text-sky-200 font-medium"
+                      >
+                        <div className="flex-shrink-0 w-7 h-7 rounded-lg bg-sky-500 text-white shadow-[0_0_10px_rgba(56,189,248,0.4)] flex items-center justify-center font-mono text-xs font-semibold transition-all duration-300">
+                          {(tIdx + 1).toString().padStart(2, '0')}
+                        </div>
+                        <span className="font-semibold text-sky-200 group-hover:text-slate-50 transition-colors">{topic}</span>
+                        
+                        <span className="ml-auto text-xs px-2.5 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 shadow-[0_0_10px_rgba(56,189,248,0.15)] font-semibold select-none group-hover:bg-sky-500 group-hover:text-white transition-all duration-300">
+                          {isExpanded ? "📖 Hide Notes" : "✨ Notes Available"}
+                        </span>
+                      </li>
+                      
+                      {isExpanded && (
+                        <div className="w-full">
+                          {renderNotes(section.title)}
+                        </div>
+                      )}
                     </div>
-                    <span className="font-medium group-hover:text-slate-100 transition-colors">{topic}</span>
-                  </li>
-                ))}
+                  );
+                })}
               </ul>
             )}
           </div>
