@@ -9,6 +9,7 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
   const [activeTab, setActiveTab] = useState<'arithmetic' | 'advanced' | 'stats'>('arithmetic');
   const [numSystemTab, setNumSystemTab] = useState<'classification' | 'divisibility' | 'formulas' | 'remainder'>('classification');
   const [simplificationTab, setSimplificationTab] = useState<'vbodmas' | 'formulas' | 'tricks' | 'examples'>('vbodmas');
+  const [hcfLcmTab, setHcfLcmTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
 
 
   const tabs = [
@@ -1055,10 +1056,459 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
       );
     }
 
-    // 1c. HCF/LCM, Decimal Fractions, Square/Cube Roots
+    // 1c. Exclusive HCF and LCM (म.स. और ल.स.)
+    if (topicLower.includes("hcf") || topicLower.includes("lcm") || topicLower.includes("समापवर्त्य")) {
+      const handleDownloadHcfLcmPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) {
+          alert("Please allow popups to download/print the PDF.");
+          return;
+        }
+        const content = `
+          <html>
+            <head>
+              <title>HCF & LCM - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body {
+                  font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif;
+                  color: #1e293b;
+                  line-height: 1.6;
+                  margin: 0;
+                  padding: 35px;
+                  background-color: #ffffff;
+                }
+                .header {
+                  text-align: center;
+                  border-bottom: 3px double #f59e0b;
+                  padding-bottom: 15px;
+                  margin-bottom: 25px;
+                }
+                .header h1 {
+                  color: #0f172a;
+                  margin: 0;
+                  font-size: 26px;
+                  font-weight: 700;
+                }
+                .header h2 {
+                  color: #d97706;
+                  margin: 5px 0 0 0;
+                  font-size: 20px;
+                  font-weight: 600;
+                }
+                .header p {
+                  margin: 8px 0 0 0;
+                  color: #4b5563;
+                  font-size: 13px;
+                  font-weight: 500;
+                }
+                .badge {
+                  background-color: #fffbeb;
+                  color: #b45309;
+                  padding: 4px 12px;
+                  border-radius: 12px;
+                  font-size: 11px;
+                  font-weight: 600;
+                  border: 1px solid #fef3c7;
+                  display: inline-block;
+                  margin-bottom: 8px;
+                }
+                .section {
+                  margin-bottom: 25px;
+                  page-break-inside: avoid;
+                }
+                .section-title {
+                  color: #b45309;
+                  font-size: 16px;
+                  font-weight: 600;
+                  border-left: 4px solid #f59e0b;
+                  padding-left: 10px;
+                  margin-bottom: 12px;
+                  background-color: #fffbeb;
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+                }
+                .grid {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 15px;
+                }
+                @media (max-width: 600px) {
+                  .grid {
+                    grid-template-columns: 1fr;
+                  }
+                }
+                .card {
+                  border: 1px solid #e2e8f0;
+                  border-radius: 8px;
+                  padding: 12px;
+                  background-color: #fafafa;
+                }
+                .card-title {
+                  font-weight: 600;
+                  color: #0f172a;
+                  font-size: 13px;
+                  margin-bottom: 6px;
+                  border-bottom: 1px solid #e2e8f0;
+                  padding-bottom: 4px;
+                }
+                table {
+                  width: 100%;
+                  border-collapse: collapse;
+                  margin-bottom: 15px;
+                }
+                th, td {
+                  border: 1px solid #cbd5e1;
+                  padding: 8px 10px;
+                  text-align: left;
+                  font-size: 12px;
+                }
+                th {
+                  background-color: #f1f5f9;
+                  color: #334155;
+                  font-weight: 600;
+                }
+                .formula-box {
+                  background-color: #f8fafc;
+                  border-left: 3px solid #f59e0b;
+                  padding: 10px;
+                  margin: 10px 0;
+                  font-family: monospace;
+                  font-size: 12px;
+                  border-radius: 0 6px 6px 0;
+                  white-space: pre-line;
+                }
+                .example-box {
+                  background-color: #fffbeb;
+                  border: 1px dashed #d97706;
+                  padding: 12px;
+                  margin: 10px 0;
+                  border-radius: 6px;
+                  font-size: 12px;
+                }
+                .example-title {
+                  font-weight: 600;
+                  color: #b45309;
+                  margin-bottom: 4px;
+                }
+                .footer {
+                  text-align: center;
+                  margin-top: 30px;
+                  font-size: 10px;
+                  color: #94a3b8;
+                  border-top: 1px solid #e2e8f0;
+                  padding-top: 10px;
+                }
+                ul {
+                  margin: 5px 0;
+                  padding-left: 20px;
+                }
+                li {
+                  margin-bottom: 4px;
+                  font-size: 12px;
+                }
+                strong {
+                  color: #0f172a;
+                }
+                @media print {
+                  body {
+                    padding: 0;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: HCF & LCM</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: महत्तम समापवर्तक व लघुत्तम समापवर्त्य</h2>
+                <p>Designed for Excellence in Railway Exams | सर्वोत्तम म.स. व ल.स. ट्रिक्स व सूत्र संकलन</p>
+              </div>
+
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी परिभाषाएं)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">LCM (लघुत्तम समापवर्त्य - ल.स.)</div>
+                    <p>वह छोटी से छोटी संख्या जो दी गई सभी संख्याओं से पूरी तरह विभाजित (divisible) हो जाए।</p>
+                    <p><b>Example:</b> 4, 6 and 8 का LCM = <b>24</b> (24 वह सबसे छोटी संख्या है जो 4, 6 और 8 तीनों से कटती है)।</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">HCF (महत्तम समापवर्तक - म.स.)</div>
+                    <p>वह बड़ी से बड़ी संख्या जो दी गई सभी संख्याओं को पूरी तरह विभाजित कर दे।</p>
+                    <p><b>Example:</b> 12, 18 and 24 का HCF = <b>6</b> (6 वह सबसे बड़ी संख्या है जो 12, 18 और 24 तीनों को विभाजित करती है)।</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (सबसे महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Rule 1: Product of Two Numbers (दो संख्याओं का नियम)</b>
+                    पहली संख्या &times; दूसरी संख्या = HCF &times; LCM
+                  
+                  • <b>Rule 2: LCM & HCF of Fractions (भिन्नों का ल.स. और म.स.)</b>
+                    भिन्नों का LCM = अंशों (Numerators) का LCM / हरों (Denominators) का HCF
+                    भिन्नों का HCF = अंशों (Numerators) का HCF / हरों (Denominators) का LCM
+                </div>
+              </div>
+
+              <div class="section" style="page-break-before: always;">
+                <div class="section-title">3. RRB Group D Special Patterns & Tricks (स्पेशल ट्रिक्स)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Pattern 1: Bells & Traffic Lights (घंटियों वाले प्रश्न)</div>
+                    <p>जब घंटियां या ट्रैफिक लाइटें अलग-अलग अंतरालों पर बदलती हैं और दोबारा एक साथ होने का समय पूछा जाए, तो <b>हमेशा LCM निकालें</b>।</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Pattern 2: Remainder Based Problems (शेषफल वाले प्रश्न)</div>
+                    <p>• <b>Smallest number</b> which divided by x, y, z leaves remainder r in each case:<br/>
+                       <b>Required Number = (LCM of x, y, z) + r</b>
+                    </p>
+                    <p>• <b>Largest number</b> which divides x, y, z leaving remainder r in each case:<br/>
+                       <b>Required Number = HCF of (x-r), (y-r), (z-r)</b>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="section">
+                <div class="section-title">4. Solved Examples (हल सहित उदाहरण)</div>
+                
+                <div class="example-box">
+                  <div class="example-title">📝 Example 1: Product of Two Numbers Rule</div>
+                  <b>Question:</b> दो संख्याओं का म.स. (HCF) 11 है और उनका ल.स. (LCM) 693 है। यदि उनमें से एक संख्या 77 है, तो दूसरी संख्या ज्ञात कीजिए।<br/>
+                  <b>Solution:</b><br/>
+                  1. Formula: पहली संख्या &times; दूसरी संख्या = HCF &times; LCM<br/>
+                  2. 77 &times; दूसरी संख्या = 11 &times; 693<br/>
+                  3. दूसरी संख्या = (11 &times; 693) / 77 = 693 / 7 = <b>99</b>.<br/>
+                  <b>Answer:</b> <b>99</b>
+                </div>
+
+                <div class="example-box">
+                  <div class="example-title">📝 Example 2: Bells Interval (घंटियों वाला प्रश्न)</div>
+                  <b>Question:</b> 4 घंटियाँ क्रमशः 6, 8, 12 और 18 सेकंड के अंतराल पर बजती हैं। यदि वे एक साथ 12:00 बजे बजना शुरू करती हैं, तो वे अगली बार एक साथ कब बजेंगी?<br/>
+                  <b>Solution:</b><br/>
+                  1. Find LCM of 6, 8, 12, 18:<br/>
+                     &bull; 6 = 2 &times; 3<br/>
+                     &bull; 8 = 2<sup>3</sup><br/>
+                     &bull; 12 = 2<sup>2</sup> &times; 3<br/>
+                     &bull; 18 = 2 &times; 3<sup>2</sup><br/>
+                     &bull; LCM = 2<sup>3</sup> &times; 3<sup>2</sup> = 8 &times; 9 = 72 seconds.<br/>
+                  2. Convert to minutes: 72 seconds = 1 minute 12 seconds.<br/>
+                  3. They will ring together again at <b>12:01:12 AM/PM</b>.<br/>
+                  <b>Answer:</b> <b>12:01:12</b>
+                </div>
+
+                <div class="example-box">
+                  <div class="example-title">📝 Example 3: Fractions LCM (भिन्नों का ल.स.)</div>
+                  <b>Question:</b> 2/3, 4/9, 5/6 का लघुत्तम समापवर्त्य (LCM) ज्ञात कीजिए।<br/>
+                  <b>Solution:</b><br/>
+                  1. Formula: भिन्नों का LCM = (अंशों का LCM) / (हरों का HCF)<br/>
+                  2. Numerators (2, 4, 5) का LCM = 20.<br/>
+                  3. Denominators (3, 9, 6) का HCF = 3.<br/>
+                  4. LCM = <b>20/3</b> or <b>6 &frac23;</b>.<br/>
+                  <b>Answer:</b> <b>20/3</b>
+                </div>
+              </div>
+
+              <div class="footer">
+                <p>Downloaded from Exam Practice Platform. Interactive mock tests and premium study materials.</p>
+                <p>&copy; 2026 Exam Practice Platform. For personal education only.</p>
+              </div>
+
+              <script>
+                window.onload = function() {
+                  window.print();
+                  setTimeout(function() {
+                    window.close();
+                  }, 500);
+                }
+              </script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content);
+        printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          {/* Decorative Glowing Element */}
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+          {/* Header with Title and Download Button */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                <Calculator className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">
+                  HCF & LCM Study Notes <Sparkles className="w-4 h-4 text-emerald-350" />
+                </h4>
+                <p className="text-slate-400 text-[11px] md:text-xs">लघुत्तम समापवर्त्य और महत्तम समापवर्तक - RRB Group D Special Bilingual Notes</p>
+              </div>
+            </div>
+            
+            <button 
+              onClick={handleDownloadHcfLcmPDF}
+              className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] self-start sm:self-center font-semibold"
+            >
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+
+          {/* Interactive Navigation for sub-topics */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            <button 
+              onClick={() => setHcfLcmTab('basics')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${hcfLcmTab === 'basics' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📊 Basic Concepts (परिभाषाएं)
+            </button>
+            <button 
+              onClick={() => setHcfLcmTab('formulas')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${hcfLcmTab === 'formulas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📐 Golden Formulas (महत्वपूर्ण सूत्र)
+            </button>
+            <button 
+              onClick={() => setHcfLcmTab('tricks')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${hcfLcmTab === 'tricks' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              ⚡ Special Tricks (शॉर्ट ट्रिक्स)
+            </button>
+            <button 
+              onClick={() => setHcfLcmTab('examples')}
+              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${hcfLcmTab === 'examples' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+            >
+              📝 Solved Examples (उदाहरण)
+            </button>
+          </div>
+
+          {/* Tab Content Display */}
+          <div className="space-y-4 animate-fadeIn">
+            {hcfLcmTab === 'basics' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🧮 LCM (लघुत्तम समापवर्त्य):</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    वह छोटी से छोटी संख्या जो दी गई सभी संख्याओं से पूरी तरह विभाजित (divisible) हो जाए।
+                  </p>
+                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
+                    e.g., 4, 6 और 8 का LCM = <b>24</b> (24 वह छोटी संख्या है जो 4, 6 और 8 तीनों से विभाजित होती है)।
+                  </p>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-355 text-[13px] block border-b border-white/5 pb-1">🎯 HCF (महत्तम समापवर्तक):</span>
+                  <p className="text-slate-350 text-[12px] leading-relaxed">
+                    वह बड़ी से बड़ी संख्या जो दी गई सभी संख्याओं को पूरी तरह विभाजित कर दे।
+                  </p>
+                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
+                    e.g., 12, 18 और 24 का HCF = <b>6</b> (6 वह बड़ी संख्या है जो 12, 18 और 24 तीनों को विभाजित करती है)।
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {hcfLcmTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-3">
+                <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas (वेबसाइट स्पेशल):</span>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1.5">
+                    <span className="font-bold text-emerald-400 text-[12px] block">नियम 1: दो संख्याओं का गुणनफल</span>
+                    <p className="text-[12px] text-slate-100 font-mono font-semibold">
+                      पहली संख्या &times; दूसरी संख्या = HCF &times; LCM
+                    </p>
+                    <p className="text-[10.5px] text-slate-400">रेलवे परीक्षा के 80% प्रश्न इसी सूत्र पर बनते हैं!</p>
+                  </div>
+                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1.5">
+                    <span className="font-bold text-emerald-400 text-[12px] block">नियम 2: भिन्नों (Fractions) का LCM/HCF</span>
+                    <p className="text-[11px] text-slate-100 font-semibold">
+                      • भिन्नों का LCM = अंशों का LCM / हरों का HCF
+                    </p>
+                    <p className="text-[11px] text-slate-100 font-semibold">
+                      • भिन्नों का HCF = अंशों का HCF / हरों का LCM
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {hcfLcmTab === 'tricks' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⏰ पैटर्न 1: ट्रैफिक लाइटें और घंटियां</span>
+                  <p className="text-slate-355 text-[12px] leading-relaxed">
+                    जब घंटियां क्रमशः 10, 15 और 20 सेकंड के अंतराल पर बजती हैं, तो दोबारा एक साथ बजने का समय निकालने के लिए <strong>हमेशा LCM</strong> निकालें।
+                  </p>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⚡ पैटर्न 2: शेषफल (Remainder) आधारित</span>
+                  <div className="space-y-1.5 text-[11.5px] text-slate-350">
+                    <p>• <strong>लघुत्तम संख्या:</strong> जिसे x, y, z से भाग देने पर r शेष बचे:<br/>
+                       <b className="text-slate-200">अभीष्ट संख्या = (LCM of x, y, z) + r</b>
+                    </p>
+                    <p>• <strong>महत्तम संख्या:</strong> जिससे x, y, z को भाग देने पर r शेष बचे:<br/>
+                       <b className="text-slate-200">अभीष्ट संख्या = HCF of (x-r), (y-r), (z-r)</b>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {hcfLcmTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 1: दो संख्याओं के नियम पर</span>
+                  <p className="text-slate-300 font-semibold text-[11.5px]">
+                    दो संख्याओं का HCF = 11, LCM = 693 है। यदि एक संख्या 77 है, तो दूसरी ज्ञात करें।
+                  </p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded">
+                    <p>• सूत्र: पहली संख्या &times; दूसरी संख्या = HCF &times; LCM</p>
+                    <p>• 77 &times; दूसरी संख्या = 11 &times; 693</p>
+                    <p>• दूसरी संख्या = (11 &times; 693) / 77 = 693 / 7 = <b>99</b></p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 2: घंटियों वाला (RRB पसंदीदा)</span>
+                  <p className="text-slate-300 font-semibold text-[11.5px]">
+                    4 घंटियाँ क्रमशः 6, 8, 12, 18 सेकंड के अंतराल पर बजती हैं। 12:00 बजे के बाद दोबारा कब बजेंगी?
+                  </p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded">
+                    <p>• 6, 8, 12, 18 का LCM = <b>72 सेकंड</b></p>
+                    <p>• 72 सेकंड = 1 मिनट 12 सेकंड</p>
+                    <p>• अगली बार एक साथ: <b>12:01:12 AM/PM</b> पर</p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
+                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 3: भिन्नों का LCM</span>
+                  <p className="text-slate-300 font-semibold font-mono text-[12px]">2/3, 4/9, 5/6 का LCM क्या होगा?</p>
+                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded">
+                    <p>• सूत्र: अंशों (2, 4, 5) का LCM / हरों (3, 9, 6) का HCF</p>
+                    <p>• अंशों का LCM = 20 | हरों का HCF = 3</p>
+                    <p>• उत्तर = <b>20/3</b> या <b>6⅔</b></p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-emerald-400" /> Topic 3/17 RRB Maths</span>
+            <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadHcfLcmPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1d. Decimal Fractions, Square/Cube Roots
     if (
-      topicLower.includes("hcf") || 
-      topicLower.includes("lcm") || 
       topicLower.includes("fraction") || 
       topicLower.includes("root") ||
       topicLower.includes("भिन्न")
@@ -1066,21 +1516,19 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
       return (
         <div className="mt-4 p-5 md:p-6 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-xl animate-fadeIn text-xs md:text-sm text-slate-350">
           <h4 className="flex items-center gap-2 font-bold text-emerald-400 text-sm md:text-base mb-4 pb-2 border-b border-white/5">
-            <Hash className="w-5 h-5" /> HCF, LCM & Fractions Notes (HCF/LCM एवं भिन्न)
+            <Hash className="w-5 h-5" /> Decimals, Fractions & Roots Notes (दशमलव, भिन्न व वर्गमूल)
           </h4>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-slate-900/40 p-4 rounded-xl border border-white/5 space-y-2">
-              <span className="font-semibold text-emerald-350 text-[13px] block">🔢 Divisibility & Shortcuts (विभाज्यता के नियम):</span>
-              <p>• <strong>Divisibility by 3 & 9:</strong> अंकों का योग 3 या 9 से विभाजित होना चाहिए।</p>
-              <p>• <strong>Divisibility by 11:</strong> विषम स्थानों के अंकों का योग - सम स्थानों के अंकों का योग = 0 या 11 का गुणज होना चाहिए (e.g. 1331).</p>
-              <p>• <strong>Unit Digit Rule:</strong> 2, 3, 7, 8 की चक्रता (cyclicity) 4 होती है। घात (power) को 4 से भाग देकर शेषफल निकालें।</p>
+              <span className="font-semibold text-emerald-350 text-[13px] block">🔢 Recurring Decimals (आवर्ती दशमलव):</span>
+              <p>• <strong>Pure Recurring:</strong> 0.p̅ = p/9, 0.pq̅ = pq/99.</p>
+              <p>• <strong>Mixed Recurring:</strong> 0.pq̅ = (pq - p)/90.</p>
+              <p className="p-2 bg-slate-950/60 rounded text-emerald-400 font-mono text-[11px]">• *उदाहरण:* 0.35̅ = (35-3)/90 = 32/90 = 16/45.</p>
             </div>
             <div className="bg-slate-900/40 p-4 rounded-xl border border-white/5 space-y-2">
-              <span className="font-semibold text-emerald-350 text-[13px] block">📐 Fractions & Roots (भिन्न व वर्गमूल):</span>
-              <p>• <strong>BODMAS Rule:</strong> Bracket ➜ Of ➜ Division ➜ Multiplication ➜ Addition ➜ Subtraction.</p>
-              <p>• <strong>Recurring Decimals:</strong> 0.p̅ = p/9, 0.pq̅ = (pq - p)/90. *उदाहरण:* 0.35̅ = (35-3)/90 = 32/90.</p>
-              <p>• <strong>HCF & LCM Rule:</strong> दो संख्याओं का गुणनफल = HCF × LCM.</p>
-              <p>• <strong>Fractions HCF/LCM:</strong> भिन्नों का LCM = अंशों का LCM / हरों का HCF.</p>
+              <span className="font-semibold text-emerald-350 text-[13px] block">📐 Square & Cube Roots (वर्गमूल व घनमूल):</span>
+              <p>• <strong>Square root shortcut:</strong> इकाई अंक चक्रता और निकटतम पूर्ण वर्ग का उपयोग करें।</p>
+              <p>• <strong>Useful Squares:</strong> 1-30 तक के वर्गों को अवश्य याद रखें। (e.g. 25² = 625, 29² = 841).</p>
             </div>
           </div>
         </div>

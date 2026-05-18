@@ -476,6 +476,41 @@ export default function RrbGroupDPage() {
                 <b>Example 3 (Formulas):</b> (0.73&sup3; + 0.27&sup3;) / (0.73&sup2; &minus; 0.73 &times; 0.27 + 0.27&sup2;) = a + b = 0.73 + 0.27 = <b>1</b>.
               </div>
             </div>
+
+            <!-- Special Appendix: HCF & LCM notes built-in -->
+            <div class="highlight-card" style="border-color: #fef3c7; background-color: #fffbeb; margin-top: 15px;">
+              <div class="highlight-title" style="color: #d97706; border-color: #fef3c7;">📖 Topic 03 Special Booklet: HCF & LCM (म.स. और ल.स. हस्तलिखित नोट्स)</div>
+              
+              <h3 style="font-size: 12px; color: #d97706; margin: 10px 0 5px 0;">A. Basic Concepts (बुनियादी अवधारणाएं)</h3>
+              <ul style="padding-left: 15px; margin: 0 0 10px 0;">
+                <li style="font-size: 10px;"><b>LCM (ल.स.):</b> वह छोटी से छोटी संख्या जो दी गई सभी संख्याओं से पूरी तरह विभाजित हो जाए. (e.g. 4, 6, 8 का LCM = <b>24</b>)</li>
+                <li style="font-size: 10px;"><b>HCF (म.स.):</b> वह बड़ी से बड़ी संख्या जो दी गई सभी संख्याओं को पूरी तरह विभाजित कर दे. (e.g. 12, 18, 24 का HCF = <b>6</b>)</li>
+              </ul>
+
+              <h3 style="font-size: 12px; color: #d97706; margin: 10px 0 5px 0;">B. Golden Formulas (सबसे महत्वपूर्ण सूत्र)</h3>
+              <div class="formula-box" style="background: #ffffff; border: 1px solid #fef3c7; margin-bottom: 10px;">
+                • <b>नियम 1: दो संख्याओं का गुणनफल</b> &rArr; पहली संख्या &times; दूसरी संख्या = HCF &times; LCM
+                • <b>नियम 2: भिन्नों (Fractions) का LCM</b> &rArr; अंशों का LCM / हरों का HCF
+                • <b>नियम 3: भिन्नों (Fractions) का HCF</b> &rArr; अंशों का HCF / हरों का LCM
+              </div>
+
+              <h3 style="font-size: 12px; color: #d97706; margin: 10px 0 5px 0;">C. Special Patterns & Tricks (विशेष ट्रिक्स)</h3>
+              <ul style="padding-left: 15px; margin: 0 0 10px 0;">
+                <li style="font-size: 10px;"><b>Traffic Lights / Bells:</b> जब घंटियों के अंतराल (e.g. 10, 15, 20 सेकंड) दिए हों और दोबारा एक साथ बजने का समय पूछा जाए, तो <b>हमेशा LCM</b> निकालें.</li>
+                <li style="font-size: 10px;"><b>Smallest number</b> leaving remainder r when divided by x,y,z = <b>(LCM of x,y,z) + r</b></li>
+                <li style="font-size: 10px;"><b>Largest number</b> dividing x,y,z leaving remainder r = <b>HCF of (x-r), (y-r), (z-r)</b></li>
+              </ul>
+
+              <h3 style="font-size: 12px; color: #d97706; margin: 10px 0 5px 0;">D. Solved Examples (हल सहित उदाहरण)</h3>
+              <div class="example-box" style="background: #ffffff; border-color: #fef3c7; margin-bottom: 5px;">
+                <b>Example 1 (Product Rule):</b> HCF = 11, LCM = 693. First number = 77. Second number = ?<br/>
+                &rArr; Second Number = (11 &times; 693) / 77 = 693 / 7 = <b>99</b>.<br/>
+                <b>Example 2 (Bells Interval):</b> 4 घंटियाँ क्रमशः 6, 8, 12, 18 सेकंड के अंतराल पर बजती हैं. 12:00 बजे के बाद अगली बार एक साथ बजेंगी?<br/>
+                &rArr; LCM of 6, 8, 12, 18 = 72 seconds = 1 minute 12 seconds &rArr; <b>12:01:12 AM/PM</b>.<br/>
+                <b>Example 3 (Fractions LCM):</b> 2/3, 4/9, 5/6 का LCM = ?<br/>
+                &rArr; LCM(2,4,5) / HCF(3,9,6) = <b>20/3</b> or <b>6 &frac23;</b>.
+              </div>
+            </div>
           </div>
 
           <!-- Section 2: Reasoning, Science, Awareness -->
