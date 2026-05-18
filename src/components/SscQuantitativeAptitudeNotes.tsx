@@ -11,6 +11,19 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
   const [simplificationTab, setSimplificationTab] = useState<'vbodmas' | 'formulas' | 'tricks' | 'examples'>('vbodmas');
   const [hcfLcmTab, setHcfLcmTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
   const [ratioTab, setRatioTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [decimalTab, setDecimalTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [percentTab, setPercentTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [unitaryTab, setUnitaryTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [workTab, setWorkTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [distTab, setDistTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [averageTab, setAverageTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [profitTab, setProfitTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [mensurationTab, setMensurationTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [interestTab, setInterestTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [diTab, setDiTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [algebraTab, setAlgebraTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [rootTab, setRootTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
+  const [partnershipTab, setPartnershipTab] = useState<'basics' | 'formulas' | 'tricks' | 'examples'>('basics');
 
 
   const tabs = [
@@ -1806,151 +1819,86 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
       return (
         <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
           {/* Decorative Glowing Element */}
-          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-48 h-48 bg-purple-500/5 rounded-full blur-[80px] pointer-events-none" />
 
           {/* Header with Title and Download Button */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.15)]">
-                <Layers className="w-5 h-5 animate-pulse" />
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold border border-purple-500/20">
+                <Percent className="w-5 h-5 animate-pulse" />
               </div>
               <div>
-                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">
-                  Ratio & Proportion Study Notes <Sparkles className="w-4 h-4 text-emerald-350" />
+                <h4 className="font-bold text-purple-400 text-base md:text-lg flex items-center gap-2">
+                  Ratio & Proportion (अनुपात और समानुपात)
                 </h4>
-                <p className="text-slate-400 text-[11px] md:text-xs">अनुपात और समानुपात - RRB Group D Special Bilingual Notes</p>
+                <p className="text-slate-400 text-[11px] md:text-xs">Complete Bilingual Study Material & Tricks</p>
               </div>
             </div>
             
             <button 
               onClick={handleDownloadRatioPDF}
-              className="px-4 py-2.5 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] self-start sm:self-center font-semibold"
+              className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold"
             >
               <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
             </button>
           </div>
 
-          {/* Interactive Navigation for sub-topics */}
+          {/* Interactive Navigation Tabs */}
           <div className="flex flex-wrap gap-2 mb-6">
-            <button 
-              onClick={() => setRatioTab('basics')}
-              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'basics' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
-            >
-              📊 Basic Concepts (अवधारणाएं)
-            </button>
-            <button 
-              onClick={() => setRatioTab('formulas')}
-              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'formulas' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
-            >
-              📐 Types & Formulas (महत्वपूर्ण सूत्र)
-            </button>
-            <button 
-              onClick={() => setRatioTab('tricks')}
-              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'tricks' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
-            >
-              ⚡ Time-Saving Tricks (शॉर्ट ट्रिक्स)
-            </button>
-            <button 
-              onClick={() => setRatioTab('examples')}
-              className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === 'examples' ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
-            >
-              📝 Solved Examples (उदाहरण)
-            </button>
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button 
+                key={t} 
+                onClick={() => setRatioTab(t as any)} 
+                className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${ratioTab === t ? 'bg-purple-500/25 border-purple-500/50 text-purple-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}
+              >
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
           </div>
 
-          {/* Tab Content Display */}
           <div className="space-y-4 animate-fadeIn">
             {ratioTab === 'basics' && (
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
-                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🧮 Ratio (अनुपात):</span>
-                  <p className="text-slate-350 text-[12px] leading-relaxed">
-                    दो समान प्रकार की राशियों के बीच तुलना को अनुपात कहते हैं। इसे ':' (colons) चिन्ह से दर्शाया जाता है।
-                  </p>
-                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
-                    e.g., A के पास ₹20 और B के पास ₹30 हैं, तो अनुपात = 20 : 30 = <b>2 : 3</b> (सरलतम रूप में)।
-                  </p>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-purple-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Ratio (अनुपात):</span>
+                  <p className="text-[12px] leading-relaxed">दो समान प्रकार की राशियों के बीच तुलना को अनुपात कहते हैं। इसे ':' चिन्ह से दर्शाया जाता है। (e.g. 20:30 = 2:3)</p>
                 </div>
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
-                  <span className="font-bold text-emerald-355 text-[13px] block border-b border-white/5 pb-1">🎯 Proportion (समानुपात):</span>
-                  <p className="text-slate-350 text-[12px] leading-relaxed">
-                    जब दो अनुपात आपस में बराबर हों, तो उन्हें समानुपात कहा जाता है। इसे '::' चिन्ह से दर्शाया जाता है।
-                  </p>
-                  <p className="p-2.5 bg-slate-950/60 rounded font-mono text-[11.5px] text-emerald-400">
-                    e.g., a : b = c : d &rArr; a : b :: c : d &rArr; <b>a/b = c/d</b> (बाहरी पदों का गुणनफल = मध्य पदों का गुणनफल: <b>a &times; d = b &times; c</b>)।
-                  </p>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-purple-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Proportion (समानुपात):</span>
+                  <p className="text-[12px] leading-relaxed">जब दो अनुपात आपस में बराबर हों, तो उन्हें समानुपात कहा जाता है। इसे '::' चिन्ह से दर्शाया जाता. है। (e.g. a:b = c:d &rArr; a&times;d = b&times;c)</p>
                 </div>
               </div>
             )}
 
             {ratioTab === 'formulas' && (
-              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-3">
-                <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">📐 Proportion Formulas (समानुपात के सूत्र):</span>
-                <div className="grid sm:grid-cols-2 gap-4 text-[12px]">
-                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1">
-                    <p>• <b>प्रथमानुपाती (First Proportional):</b> a और b का = <b className="text-slate-100">a² / b</b></p>
-                    <p>• <b>मध्यानुपाती (Mean Proportional):</b> a और b का = <b className="text-slate-100">√(ab)</b></p>
-                  </div>
-                  <div className="p-3 bg-emerald-500/5 rounded border border-emerald-500/10 space-y-1">
-                    <p>• <b>तृतीयानुपाती (Third Proportional):</b> a और b का = <b className="text-slate-100">b² / a</b></p>
-                    <p>• <b>चतुर्थानुपाती (Fourth Proportional):</b> a, b, c का = <b className="text-slate-100">(b &times; c) / a</b></p>
-                  </div>
-                </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-purple-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas:</span>
+                <p>• <b>Mean Proportional (मध्यानुपाती):</b> &radic;(a &times; b)</p>
+                <p>• <b>Third Proportional (तृतीयानुपाती):</b> b&sup2; / a</p>
+                <p>• <b>First Proportional (प्रथमानुपाती):</b> a&sup2; / b</p>
+                <p>• <b>Fourth Proportional (चतुर्थानुपाती):</b> (b &times; c) / a</p>
               </div>
             )}
 
             {ratioTab === 'tricks' && (
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
-                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">⚡ ट्रिक 1: पड़ोसी (Blank Space) विधि</span>
-                  <p className="text-slate-350 text-[12px] leading-relaxed">
-                    यदि A : B = 2 : 3 और B : C = 4 : 5 हो, तो खाली जगह में उसके बगल वाली संख्या लिखकर गुणा करें:
-                  </p>
-                  <pre className="p-2.5 bg-slate-950/60 rounded font-mono text-[11px] text-emerald-400">
-                    A  :  B  :  C{'\n'}
-                    2  :  3  : [3]{'\n'}
-                   [4] :  4  :  5{'\n'}
-                   --------------{'\n'}
-                    8  :  12 :  15  &rArr;  <b>A:B:C = 8:12:15</b>
-                  </pre>
-                </div>
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
-                  <span className="font-bold text-emerald-350 text-[13px] block border-b border-white/5 pb-1">🪙 ट्रिक 2: सिक्कों वाले प्रश्न</span>
-                  <p className="text-slate-350 text-[12px] leading-relaxed">
-                    सिक्कों की संख्या के अनुपात को मूल्य (Value) के अनुपात में बदलने के लिए हमेशा उनके व्यक्तिगत सिक्का मूल्य (Face Value) से गुणा करें।
-                  </p>
-                  <p className="text-[11px] text-slate-400">
-                    (जैसे ₹1 के लिए 1 से, 50 पैसे के लिए 1/2 से, 25 पैसे के लिए 1/4 से)।
-                  </p>
-                </div>
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-purple-300 text-[13px] block border-b border-white/5 pb-1">⚡ Combining Ratios Trick (पड़ोसी विधि):</span>
+                <p className="text-[12px]">खाली स्थानों को बगल के पड़ोसी संख्या से भरें और ऊपर-नीचे गुणा कर दें।</p>
               </div>
             )}
 
             {ratioTab === 'examples' && (
               <div className="space-y-3">
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
-                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 1: मध्यानुपाती पर आधारित</span>
-                  <p className="text-slate-300 font-semibold text-[11.5px]">
-                    4 और 64 का मध्यानुपाती (Mean Proportional) ज्ञात कीजिए।
-                  </p>
-                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded">
-                    <p>• सूत्र: मध्यानुपाती = &radic;(ab)</p>
-                    <p>• मध्यानुपाती = &radic;(4 &times; 64)</p>
-                    <p>• मध्यानुपाती = &radic;256 = <b>16</b></p>
-                  </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-purple-400 text-[12px] block">📝 प्रश्न 1: 4 और 64 का मध्यानुपाती</span>
+                  <p className="text-[11.5px] text-slate-350">&radic;(4 &times; 64) = &radic;256 = <b>16</b></p>
                 </div>
-
-                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-1">
-                  <span className="font-bold text-emerald-350 text-[12px] block">📝 प्रश्न 2: आय और व्यय पर आधारित (RRB पसंदीदा)</span>
-                  <p className="text-slate-300 font-semibold text-[11.5px]">
-                    A और B की आय का अनुपात 3:2 है और खर्च का अनुपात 5:3 है। यदि प्रत्येक ₹2000 बचाता है, तो A की आय क्या है?
-                  </p>
-                  <div className="text-[11px] text-slate-400 space-y-0.5 bg-slate-950/40 p-2 rounded leading-relaxed">
-                    <p>• माना आय 3x और 2x है। (आय &minus; बचत = खर्च)</p>
-                    <p>• (3x &minus; 2000) / (2x &minus; 2000) = 5 / 3</p>
-                    <p>• 3(3x &minus; 2000) = 5(2x &minus; 2000) &rArr; 9x &minus; 6000 = 10x &minus; 10000</p>
-                    <p>• x = 4000 &rArr; A की आय = 3x = 3 &times; 4000 = <b>₹12,000</b></p>
-                  </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-purple-400 text-[12px] block">📝 प्रश्न 2: A और B की आय का अनुपात 3 : 2 है और खर्च 5 : 3 है। यदि प्रत्येक ₹2000 बचाता है, तो A की आय?</span>
+                  <p className="text-[11.5px] text-slate-350">Income: 3x, 2x. (3x - 2000)/(2x - 2000) = 5/3 &rArr; x = 4000. A's Income = 3x = 3 &times; 4000 = <b>₹12,000</b></p>
                 </div>
               </div>
             )}
@@ -1961,6 +1909,1616 @@ export default function SscQuantitativeAptitudeNotes({ topic }: { topic?: string
             <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadRatioPDF}>
               <Printer className="w-3 h-3" /> Open Print Layout
             </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1d. Decimal Fractions (दशमलव और भिन्न)
+    if (topicLower.includes("decimal") || topicLower.includes("fraction") || topicLower.includes("दशमलव") || topicLower.includes("भिन्न")) {
+      const handleDownloadDecimalPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Decimal Fractions - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #0d9488; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #0d9488; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .header p { margin: 8px 0 0 0; color: #4b5563; font-size: 13px; font-weight: 500; }
+                .badge { background-color: #f0fdfa; color: #0d9488; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #ccfbf1; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #0d9488; font-size: 16px; font-weight: 600; border-left: 4px solid #0d9488; padding-left: 10px; margin-bottom: 12px; background-color: #f0fdfa; padding-top: 6px; padding-bottom: 6px; }
+                .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+                .card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background-color: #fafafa; }
+                .card-title { font-weight: 600; color: #0f172a; font-size: 13px; margin-bottom: 6px; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #0d9488; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #f0fdfa; border: 1px dashed #0d9488; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+                .example-title { font-weight: 600; color: #0d9488; margin-bottom: 4px; }
+                .footer { text-align: center; margin-top: 30px; font-size: 10px; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 10px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Decimal Fractions</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: दशमलव और भिन्न</h2>
+                <p>Designed for Railway Exams | Fast Recurring Fractions Conversion Rules</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <div class="grid">
+                  <div class="card">
+                    <div class="card-title">Decimal to Fraction (दशमलव से भिन्न)</div>
+                    <p>साधारण दशमलव को भिन्न में बदलने के लिए दशमलव बिंदु हटाकर हर में 10, 100 आदि लिखें। (e.g. 0.75 = 75/100 = <b>3/4</b>)</p>
+                  </div>
+                  <div class="card">
+                    <div class="card-title">Recurring Decimals (आवर्ती दशमलव)</div>
+                    <p>जब दशमलव के बाद अंक बार-बार दोहराए जाएं: 0.333... = 0.3̅. इन्हें बार (Bar) द्वारा दर्शाया जाता है।</p>
+                  </div>
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Conversion Rules (परिवर्तन के नियम)</div>
+                <div class="formula-box">
+                  • <b>Pure Recurring (शुद्ध आवर्ती):</b> 0.p̅ = <b>p / 9</b> | 0.pq̅ = <b>pq / 99</b>
+                  • <b>Mixed Recurring (मिश्रित आवर्ती):</b> 0.pq̅ = <b>(pq &minus; p) / 90</b> | 0.pqr̅ = <b>(pqr &minus; pq) / 900</b>
+                  • <b>Fraction Comparison:</b> Cross multiply to find larger. If a/b and c/d, check a&times;d and b&times;c.
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <div class="example-title">📝 Example 1: Recurring Decimal Conversion</div>
+                  <b>Question:</b> 0.35̅ (मिश्रित आवर्ती दशमलव) को साधारण भिन्न में बदलें।<br/>
+                  <b>Solution:</b> सूत्र: 0.ab̅ = (ab &minus; a) / 90 &rArr; (35 &minus; 3) / 90 = 32 / 90 = <b>16 / 45</b>.
+                </div>
+                <div class="example-box">
+                  <div class="example-title">📝 Example 2: Ladder Fraction (लगातार भिन्न)</div>
+                  <b>Question:</b> 1 + 1 / (1 + 1/2) का मान ज्ञात करें।<br/>
+                  <b>Solution:</b> नीचे से हल करें: 1 + 1/2 = 3/2 &rArr; 1 / (3/2) = 2/3 &rArr; 1 + 2/3 = <b>5/3</b>.
+                </div>
+              </div>
+              <div class="footer"><p>&copy; Exam Practice Platform</p></div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 font-bold border border-teal-500/20">
+                <Hash className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-teal-400 text-base md:text-lg flex items-center gap-2">Decimal Fractions (दशमलव और भिन्न)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadDecimalPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setDecimalTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${decimalTab === t ? 'bg-teal-500/25 border-teal-500/50 text-teal-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Rules & Formulas'}
+                {t === 'tricks' && '⚡ Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {decimalTab === 'basics' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-teal-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Decimal to Fraction:</span>
+                  <p className="text-[12px] leading-relaxed">साधारण दशमलव को भिन्न में बदलने के लिए दशमलव बिंदु हटाकर हर में 10, 100 आदि लिखें। (e.g. 0.75 = 75/100 = 3/4)</p>
+                </div>
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-teal-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Recurring Decimals (आवर्ती दशमलव):</span>
+                  <p className="text-[12px] leading-relaxed">जब दशमलव के बाद अंक बार-बार दोहराए जाएं: 0.333... = 0.3̅. इन्हें बार (Bar) द्वारा दर्शाया जाता है।</p>
+                </div>
+              </div>
+            )}
+            {decimalTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-teal-300 text-[13px] block border-b border-white/5 pb-1">📐 Recurring Decimals Rules:</span>
+                <p>• <b>Pure Recurring (शुद्ध आवर्ती):</b> 0.p̅ = p / 9 | 0.pq̅ = pq / 99</p>
+                <p>• <b>Mixed Recurring (मिश्रित आवर्ती):</b> 0.pq̅ = (pq &minus; p) / 90</p>
+              </div>
+            )}
+            {decimalTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-teal-300 text-[13px] block border-b border-white/5 pb-1">⚡ Ladder Fraction (लगातार भिन्न) Shortcut:</span>
+                <p className="text-[12px]">हमेशा नीचे से शुरू करें और क्रमबद्ध रूप से ऊपर की तरफ हल करते हुए जाएं।</p>
+              </div>
+            )}
+            {decimalTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-teal-400 text-[12px] block">📝 प्रश्न: Convert 0.35̅ to fraction.</span>
+                  <p className="text-[11.5px] text-slate-350">सूत्र: 0.ab̅ = (ab &minus; a) / 90 &rArr; (35 &minus; 3) / 90 = 32 / 90 = <b>16 / 45</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-teal-400" /> Topic 5/17 RRB Maths</span>
+            <span className="text-teal-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadDecimalPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1e. Percentage (प्रतिशत)
+    if (topicLower.includes("percent") || topicLower.includes("प्रतिशत")) {
+      const handleDownloadPercentPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Percentage - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #16a34a; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #16a34a; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #f0fdf4; color: #16a34a; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #bbf7d0; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #16a34a; font-size: 16px; font-weight: 600; border-left: 4px solid #16a34a; padding-left: 10px; margin-bottom: 12px; background-color: #f0fdf4; padding-top: 6px; padding-bottom: 6px; }
+                .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+                .card { border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; background-color: #fafafa; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #16a34a; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #f0fdf4; border: 1px dashed #16a34a; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Percentage</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: प्रतिशत</h2>
+                <p>Designed for Railway Exams | Successive Percentage Tricks</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>प्रतिशत का अर्थ है प्रति सैकड़ा (per hundred)। चिन्ह % से दर्शाया जाता है। (e.g. 20% = 20/100 = 1/5)</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Successive % Change:</b> x + y + (x &times; y) / 100
+                  • <b>Percentage to Fraction:</b> Divide by 100
+                  • <b>Fraction to Percentage:</b> Multiply by 100
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> Price increases by 20% then decreases by 20%. Net change?
+                  <br/><b>Solution:</b> Successive rule: 20 &minus; 20 &minus; (20&times;20)/100 = <b>&minus;4%</b> (4% कमी).
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-green-500/10 flex items-center justify-center text-green-400 font-bold border border-green-500/20">
+                <PercentIcon className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-bold text-green-400 text-base md:text-lg flex items-center gap-2">Percentage (प्रतिशत)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadPercentPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setPercentTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${percentTab === t ? 'bg-green-500/25 border-green-500/50 text-green-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Rules & Formulas'}
+                {t === 'tricks' && '⚡ Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {percentTab === 'basics' && (
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-green-400 text-[13px] block border-b border-white/5 pb-1 mb-2">What is Percentage:</span>
+                  <p className="text-[12px] leading-relaxed">प्रतिशत का अर्थ है प्रति सैकड़ा (per hundred)। चिन्ह % से दर्शाया जाता है। (e.g. 20% = 20/100 = 1/5)</p>
+                </div>
+              </div>
+            )}
+            {percentTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-green-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas:</span>
+                <p>• <b>Successive % Change:</b> x + y + (x &times; y) / 100</p>
+              </div>
+            )}
+            {percentTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-green-300 text-[13px] block border-b border-white/5 pb-1">⚡ Fraction equivalents:</span>
+                <p className="text-[12px]">1/2 = 50% | 1/4 = 25% | 1/8 = 12.5% | 1/3 = 33.33%</p>
+              </div>
+            )}
+            {percentTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-green-400 text-[12px] block">📝 प्रश्न: Price increases by 20% then decreases by 20%. Net change?</span>
+                  <p className="text-[11.5px] text-slate-350">Successive rule: 20 &minus; 20 &minus; (20&times;20)/100 = <b>&minus;4%</b> (4% कमी)</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-green-400" /> Topic 6/17 RRB Maths</span>
+            <span className="text-green-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadPercentPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1f. Unitary Method (ऐकिक नियम)
+    if (topicLower.includes("unitary") || topicLower.includes("ऐकिक")) {
+      const handleDownloadUnitaryPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Unitary Method - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #059669; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #059669; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #ecfdf5; color: #059669; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #a7f3d0; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #059669; font-size: 16px; font-weight: 600; border-left: 4px solid #059669; padding-left: 10px; margin-bottom: 12px; background-color: #ecfdf5; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #059669; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #ecfdf5; border: 1px dashed #059669; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Unitary Method</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: ऐकिक नियम</h2>
+                <p>Designed for Railway Exams | Unit Value Estimation and Chain Rules</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>ऐकिक नियम (Unitary Method) में सबसे पहले किसी एक इकाई (unit) का मूल्य निकाला जाता है, और फिर अभीष्ट मात्रा का मूल्य गुणा करके निकाला जाता है।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Proportions (समानुपात)</div>
+                <p>• <b>Direct Proportion (सीधा समानुपात):</b> एक राशि बढ़ने पर दूसरी भी बढ़े। (e.g. अधिक वस्तु = अधिक मूल्य)</p>
+                <p>• <b>Inverse Proportion (विलोम समानुपात):</b> एक राशि बढ़ने पर दूसरी घटे। (e.g. अधिक पुरुष = कम दिन)</p>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> 15 men earn ₹9000 in 5 days. How much will 20 men earn in 8 days?
+                  <br/><b>Solution:</b> Formula: E &prop; (Men &times; Days) &rArr; E2 = (20 &times; 8 &times; 9000) / (15 &times; 5) = <b>₹19,200</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold border border-emerald-500/20">
+                <RefreshCw className="w-5 h-5 animate-spin-slow" />
+              </div>
+              <div>
+                <h4 className="font-bold text-emerald-400 text-base md:text-lg flex items-center gap-2">Unitary Method (ऐकिक नियम)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick unit cost calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadUnitaryPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setUnitaryTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${unitaryTab === t ? 'bg-emerald-500/25 border-emerald-500/50 text-emerald-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Proportions'}
+                {t === 'tricks' && '⚡ Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {unitaryTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-emerald-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Basic Concepts:</span>
+                <p className="text-[12px] leading-relaxed">ऐकिक नियम (Unitary Method) में सबसे पहले किसी एक इकाई (unit) का मूल्य निकाला जाता है, और फिर अभीष्ट मात्रा का मूल्य गुणा करके निकाला जाता है।</p>
+              </div>
+            )}
+            {unitaryTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-emerald-300 text-[13px] block border-b border-white/5 pb-1">📐 Rules of Proportions:</span>
+                <p>• <b>Direct (सीधा):</b> एक बढ़ने पर दूसरा बढ़े। (e.g. अधिक वस्तु = अधिक मूल्य)</p>
+                <p>• <b>Inverse (विलोम):</b> एक बढ़ने पर दूसरा घटे। (e.g. अधिक पुरुष = कम दिन)</p>
+              </div>
+            )}
+            {unitaryTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-emerald-300 text-[13px] block border-b border-white/5 pb-1">⚡ Arrow Shortcut:</span>
+                <p className="text-[12px]">विलोम संबंध में तीर की दिशा उल्टी और सीधे में समान रखें।</p>
+              </div>
+            )}
+            {unitaryTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-emerald-400 text-[12px] block">📝 प्रश्न: If 15 men earn ₹9000 in 5 days, how much will 20 men earn in 8 days?</span>
+                  <p className="text-[11.5px] text-slate-350">E2 = (20 &times; 8 &times; 9000) / (15 &times; 5) = <b>₹19,200</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-emerald-400" /> Topic 7/17 RRB Maths</span>
+            <span className="text-emerald-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadUnitaryPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1g. Time and Work (समय और कार्य)
+    if (topicLower.includes("work") || topicLower.includes("कार्य")) {
+      const handleDownloadWorkPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Time & Work - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #0891b2; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #0891b2; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #ecfeff; color: #0891b2; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #cffafc; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #0891b2; font-size: 16px; font-weight: 600; border-left: 4px solid #0891b2; padding-left: 10px; margin-bottom: 12px; background-color: #ecfeff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #0891b2; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #ecfeff; border: 1px dashed #0891b2; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Time & Work</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: समय और कार्य</h2>
+                <p>Designed for Railway Exams | LCM Method & Chain Rules</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• <b>Work = Efficiency &times; Time</b> (कार्य = कार्यक्षमता &times; समय)</p>
+                <p>• कार्यक्षमता, समय के व्युत्क्रमानुपाती होती है (Efficiency &prop; 1/Time)।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>MDH Chain Rule:</b> (M1 &times; D1 &times; H1) / W1 = (M2 &times; D2 &times; H2) / W2
+                  • <b>Combined Work:</b> A in x days, B in y days &rArr; Together = <b>(x&times;y)/(x+y)</b> days.
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> A does a work in 10 days, B in 15 days. Together they take?
+                  <br/><b>Solution:</b> LCM of 10,15 = 30 (Total Work). Efficiency: A = 3, B = 2. Together time = 30 / (3+2) = <b>6 days</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold border border-cyan-500/20">
+                <RefreshCw className="w-5 h-5 animate-spin-slow" />
+              </div>
+              <div>
+                <h4 className="font-bold text-cyan-400 text-base md:text-lg flex items-center gap-2">Time and Work (समय और कार्य)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick schedule estimation</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadWorkPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setWorkTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${workTab === t ? 'bg-cyan-500/25 border-cyan-500/50 text-cyan-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ LCM Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {workTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-cyan-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Basic Efficiency Rules:</span>
+                <p className="text-[12px] leading-relaxed">Work = Efficiency &times; Time. कार्यक्षमता, समय के व्युत्क्रमानुपाती होती है (Efficiency &prop; 1/Time)।</p>
+              </div>
+            )}
+            {workTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-cyan-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas:</span>
+                <p>• <b>MDH Chain Rule:</b> (M1 &times; D1 &times; H1) / W1 = (M2 &times; D2 &times; H2) / W2</p>
+              </div>
+            )}
+            {workTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-cyan-300 text-[13px] block border-b border-white/5 pb-1">⚡ LCM Method Shortcut:</span>
+                <p className="text-[12px]">हमेशा दिनों का LCM निकालकर उसे कुल कार्य (Total Work) मानें।</p>
+              </div>
+            )}
+            {workTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-cyan-400 text-[12px] block">📝 प्रश्न: A in 10 days, B in 15 days. Combined?</span>
+                  <p className="text-[11.5px] text-slate-350">LCM of 10,15 = 30. Efficiencies A=3, B=2. Combined time = 30 / 5 = <b>6 days</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-cyan-400" /> Topic 8/17 RRB Maths</span>
+            <span className="text-cyan-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadWorkPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1h. Time and Distance (समय और दूरी)
+    if (topicLower.includes("distance") || topicLower.includes("speed") || topicLower.includes("दूरी")) {
+      const handleDownloadDistPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Time, Speed & Distance - Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #0284c7; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #0284c7; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #f0f9ff; color: #0284c7; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #0284c7; font-size: 16px; font-weight: 600; border-left: 4px solid #0284c7; padding-left: 10px; margin-bottom: 12px; background-color: #f0f9ff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #0284c7; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #f0f9ff; border: 1px dashed #0284c7; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Time, Speed & Distance</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: समय, चाल और दूरी</h2>
+                <p>Designed for Railway Exams | Train & Platform Crossing Rules</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• <b>Speed = Distance / Time</b> (चाल = दूरी / समय)</p>
+                <p>• km/h को m/s में बदलने के लिए <b>5/18</b> से गुणा करें, और m/s को km/h में बदलने के लिए <b>18/5</b> से।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Relative Speed (सापेक्ष चाल):</b> Same direction = S1 - S2 | Opposite direction = S1 + S2
+                  • <b>Average Speed:</b> Same distance covered &rArr; Avg = <b>2 &times; S1 &times; S2 / (S1 + S2)</b>
+                  • <b>Train Crossing:</b> Distance = Train Length + Platform Length
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> A 200m train crosses a 300m platform at 72 km/h. Find time taken?
+                  <br/><b>Solution:</b> Speed = 72 &times; 5/18 = 20 m/s. Total Distance = 200 + 300 = 500m. Time = 500 / 20 = <b>25 seconds</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-500/10 flex items-center justify-center text-sky-400 font-bold border border-sky-500/20">
+                <RefreshCw className="w-5 h-5 animate-spin-slow" />
+              </div>
+              <div>
+                <h4 className="font-bold text-sky-400 text-base md:text-lg flex items-center gap-2">Time and Distance (समय और दूरी)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick train speed estimations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadDistPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setDistTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${distTab === t ? 'bg-sky-500/25 border-sky-500/50 text-sky-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Relative Speed'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {distTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-sky-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Basic Speed Conversion:</span>
+                <p className="text-[12px] leading-relaxed">km/h को m/s में बदलने के लिए 5/18 से गुणा करें, और m/s को km/h में बदलने के लिए 18/5 से।</p>
+              </div>
+            )}
+            {distTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-sky-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas:</span>
+                <p>• <b>Average Speed:</b> Avg = 2 &times; S1 &times; S2 / (S1 + S2) [बराबर दूरी के लिए]</p>
+              </div>
+            )}
+            {distTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-sky-300 text-[13px] block border-b border-white/5 pb-1">⚡ Relative Speed Rule:</span>
+                <p className="text-[12px]">समान दिशा में चालों का अंतर (S1 - S2) और विपरीत दिशा में चालों का योग (S1 + S2) लें।</p>
+              </div>
+            )}
+            {distTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-sky-400 text-[12px] block">📝 प्रश्न: Train 200m crosses 300m platform at 72 km/h. Time?</span>
+                  <p className="text-[11.5px] text-slate-350">Speed = 20 m/s. Distance = 500m. Time = 500 / 20 = <b>25 seconds</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-sky-400" /> Topic 9/17 RRB Maths</span>
+            <span className="text-sky-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadDistPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1i. Average (औसत)
+    if (topicLower.includes("average") || topicLower.includes("औसत")) {
+      const handleDownloadAveragePDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Average - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #2563eb; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #2563eb; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #eff6ff; color: #2563eb; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #dbeafe; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #2563eb; font-size: 16px; font-weight: 600; border-left: 4px solid #2563eb; padding-left: 10px; margin-bottom: 12px; background-color: #eff6ff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #2563eb; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #eff6ff; border: 1px dashed #2563eb; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Average</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: औसत</h2>
+                <p>Designed for Railway Exams | Consecutive Odd/Even Series Shortcuts</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• <b>Average = Sum of values / Number of values</b> (औसत = राशियों का योग / राशियों की संख्या)</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Series Rules (महत्वपूर्ण श्रेणी नियम)</div>
+                <div class="formula-box">
+                  • Average of first N natural numbers = <b>(N + 1) / 2</b>
+                  • Average of first N even numbers = <b>N + 1</b>
+                  • Average of first N odd numbers = <b>N</b>
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> Average of 5 consecutive odd numbers is 25. Find the largest?
+                  <br/><b>Solution:</b> 5 विषम संख्याओं का औसत मध्य संख्या होती है। मध्य संख्या = 25.
+                  श्रेणी: 21, 23, 25, 27, 29. सबसे बड़ी संख्या = <b>29</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold border border-blue-500/20">
+                <BarChart2 className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-blue-400 text-base md:text-lg flex items-center gap-2">Average (औसत)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick median calculation</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadAveragePDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setAverageTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${averageTab === t ? 'bg-blue-500/25 border-blue-500/50 text-blue-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Series Laws'}
+                {t === 'tricks' && '⚡ Tricks'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {averageTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-blue-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Arithmetic Mean:</span>
+                <p className="text-[12px] leading-relaxed">औसत = राशियों का योग / राशियों की संख्या। क्रमागत विषम/सम संख्याओं का औसत हमेशा उनका मध्य बिंदु होता है।</p>
+              </div>
+            )}
+            {averageTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-blue-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Rules:</span>
+                <p>• <b>First N natural numbers avg:</b> (N + 1) / 2</p>
+                <p>• <b>First N even numbers avg:</b> N + 1</p>
+                <p>• <b>First N odd numbers avg:</b> N</p>
+              </div>
+            )}
+            {averageTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-blue-300 text-[13px] block border-b border-white/5 pb-1">⚡ Deviations Shortcut:</span>
+                <p className="text-[12px]">कठिन गणना से बचने के लिए एक काल्पनिक औसत (Assumed Average) मानकर विचलनों (deviations) का योग शून्य के बराबर करें।</p>
+              </div>
+            )}
+            {averageTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-blue-400 text-[12px] block">📝 प्रश्न: Average of 5 consecutive odd numbers is 25. Largest?</span>
+                  <p className="text-[11.5px] text-slate-350">मध्य संख्या = 25 &rArr; संख्याएं = 21, 23, 25, 27, 29. उत्तर = <b>29</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-blue-400" /> Topic 10/17 RRB Maths</span>
+            <span className="text-blue-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadAveragePDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1j. Profit and Loss (लाभ और हानि)
+    if (topicLower.includes("profit") || topicLower.includes("loss") || topicLower.includes("लाभ")) {
+      const handleDownloadProfitPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Profit & Loss - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #ea580c; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #ea580c; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #fff7ed; color: #ea580c; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #ffedd5; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #ea580c; font-size: 16px; font-weight: 600; border-left: 4px solid #ea580c; padding-left: 10px; margin-bottom: 12px; background-color: #fff7ed; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #ea580c; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #fff7ed; border: 1px dashed #ea580c; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Profit & Loss</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: लाभ और हानि</h2>
+                <p>Designed for Railway Exams | Dishonest Shopkeeper Shortcuts</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• लाभ (Profit) या हानि (Loss) हमेशा क्रय मूल्य (Cost Price) पर ही निकाला जाता है।</p>
+                <p>• छूट (Discount) हमेशा अंकित मूल्य (Marked Price) पर दी जाती है।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (महत्वपूर्ण सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Profit %:</b> [ (SP &minus; CP) / CP ] &times; 100
+                  • <b>Discount %:</b> [ (MP &minus; SP) / MP ] &times; 100
+                  • <b>Relationship CP/MP:</b> CP / MP = (100 &minus; D%) / (100 + P%)
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> A shopkeeper sells CP but uses 800g instead of 1kg. Find Profit%?
+                  <br/><b>Solution:</b> Profit% = [ Error / (True Value &minus; Error) ] &times; 100 &rArr; [ 200 / 800 ] &times; 100 = <b>25%</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-400 font-bold border border-orange-500/20">
+                <PercentIcon className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-orange-400 text-base md:text-lg flex items-center gap-2">Profit & Loss (लाभ और हानि)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick business calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadProfitPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setProfitTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${profitTab === t ? 'bg-orange-500/25 border-orange-500/50 text-orange-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Dishonest Rules'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {profitTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-orange-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Cost & Selling Price:</span>
+                <p className="text-[12px] leading-relaxed">लाभ या हानि हमेशा क्रय मूल्य (Cost Price) पर ही निकाला जाता है। छूट (Discount) हमेशा अंकित मूल्य (Marked Price) पर दी जाती है।</p>
+              </div>
+            )}
+            {profitTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-orange-300 text-[13px] block border-b border-white/5 pb-1">📐 Relations & Formulas:</span>
+                <p>• <b>CP / MP Ratio:</b> CP / MP = (100 &minus; Discount%) / (100 + Profit%)</p>
+              </div>
+            )}
+            {profitTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-orange-300 text-[13px] block border-b border-white/5 pb-1">⚡ Dishonest Shopkeeper Shortcut:</span>
+                <p className="text-[12px]">Profit% = [ Error / (True Value - Error) ] &times; 100</p>
+              </div>
+            )}
+            {profitTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-orange-400 text-[12px] block">📝 प्रश्न: Uses 800g instead of 1kg. Profit%?</span>
+                  <p className="text-[11.5px] text-slate-350">Profit% = [ 200 / 800 ] &times; 100 = <b>25%</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-orange-400" /> Topic 11/17 RRB Maths</span>
+            <span className="text-orange-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadProfitPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1k. Mensuration (क्षेत्रमिति)
+    if (topicLower.includes("mensuration") || topicLower.includes("क्षेत्रमिति")) {
+      const handleDownloadMensurationPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Mensuration - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #4f46e5; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #4f46e5; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #eef2ff; color: #4f46e5; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #e0e7ff; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #4f46e5; font-size: 16px; font-weight: 600; border-left: 4px solid #4f46e5; padding-left: 10px; margin-bottom: 12px; background-color: #eef2ff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #4f46e5; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #eef2ff; border: 1px dashed #4f46e5; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Mensuration</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: क्षेत्रमिति (2D and 3D)</h2>
+                <p>Designed for Railway Exams | Shape Formulas Reference Sheet</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. 2D Shapes (द्विविमीय क्षेत्रमिति)</div>
+                <p>• <b>Circle (वृत्त):</b> Area = <b>&pi;r&sup2;</b> | Perimeter = <b>2&pi;r</b></p>
+                <p>• <b>Triangle (त्रिभुज):</b> Area = <b>&frac12; &times; Base &times; Height</b></p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. 3D Solid Shapes (त्रिविमीय क्षेत्रमिति)</div>
+                <div class="formula-box">
+                  • <b>Cylinder (बेलन):</b> CSA = <b>2&pi;rh</b> | Volume = <b>&pi;r&sup2;h</b>
+                  • <b>Cone (शंकु):</b> CSA = <b>&pi;rl</b> | Volume = <b>&frac13; &pi;r&sup2;h</b>
+                  • <b>Sphere (गोला):</b> CSA = <b>4&pi;r&sup2;</b> | Volume = <b>&frac43; &pi;r&sup3;</b>
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> Find the volume of a sphere whose radius is doubled?
+                  <br/><b>Solution:</b> Volume &prop; r&sup3;. If radius becomes 2r, new volume = 8 times the original volume (700% increase).
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-bold border border-indigo-500/20">
+                <Ruler className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-indigo-400 text-base md:text-lg flex items-center gap-2">Mensuration (क्षेत्रमिति)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick perimeter and volume calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadMensurationPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setMensurationTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${mensurationTab === t ? 'bg-indigo-500/25 border-indigo-500/50 text-indigo-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 2D Concepts'}
+                {t === 'formulas' && '📐 3D Formulas'}
+                {t === 'tricks' && '⚡ Radius Changes'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {mensurationTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-indigo-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Circle & Triangle:</span>
+                <p className="text-[12px] leading-relaxed">वृत्त का क्षेत्रफल = &pi;r&sup2; | वृत्त की परिधि = 2&pi;r। त्रिभुज का क्षेत्रफल = &frac12; &times; आधार &times; ऊँचाई।</p>
+              </div>
+            )}
+            {mensurationTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-indigo-300 text-[13px] block border-b border-white/5 pb-1">📐 3D Solids:</span>
+                <p>• <b>Cylinder (बेलन):</b> Volume = &pi;r&sup2;h</p>
+                <p>• <b>Cone (शंकु):</b> Volume = &frac13; &pi;r&sup2;h</p>
+                <p>• <b>Sphere (गोला):</b> Volume = &frac43; &pi;r&sup3;</p>
+              </div>
+            )}
+            {mensurationTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-indigo-300 text-[13px] block border-b border-white/5 pb-1">⚡ Doubling Radius Rule:</span>
+                <p className="text-[12px]">त्रिज्या दोगुनी करने पर गोले का आयतन 2&sup3; = 8 गुना हो जाता है (700% की वृद्धि)।</p>
+              </div>
+            )}
+            {mensurationTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-indigo-400 text-[12px] block">📝 प्रश्न: Sphere radius doubled. Volume?</span>
+                  <p className="text-[11.5px] text-slate-350">Volume &prop; r&sup3; &rArr; (2r)&sup3; = 8r&sup3;. <b>8 गुना (8 times)</b> हो जायेगा।</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-indigo-400" /> Topic 12/17 RRB Maths</span>
+            <span className="text-indigo-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadMensurationPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1l. Simple and Compound Interest (ब्याज)
+    if (topicLower.includes("interest") || topicLower.includes("ब्याज")) {
+      const handleDownloadInterestPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Simple & Compound Interest - Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #db2777; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #db2777; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #fdf2f8; color: #db2777; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #fbcfe8; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #db2777; font-size: 16px; font-weight: 600; border-left: 4px solid #db2777; padding-left: 10px; margin-bottom: 12px; background-color: #fdf2f8; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #db2777; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #fdf2f8; border: 1px dashed #db2777; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Interest</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: साधारण व चक्रवृद्धि ब्याज</h2>
+                <p>Designed for Railway Exams | CI and SI Difference Formulas</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Simple Interest (साधारण ब्याज)</div>
+                <p>• <b>SI = (P &times; R &times; T) / 100</b></p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (चक्रवृद्धि ब्याज अंतर)</div>
+                <div class="formula-box">
+                  • <b>Difference for 2 Years:</b> D2 = P &times; (R / 100)&sup2;
+                  • <b>Difference for 3 Years:</b> D3 = P &times; (R / 100)&sup2; &times; [ 3 + R / 100 ]
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> P = ₹10,000, R = 10%, T = 2 years. Find D2 (CI &minus; SI)?
+                  <br/><b>Solution:</b> D2 = 10000 &times; (10 / 100)&sup2; = 10000 &times; 0.01 = <b>₹100</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-pink-500/10 flex items-center justify-center text-pink-400 font-bold border border-pink-500/20">
+                <Layers className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-pink-400 text-base md:text-lg flex items-center gap-2">Simple & Compound Interest (ब्याज)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick interest calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadInterestPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setInterestTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${interestTab === t ? 'bg-pink-500/25 border-pink-500/50 text-pink-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Difference Rules'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {interestTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-pink-400 text-[13px] block border-b border-white/5 pb-1 mb-2">SI & CI Basics:</span>
+                <p className="text-[12px] leading-relaxed">साधारण ब्याज हमेशा मूलधन पर और चक्रवृद्धि ब्याज ब्याज के ऊपर ब्याज (interest on interest) होता है।</p>
+              </div>
+            )}
+            {interestTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-pink-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Formulas:</span>
+                <p>• <b>SI Formula:</b> SI = (P &times; R &times; T) / 100</p>
+                <p>• <b>Difference for 2 Years:</b> D2 = P &times; (R / 100)&sup2;</p>
+              </div>
+            )}
+            {interestTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-pink-300 text-[13px] block border-b border-white/5 pb-1">⚡ Yearly vs Half-Yearly:</span>
+                <p className="text-[12px]">अर्धवार्षिक compounding में दर को आधा (R/2) और समय को दोगुना (2T) कर दें।</p>
+              </div>
+            )}
+            {interestTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-pink-400 text-[12px] block">📝 प्रश्न: P=10,000, R=10%, T=2 years. Find D2 (CI - SI)?</span>
+                  <p className="text-[11.5px] text-slate-350">D2 = 10000 &times; (10 / 100)&sup2; = 10000 &times; 0.01 = <b>₹100</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-pink-400" /> Topic 13/17 RRB Maths</span>
+            <span className="text-pink-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadInterestPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1m. Data Interpretation (डेटा व्याख्या)
+    if (topicLower.includes("interpretation") || topicLower.includes("data") || topicLower.includes("डेटा")) {
+      const handleDownloadDIPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Data Interpretation - Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #7c3aed; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #7c3aed; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #f5f3ff; color: #7c3aed; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #ede9fe; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #7c3aed; font-size: 16px; font-weight: 600; border-left: 4px solid #7c3aed; padding-left: 10px; margin-bottom: 12px; background-color: #f5f3ff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #7c3aed; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #f5f3ff; border: 1px dashed #7c3aed; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Data Interpretation</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: डेटा व्याख्या (DI)</h2>
+                <p>Designed for Railway Exams | Pie Chart Degree Conversion Hacks</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• <b>Data Interpretation (DI):</b> सारणी (Tables), पाई चार्ट (Pie Charts), दंड आरेख (Bar Graphs) आदि के रूप में प्रस्तुत डेटा का विश्लेषण।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Formulas (कोण/प्रतिशत संबंध)</div>
+                <div class="formula-box">
+                  • <b>Degree to Percentage:</b> Value % = (Degree / 360) &times; 100
+                  • <b>Percentage to Degree:</b> Sector Angle = (Percentage / 100) &times; 360&deg;
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> Find the sector angle for a contribution of 20% in a pie chart?
+                  <br/><b>Solution:</b> Angle = (20 / 100) &times; 360&deg; = <b>72&deg;</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 font-bold border border-violet-500/20">
+                <BarChart2 className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-violet-400 text-base md:text-lg flex items-center gap-2">Data Interpretation (डेटा व्याख्या)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick chart estimation</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadDIPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setDiTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${diTab === t ? 'bg-violet-500/25 border-violet-500/50 text-violet-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Angle Conversion'}
+                {t === 'tricks' && '⚡ Charts Shortcuts'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {diTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-violet-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Pie Charts & Bar Graphs:</span>
+                <p className="text-[12px] leading-relaxed">सारणी (Tables), पाई चार्ट (Pie Charts), दंड आरेख (Bar Graphs) आदि के रूप में प्रस्तुत डेटा का विश्लेषण।</p>
+              </div>
+            )}
+            {diTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-violet-300 text-[13px] block border-b border-white/5 pb-1">📐 Sector Angles:</span>
+                <p>• <b>Sector Angle Formula:</b> Sector Angle = (Percentage / 100) &times; 360&deg;</p>
+              </div>
+            )}
+            {diTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-violet-300 text-[13px] block border-b border-white/5 pb-1">⚡ Fast Ratio Estimation:</span>
+                <p className="text-[12px]">सभी मानों का वास्तविक योग करने के बजाय सीधे उनके संगत अंश/प्रतिशत का अनुपात ज्ञात करें।</p>
+              </div>
+            )}
+            {diTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-violet-400 text-[12px] block">📝 प्रश्न: Find sector angle for a contribution of 20% in pie chart?</span>
+                  <p className="text-[11.5px] text-slate-350">Angle = (20 / 100) &times; 360&deg; = <b>72&deg;</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-violet-400" /> Topic 14/17 RRB Maths</span>
+            <span className="text-violet-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadDIPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1n. Algebra (बीजगणित)
+    if (topicLower.includes("algebra") || topicLower.includes("बीजगणित")) {
+      const handleDownloadAlgebraPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Algebra - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #c026d3; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #c026d3; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #fdf4ff; color: #c026d3; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #fae8ff; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #c026d3; font-size: 16px; font-weight: 600; border-left: 4px solid #c026d3; padding-left: 10px; margin-bottom: 12px; background-color: #fdf4ff; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #c026d3; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #fdf4ff; border: 1px dashed #c026d3; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Algebra</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: बीजगणित</h2>
+                <p>Designed for Railway Exams | Symmetric Equations Hacks</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Essential Identities (प्रमुख सूत्र)</div>
+                <div class="formula-box">
+                  • <b>Square Identity:</b> (a + b)&sup2; = a&sup2; + 2ab + b&sup2;
+                  • <b>Special Cubic Identity:</b> If a + b + c = 0 &rArr; a&sup3; + b&sup3; + c&sup3; = <b>3abc</b>
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> If x + 1/x = 4, find x&sup2; + 1/x&sup2;?
+                  <br/><b>Solution:</b> Square both sides: (x + 1/x)&sup2; = 16 &rArr; x&sup2; + 2 + 1/x&sup2; = 16 &rArr; x&sup2; + 1/x&sup2; = 16 &minus; 2 = <b>14</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-400 font-bold border border-fuchsia-500/20">
+                <Ruler className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-fuchsia-400 text-base md:text-lg flex items-center gap-2">Algebra (बीजगणित)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick identity applications</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadAlgebraPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setAlgebraTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${algebraTab === t ? 'bg-fuchsia-500/25 border-fuchsia-500/50 text-fuchsia-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Value Putting'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {algebraTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-fuchsia-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Polynomials & Variables:</span>
+                <p className="text-[12px] leading-relaxed">बीजगणित में चरों (variables) का उपयोग समीकरणों को हल करने के लिए किया जाता है। प्रमुख बीजीय सर्वसमिकाओं का उपयोग करके हम बड़े व्यंजकों को सेकंडों में सरल कर सकते हैं।</p>
+              </div>
+            )}
+            {algebraTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-fuchsia-300 text-[13px] block border-b border-white/5 pb-1">📐 Golden Identities:</span>
+                <p>• (a + b)&sup2; = a&sup2; + 2ab + b&sup2;</p>
+                <p>• If a + b + c = 0 &rArr; a&sup3; + b&sup3; + c&sup3; = 3abc</p>
+              </div>
+            )}
+            {algebraTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-fuchsia-300 text-[13px] block border-b border-white/5 pb-1">⚡ Value Putting Method:</span>
+                <p className="text-[12px]">समीकरणों में चरों का काल्पनिक मान (जैसे 0, 1) रखकर विकल्पों को तुरंत संतुष्ट करें।</p>
+              </div>
+            )}
+            {algebraTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-fuchsia-400 text-[12px] block">📝 प्रश्न: If x + 1/x = 4, find x&sup2; + 1/x&sup2;?</span>
+                  <p className="text-[11.5px] text-slate-350">Square: (x + 1/x)&sup2; = 16 &rArr; x&sup2; + 2 + 1/x&sup2; = 16 &rArr; x&sup2; + 1/x&sup2; = <b>14</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-fuchsia-400" /> Topic 15/17 RRB Maths</span>
+            <span className="text-fuchsia-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadAlgebraPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1o. Square Root and Cube Root (वर्गमूल और घनमूल)
+    if (topicLower.includes("root") || topicLower.includes("वर्गमूल")) {
+      const handleDownloadRootPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Square & Cube Root - Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #e11d48; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #e11d48; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #fff1f2; color: #e11d48; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #ffe4e6; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #e11d48; font-size: 16px; font-weight: 600; border-left: 4px solid #e11d48; padding-left: 10px; margin-bottom: 12px; background-color: #fff1f2; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #e11d48; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #fff1f2; border: 1px dashed #e11d48; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Square & Cube Roots</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: वर्गमूल और घनमूल</h2>
+                <p>Designed for Railway Exams | Perfect Square Estimation Hacks</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Definitions (बुनियादी नियम)</div>
+                <p>• <b>Square Root (वर्गमूल):</b> &radic;x वह संख्या है जिसे स्वयं से गुणा करने पर x प्राप्त हो। (e.g. &radic;25 = 5)</p>
+                <p>• <b>Cube Root (घनमूल):</b> &sup3;&radic;x वह संख्या है जिसे स्वयं से तीन बार गुणा करने पर x प्राप्त हो। (e.g. &sup3;&radic;125 = 5)</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Perfect Square Estimation Tricks (अनुमान विधि)</div>
+                <div class="formula-box">
+                  • <b>Unit Digit Rule:</b> Perfect squares only end in 0, 1, 4, 5, 6, 9. If number ends in 2, 3, 7, 8, it can NEVER be a perfect square.
+                  • <b>Estimation:</b> Locate between nearest perfect squares of multiples of 10.
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> Find the square root of 5041?
+                  <br/><b>Solution:</b> Ends in 1 &rArr; root ends in 1 or 9. Since 70&sup2; = 4900 < 5041 < 80&sup2; = 6400. Try 71&sup2; and 79&sup2;. 71&sup2; = <b>5041</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 font-bold border border-rose-500/20">
+                <Hash className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-rose-400 text-base md:text-lg flex items-center gap-2">Square & Cube Roots (वर्गमूल व घनमूल)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick roots estimation</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadRootPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setRootTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${rootTab === t ? 'bg-rose-500/25 border-rose-500/50 text-rose-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Endings Law'}
+                {t === 'tricks' && '⚡ Estimation Tricks'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {rootTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-rose-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Concept of Roots:</span>
+                <p className="text-[12px] leading-relaxed">वर्गमूल (&radic;x) वह संख्या है जिसे स्वयं से गुणा करने पर x प्राप्त हो। घनमूल (&sup3;&radic;x) वह संख्या है जिसे स्वयं से तीन बार गुणा करने पर x प्राप्त हो।</p>
+              </div>
+            )}
+            {rootTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-rose-300 text-[13px] block border-b border-white/5 pb-1">📐 Perfect Square Rules:</span>
+                <p>• पूर्ण वर्ग केवल 0, 1, 4, 5, 6, 9 पर ही समाप्त हो सकते हैं। यदि संख्या 2, 3, 7, 8 पर समाप्त हो, तो वह कभी पूर्ण वर्ग नहीं हो सकती।</p>
+              </div>
+            )}
+            {rootTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-rose-300 text-[13px] block border-b border-white/5 pb-1">⚡ Estimation Shortcut:</span>
+                <p className="text-[12px]">दी गई संख्या के सबसे निकटतम 10 के गुणज के पूर्ण वर्ग की पहचान करके इकाई अंक का मिलान करें।</p>
+              </div>
+            )}
+            {rootTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-rose-400 text-[12px] block">📝 प्रश्न: Find square root of 5041?</span>
+                  <p className="text-[11.5px] text-slate-350">Ends in 1 &rArr; root ends in 1 or 9. Since 70&sup2; = 4900 &lt; 5041 &lt; 80&sup2;. 71&sup2; = <b>5041</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-rose-400" /> Topic 16/17 RRB Maths</span>
+            <span className="text-rose-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadRootPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // 1p. Partnership (साझेदारी)
+    if (topicLower.includes("partnership") || topicLower.includes("साझेदारी")) {
+      const handleDownloadPartnershipPDF = () => {
+        const printWindow = window.open('', '_blank');
+        if (!printWindow) { alert("Please allow popups to download/print the PDF."); return; }
+        const content = `
+          <html>
+            <head>
+              <title>Partnership - Complete Study Notes</title>
+              <style>
+                @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+                body { font-family: 'Outfit', 'Noto Sans Devanagari', sans-serif; color: #1e293b; line-height: 1.6; margin: 0; padding: 35px; background-color: #ffffff; }
+                .header { text-align: center; border-bottom: 3px double #d97706; padding-bottom: 15px; margin-bottom: 25px; }
+                .header h1 { color: #0f172a; margin: 0; font-size: 26px; font-weight: 700; }
+                .header h2 { color: #d97706; margin: 5px 0 0 0; font-size: 20px; font-weight: 600; }
+                .badge { background-color: #fffbeb; color: #d97706; padding: 4px 12px; border-radius: 12px; font-size: 11px; font-weight: 600; border: 1px solid #fef3c7; display: inline-block; margin-bottom: 8px; }
+                .section { margin-bottom: 25px; page-break-inside: avoid; }
+                .section-title { color: #d97706; font-size: 16px; font-weight: 600; border-left: 4px solid #d97706; padding-left: 10px; margin-bottom: 12px; background-color: #fffbeb; padding-top: 6px; padding-bottom: 6px; }
+                .formula-box { background-color: #f8fafc; border-left: 3px solid #d97706; padding: 10px; margin: 10px 0; font-family: monospace; font-size: 12px; border-radius: 0 6px 6px 0; white-space: pre-line; }
+                .example-box { background-color: #fffbeb; border: 1px dashed #d97706; padding: 12px; margin: 10px 0; border-radius: 6px; font-size: 12px; }
+              </style>
+            </head>
+            <body>
+              <div class="header">
+                <div class="badge">RRB Group D Mathematics Special</div>
+                <h1>Complete Bilingual Study Notes: Partnership</h1>
+                <h2>गणित सम्पूर्ण हस्तलिखित नोट्स: साझेदारी</h2>
+                <p>Designed for Railway Exams | Capital and Time Equalization Hacks</p>
+              </div>
+              <div class="section">
+                <div class="section-title">1. Basic Concepts (बुनियादी अवधारणाएं)</div>
+                <p>• साझेदारी (Partnership) में होने वाले लाभ (Profit) या हानि (Loss) का वितरण निवेशित पूंजी और निवेश के समय के गुणनफल के अनुपात में होता है।</p>
+              </div>
+              <div class="section">
+                <div class="section-title">2. Golden Profit Formulas (लाभ विभाजन नियम)</div>
+                <div class="formula-box">
+                  • <b>Profit Sharing Ratio:</b> Profit Ratio = (Capital A &times; Time A) : (Capital B &times; Time B)
+                  • If Capitals are equal: Profit is divided in the ratio of Time.
+                  • If Times are equal: Profit is divided in the ratio of Capital.
+                </div>
+              </div>
+              <div class="section">
+                <div class="section-title">3. Solved Examples (हल सहित उदाहरण)</div>
+                <div class="example-box">
+                  <b>Question:</b> A invests ₹10,000 for 12 months, B ₹15,000 for 8 months. Profit sharing ratio?
+                  <br/><b>Solution:</b> Ratio = (10000 &times; 12) : (15000 &times; 8) = 120,000 : 120,000 = <b>1 : 1</b>.
+                </div>
+              </div>
+              <script>window.onload = function() { window.print(); setTimeout(window.close, 500); }</script>
+            </body>
+          </html>
+        `;
+        printWindow.document.write(content); printWindow.document.close();
+      };
+
+      return (
+        <div className="mt-4 p-5 md:p-8 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-2xl animate-fadeIn text-xs md:text-sm text-slate-350 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-48 h-48 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none" />
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 font-bold border border-amber-500/20">
+                <Layers className="w-5 h-5 animate-pulse" />
+              </div>
+              <div>
+                <h4 className="font-bold text-amber-400 text-base md:text-lg flex items-center gap-2">Partnership (साझेदारी)</h4>
+                <p className="text-slate-400 text-[11px]">Bilingual study notes for quick business share calculations</p>
+              </div>
+            </div>
+            <button onClick={handleDownloadPartnershipPDF} className="px-4 py-2 text-xs font-semibold rounded-xl bg-emerald-500 hover:bg-emerald-600 hover:scale-105 active:scale-95 text-slate-950 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] font-semibold">
+              <Printer className="w-4 h-4 text-slate-950" /> Download Premium PDF Notes
+            </button>
+          </div>
+          <div className="flex flex-wrap gap-2 mb-6">
+            {['basics', 'formulas', 'tricks', 'examples'].map((t) => (
+              <button key={t} onClick={() => setPartnershipTab(t as any)} className={`px-3 py-1.5 rounded-lg border text-[11px] md:text-xs font-semibold transition-all duration-300 ${partnershipTab === t ? 'bg-amber-500/25 border-amber-500/50 text-amber-300' : 'bg-slate-900/40 border-white/5 text-slate-400 hover:text-slate-200'}`}>
+                {t === 'basics' && '📊 Concepts'}
+                {t === 'formulas' && '📐 Formulas'}
+                {t === 'tricks' && '⚡ Equalization'}
+                {t === 'examples' && '📝 Examples'}
+              </button>
+            ))}
+          </div>
+          <div className="space-y-4 animate-fadeIn">
+            {partnershipTab === 'basics' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                <span className="font-bold text-amber-400 text-[13px] block border-b border-white/5 pb-1 mb-2">Basic Concepts:</span>
+                <p className="text-[12px] leading-relaxed">साझेदारी (Partnership) में होने वाले लाभ (Profit) या हानि (Loss) का वितरण निवेशित पूंजी और निवेश के समय के गुणनफल के अनुपात में होता है।</p>
+              </div>
+            )}
+            {partnershipTab === 'formulas' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-amber-300 text-[13px] block border-b border-white/5 pb-1">📐 Profit Sharing Ratio:</span>
+                <p>• <b>Formula:</b> Profit Ratio = (Capital A &times; Time A) : (Capital B &times; Time B)</p>
+              </div>
+            )}
+            {partnershipTab === 'tricks' && (
+              <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5 space-y-2">
+                <span className="font-bold text-amber-300 text-[13px] block border-b border-white/5 pb-1">⚡ Working Partner Rule:</span>
+                <p className="text-[12px]">सक्रिय (working) साझेदार को कुल लाभ का एक निश्चित प्रतिशत वेतन के रूप में देकर बचे लाभ को पूर्व अनुपात में विभाजित करें।</p>
+              </div>
+            )}
+            {partnershipTab === 'examples' && (
+              <div className="space-y-3">
+                <div className="bg-slate-900/50 p-4 rounded-xl border border-white/5">
+                  <span className="font-bold text-amber-400 text-[12px] block">📝 प्रश्न: A invests 10,000 for 12 months, B 15,000 for 8 months. Profit ratio?</span>
+                  <p className="text-[11.5px] text-slate-350">Profit ratio = (10000&times;12) : (15000&times;8) = 120,000 : 120,000 = <b>1 : 1</b></p>
+                </div>
+              </div>
+            )}
+          </div>
+          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
+            <span className="flex items-center gap-1"><BookOpen className="w-3.5 h-3.5 text-amber-400" /> Topic 17/17 RRB Maths</span>
+            <span className="text-amber-350 font-semibold cursor-pointer hover:underline flex items-center gap-1" onClick={handleDownloadPartnershipPDF}>
+              <Printer className="w-3 h-3" /> Open Print Layout
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    // Default Fallback
+    if (topic) {
+      return (
+        <div className="mt-4 p-5 md:p-6 bg-[#070b12]/95 border border-emerald-500/20 rounded-2xl shadow-xl animate-fadeIn text-xs md:text-sm text-slate-350">
+          <h4 className="flex items-center gap-2 font-bold text-emerald-400 text-sm md:text-base mb-4 pb-2 border-b border-white/5">
+            <Calculator className="w-5 h-5" /> Quantitative Aptitude Study Notes ({topic})
+          </h4>
+          <p className="text-slate-400 mb-2">शॉर्टकट ट्रिक्स, महत्वपूर्ण सूत्र एवं अभ्यास अवधारणाएं:</p>
+          <div className="p-3 bg-emerald-500/5 border border-emerald-500/20 rounded-xl">
+            <p className="font-semibold text-emerald-300 mb-1">• {topic} Key Shortcut:</p>
+            <p>सभी प्रतियोगी परीक्षाओं (SSC, Railway, Police) के लिए सर्वश्रेष्ठ संकलन। अभ्यास के साथ हल करें!</p>
           </div>
         </div>
       );
