@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Clock, Calendar, AlertCircle, ArrowRight, BookOpen, Award, Brain, Atom, Calculator } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, AlertCircle, ArrowRight, BookOpen, Award, Brain, Atom, Calculator, Newspaper } from 'lucide-react';
 
 export default function RrbGroupDGeneralTestDashboard() {
   const activeSeries = [
@@ -34,11 +34,21 @@ export default function RrbGroupDGeneralTestDashboard() {
       icon: <Atom className="w-8 h-8 text-emerald-400" />,
       colorClass: "from-emerald-500/10 to-teal-500/10 border-emerald-500/20 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)]",
       badge: "10 Tests Active"
+    },
+    {
+      title: "General Awareness Mock Test Series",
+      titleHindi: "सामान्य जागरूकता मॉक टेस्ट सीरीज",
+      description: "10 Full Mock Tests containing 300 bilingual questions on Current Affairs, Science & Tech, Sports & Culture.",
+      descriptionHindi: "सामयिकी, विज्ञान-प्रौद्योगिकी, खेल और संस्कृति पर 300 द्विभाषी प्रश्नों वाले 10 पूर्ण मॉक टेस्ट।",
+      path: "/exams/rrb-group-d/test/general-awareness",
+      icon: <Newspaper className="w-8 h-8 text-amber-400" />,
+      colorClass: "from-[#f59e0b]/10 to-[#d97706]/10 border-[#f59e0b]/20 text-[#f59e0b] shadow-[0_0_15px_rgba(245,158,11,0.15)]",
+      badge: "10 Tests Active"
     }
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-16 animate-fadeIn">
+    <div className="max-w-7xl mx-auto px-4 py-16 animate-fadeIn">
       {/* Breadcrumb Header */}
       <div className="flex items-center gap-3 mb-10">
         <Link href="/exams/rrb-group-d" className="p-2 rounded-xl bg-slate-800 border border-white/5 hover:border-sky-500/30 text-sky-400 hover:text-sky-300 transition-all flex items-center justify-center">
@@ -53,7 +63,7 @@ export default function RrbGroupDGeneralTestDashboard() {
       </div>
 
       {/* Subject Series Cards Grid */}
-      <div className="grid md:grid-cols-3 gap-6 mb-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
         {activeSeries.map((series, idx) => (
           <div key={idx} className="bg-[#070b12] border border-white/5 rounded-3xl p-6 hover:border-sky-500/35 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-full blur-[40px] pointer-events-none" />
