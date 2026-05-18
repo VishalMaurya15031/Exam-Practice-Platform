@@ -640,7 +640,11 @@ A  :  B  :  C
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 mb-12">
-
+        <Link href="/exams/rrb-group-d/test">
+          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg shadow-sky-500/25">
+            Start Mock Test
+          </button>
+        </Link>
         <button 
           onClick={handleDownloadSyllabusPDF}
           className="px-6 py-3 rounded-xl bg-slate-800 border border-white/10 text-slate-300 font-semibold hover:bg-slate-700 transition-colors flex items-center gap-2"
@@ -659,7 +663,7 @@ A  :  B  :  C
                 {section.title}
               </h2>
               {idx === 0 && (
-                <Link href="/exams/rrb-group-d/test">
+                <Link href="/exams/rrb-group-d/test/mathematics">
                   <button className="px-4 py-2 text-xs md:text-sm font-bold bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-105 active:scale-95 text-slate-950 rounded-xl transition-all shadow-[0_0_15px_rgba(14,165,233,0.3)] hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] flex items-center gap-1.5 self-start md:self-auto">
                     📝 Start Mathematics Mock Test (गणित मॉक टेस्ट)
                   </button>
