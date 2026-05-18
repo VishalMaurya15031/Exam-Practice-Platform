@@ -669,6 +669,13 @@ A  :  B  :  C
                   </button>
                 </Link>
               )}
+              {idx === 1 && (
+                <Link href="/exams/rrb-group-d/test/reasoning">
+                  <button className="px-4 py-2 text-xs md:text-sm font-bold bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-105 active:scale-95 text-slate-950 rounded-xl transition-all shadow-[0_0_15px_rgba(14,165,233,0.3)] hover:shadow-[0_0_20px_rgba(14,165,233,0.5)] flex items-center gap-1.5 self-start md:self-auto">
+                    🧠 Start Reasoning Mock Test (तर्कशक्ति मॉक टेस्ट)
+                  </button>
+                </Link>
+              )}
             </div>
             
             {/* Handle Sections with Subtopics */}
