@@ -2,8 +2,21 @@
 import React, { useState } from 'react';
 import { Atom, Activity, Zap, Beaker, ShieldAlert } from 'lucide-react';
 
-export default function RrbGeneralScienceNotes() {
-  const [activeTab, setActiveTab] = useState<'physics' | 'chemistry' | 'biology'>('physics');
+export default function RrbGeneralScienceNotes({ topic }: { topic?: string }) {
+  const getDefaultTab = () => {
+    if (topic) {
+      const topicLower = topic.toLowerCase();
+      if (topicLower.includes("chemistry") || topicLower.includes("atoms") || topicLower.includes("molecules") || topicLower.includes("chemical") || topicLower.includes("periodic") || topicLower.includes("metal") || topicLower.includes("oxidation") || topicLower.includes("combustion") || topicLower.includes("bond")) {
+        return 'chemistry';
+      }
+      if (topicLower.includes("life science") || topicLower.includes("biology") || topicLower.includes("organism") || topicLower.includes("plant") || topicLower.includes("cell") || topicLower.includes("cytology") || topicLower.includes("genetics") || topicLower.includes("human") || topicLower.includes("blood") || topicLower.includes("eye") || topicLower.includes("nutrient") || topicLower.includes("anatomy") || topicLower.includes("heredity") || topicLower.includes("evolution") || topicLower.includes("tissue") || topicLower.includes("disease") || topicLower.includes("ecology") || topicLower.includes("pollution")) {
+        return 'biology';
+      }
+    }
+    return 'physics';
+  };
+
+  const [activeTab, setActiveTab] = useState<'physics' | 'chemistry' | 'biology'>(getDefaultTab());
 
   const tabs = [
     { id: 'physics', label: '⚡ Physics (भौतिक विज्ञान)', color: 'text-sky-400 border-sky-500/30 bg-sky-500/5' },

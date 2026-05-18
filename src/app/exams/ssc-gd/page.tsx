@@ -105,16 +105,16 @@ export default function SscGdPage() {
 
     // Section 3: Reasoning
     if (sectionIdx === 2) {
-      return <SscReasoningNotes />;
+      return <SscReasoningNotes topic={topic} />;
     }
 
     // Section 4: GK/GS
     if (sectionIdx === 3) {
-      return <SscGeneralAwarenessNotes />;
+      return <SscGeneralAwarenessNotes topic={topic} />;
     }
 
     // Section 5: Mathematics
-    return <SscQuantitativeAptitudeNotes />;
+    return <SscQuantitativeAptitudeNotes topic={topic} />;
   };
 
   return (

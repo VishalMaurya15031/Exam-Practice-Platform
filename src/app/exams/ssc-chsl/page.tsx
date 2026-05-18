@@ -175,11 +175,11 @@ export default function SscChslPage() {
     ].some(keyword => topicLower.includes(keyword));
 
     if (isEnglish) return <SscEnglishNotes />;
-    if (isReasoning) return <SscReasoningNotes />;
-    if (isMathsOrStats) return <SscQuantitativeAptitudeNotes />;
+    if (isReasoning) return <SscReasoningNotes topic={topic} />;
+    if (isMathsOrStats) return <SscQuantitativeAptitudeNotes topic={topic} />;
     
     // Everything else maps to General Awareness / Computer Basics
-    return <SscGeneralAwarenessNotes />;
+    return <SscGeneralAwarenessNotes topic={topic} />;
   };
 
   return (

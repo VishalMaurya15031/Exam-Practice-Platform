@@ -152,23 +152,23 @@ const syllabusData: SyllabusSection[] = [
 export default function RrbNtpcPage() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
 
-  const renderNotes = (subtitle: string) => {
+  const renderNotes = (subtitle: string, topic: string) => {
     const subLower = subtitle.toLowerCase();
 
     // Mathematics
     if (subLower.includes("math") || subLower.includes("arithmetic")) {
-      return <SscQuantitativeAptitudeNotes />;
+      return <SscQuantitativeAptitudeNotes topic={topic} />;
     }
     // Reasoning
     if (subLower.includes("intelligence") || subLower.includes("reasoning")) {
-      return <SscReasoningNotes />;
+      return <SscReasoningNotes topic={topic} />;
     }
     // General Science
     if (subLower.includes("science") || subLower.includes("biology") || subLower.includes("physics") || subLower.includes("chemistry")) {
-      return <RrbGeneralScienceNotes />;
+      return <RrbGeneralScienceNotes topic={topic} />;
     }
     // General Awareness
-    return <SscGeneralAwarenessNotes />;
+    return <SscGeneralAwarenessNotes topic={topic} />;
   };
 
   return (
@@ -233,7 +233,7 @@ export default function RrbNtpcPage() {
                             
                             {isExpanded && (
                               <div className="w-full">
-                                {renderNotes(sub.subtitle)}
+                                {renderNotes(sub.subtitle, topic)}
                               </div>
                             )}
                           </div>
@@ -267,7 +267,7 @@ export default function RrbNtpcPage() {
                       
                       {isExpanded && (
                         <div className="w-full">
-                          {renderNotes(section.title)}
+                          {renderNotes(section.title, topic)}
                         </div>
                       )}
                     </div>

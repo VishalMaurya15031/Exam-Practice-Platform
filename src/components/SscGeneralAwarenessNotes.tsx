@@ -2,8 +2,21 @@
 import React, { useState } from 'react';
 import { Landmark, Globe, Cpu, Star, ShieldAlert } from 'lucide-react';
 
-export default function SscGeneralAwarenessNotes() {
-  const [activeTab, setActiveTab] = useState<'polity' | 'history' | 'computer'>('polity');
+export default function SscGeneralAwarenessNotes({ topic }: { topic?: string }) {
+  const getDefaultTab = () => {
+    if (topic) {
+      const topicLower = topic.toLowerCase();
+      if (topicLower.includes("computer") || topicLower.includes("basics of computers") || topicLower.includes("कंप्यूटर")) {
+        return 'computer';
+      }
+      if (topicLower.includes("polity") || topicLower.includes("constitution") || topicLower.includes("governance") || topicLower.includes("राजव्यवस्था") || topicLower.includes("संविधान")) {
+        return 'polity';
+      }
+    }
+    return 'history'; // Default tab
+  };
+
+  const [activeTab, setActiveTab] = useState<'polity' | 'history' | 'computer'>(getDefaultTab());
 
   const tabs = [
     { id: 'polity', label: '🏛️ Polity & Constitution (राजव्यवस्था)', color: 'text-emerald-400 border-emerald-500/30 bg-emerald-500/5' },

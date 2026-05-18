@@ -85,12 +85,12 @@ export default function SscJePage() {
 
     // Check if Reasoning
     if (topicLower.includes("reasoning") || topicLower.includes("analogies") || topicLower.includes("similarities") || topicLower.includes("visualisation") || topicLower.includes("relations") || topicLower.includes("direction") || topicLower.includes("series")) {
-      return <SscReasoningNotes />;
+      return <SscReasoningNotes topic={topic} />;
     }
 
     // Check if General Awareness
     if (topicLower.includes("history") || topicLower.includes("geography") || topicLower.includes("polity") || topicLower.includes("research") || topicLower.includes("current")) {
-      return <SscGeneralAwarenessNotes />;
+      return <SscGeneralAwarenessNotes topic={topic} />;
     }
 
     // Render Premium Custom Engineering Notes for technical segments!

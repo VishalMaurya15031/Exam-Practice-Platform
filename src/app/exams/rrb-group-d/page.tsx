@@ -115,12 +115,12 @@ const syllabusData: SyllabusSection[] = [
 export default function RrbGroupDPage() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
 
-  const renderNotes = (sectionIdx: number) => {
+  const renderNotes = (sectionIdx: number, topic: string) => {
     // 0: Mathematics, 1: Reasoning, 2: Science, 3: General Awareness
-    if (sectionIdx === 0) return <SscQuantitativeAptitudeNotes />;
-    if (sectionIdx === 1) return <SscReasoningNotes />;
-    if (sectionIdx === 2) return <RrbGeneralScienceNotes />;
-    return <SscGeneralAwarenessNotes />;
+    if (sectionIdx === 0) return <SscQuantitativeAptitudeNotes topic={topic} />;
+    if (sectionIdx === 1) return <SscReasoningNotes topic={topic} />;
+    if (sectionIdx === 2) return <RrbGeneralScienceNotes topic={topic} />;
+    return <SscGeneralAwarenessNotes topic={topic} />;
   };
 
   return (
@@ -185,7 +185,7 @@ export default function RrbGroupDPage() {
                             
                             {isExpanded && (
                               <div className="w-full">
-                                {renderNotes(idx)}
+                                {renderNotes(idx, topic)}
                               </div>
                             )}
                           </div>
@@ -219,7 +219,7 @@ export default function RrbGroupDPage() {
                       
                       {isExpanded && (
                         <div className="w-full">
-                          {renderNotes(idx)}
+                          {renderNotes(idx, topic)}
                         </div>
                       )}
                     </div>

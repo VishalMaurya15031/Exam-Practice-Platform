@@ -68,12 +68,12 @@ const syllabusData: SyllabusSection[] = [
 export default function SscMtsPage() {
   const [expandedTopic, setExpandedTopic] = useState<string | null>(null);
 
-  const renderNotes = (subSectionIdx: number) => {
+  const renderNotes = (subSectionIdx: number, topic: string) => {
     // 0: Numerical, 1: English, 2: Reasoning, 3: GA
-    if (subSectionIdx === 0) return <SscQuantitativeAptitudeNotes />;
+    if (subSectionIdx === 0) return <SscQuantitativeAptitudeNotes topic={topic} />;
     if (subSectionIdx === 1) return <SscEnglishNotes />;
-    if (subSectionIdx === 2) return <SscReasoningNotes />;
-    return <SscGeneralAwarenessNotes />;
+    if (subSectionIdx === 2) return <SscReasoningNotes topic={topic} />;
+    return <SscGeneralAwarenessNotes topic={topic} />;
   };
 
   return (
@@ -138,7 +138,7 @@ export default function SscMtsPage() {
                             
                             {isExpanded && (
                               <div className="w-full">
-                                {renderNotes(sIdx)}
+                                {renderNotes(sIdx, topic)}
                               </div>
                             )}
                           </div>
