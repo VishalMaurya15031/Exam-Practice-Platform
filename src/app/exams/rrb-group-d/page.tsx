@@ -640,9 +640,11 @@ A  :  B  :  C
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 mb-12">
-        <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg shadow-sky-500/25">
-          Start Mock Test
-        </button>
+        <Link href="/exams/rrb-group-d/test">
+          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg shadow-sky-500/25">
+            Start Mock Test
+          </button>
+        </Link>
         <button 
           onClick={handleDownloadSyllabusPDF}
           className="px-6 py-3 rounded-xl bg-slate-800 border border-white/10 text-slate-300 font-semibold hover:bg-slate-700 transition-colors flex items-center gap-2"
