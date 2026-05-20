@@ -23,7 +23,7 @@ type MockTest = {
 };
 
 const mockTestsData: MockTest[] = [
-  {
+{
     id: 1,
     title: "RRB NTPC Mathematics Mock Test - 1",
     titleHindi: "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 1",
@@ -864,9 +864,3011 @@ const mockTestsData: MockTest[] = [
         category: "Easy"
       }
     ]
-  }
+  },
+{
+  "id": 4,
+  "title": "RRB NTPC Mathematics Mock Test - 4",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 4",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 4",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 4",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 40 and 120.",
+      "textHindi": "40 और 120 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "3200",
+        "3180",
+        "3224",
+        "3188"
+      ],
+      "correct": "3200",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/4 of a number is 160, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/4 भाग 160 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "320",
+        "310",
+        "335",
+        "350"
+      ],
+      "correct": "320",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 3 : 6. If their HCF is 8, find their LCM.",
+      "textHindi": "दो संख्याएँ 3 : 6 के अनुपात में हैं। यदि उनका म.स. (HCF) 8 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "144",
+        "136",
+        "152",
+        "288"
+      ],
+      "correct": "144",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹4000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹4000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹1200",
+        "₹1100",
+        "₹1300",
+        "₹2400"
+      ],
+      "correct": "₹1200",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 56% of the total votes and won by 480 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 56% मिला और उसने 480 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "4000",
+        "3500",
+        "4500",
+        "5000"
+      ],
+      "correct": "4000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 112 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 112 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "768 sq.m",
+        "748 sq.m",
+        "808 sq.m",
+        "1536 sq.m"
+      ],
+      "correct": "768 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 40 days and B in 60 days. A, B and C together can do it in 16 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 40 दिनों में और B उसे 60 दिनों में कर सकता है। A, B और C मिलकर इसे 16 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "48 days",
+        "46 days",
+        "52 days",
+        "96 days"
+      ],
+      "correct": "48 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 54 km/h crosses a pole in 14 seconds. Find the length of the train.",
+      "textHindi": "54 किमी/घंटा की गति से चलने वाली एक ट्रेन 14 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "210 m",
+        "190 m",
+        "260 m",
+        "310 m"
+      ],
+      "correct": "210 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹4000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹4000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹840",
+        "₹790",
+        "₹940",
+        "₹1040"
+      ],
+      "correct": "₹840",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹720 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹720 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹880",
+        "₹840",
+        "₹920",
+        "₹1760"
+      ],
+      "correct": "₹880",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 3, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 3 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "7",
+        "5",
+        "9",
+        "9"
+      ],
+      "correct": "7",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 20, 48, 12, 76, 32, 96, 60.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 20, 48, 12, 76, 32, 96, 60।",
+      "options": [
+        "84",
+        "79",
+        "89",
+        "96"
+      ],
+      "correct": "84",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^24 is divided by 5?",
+      "textHindi": "जब 2^24 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "correct": "1",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 12/16 as a decimal.",
+      "textHindi": "भिन्न 12/16 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 8/36 and 16/12.",
+      "textHindi": "भिन्नों 8/36 और 16/12 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 16 and 24.",
+      "textHindi": "16 और 24 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "36",
+        "34",
+        "39",
+        "72"
+      ],
+      "correct": "36",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 12 cm.",
+      "textHindi": "12 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "2304π cu.cm",
+        "2294π cu.cm",
+        "2328π cu.cm",
+        "4608π cu.cm"
+      ],
+      "correct": "2304π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 60 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 60 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "48 days",
+        "51 days",
+        "46 days",
+        "96 days"
+      ],
+      "correct": "48 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 120 km/h and returns at 240 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 120 किमी/घंटा की गति से तय करती है और 240 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "160 km/h",
+        "155 km/h",
+        "170 km/h",
+        "320 km/h"
+      ],
+      "correct": "160 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹4000 at 10% per annum for 2 years.",
+      "textHindi": "₹4000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹40",
+        "₹38",
+        "₹45",
+        "₹80"
+      ],
+      "correct": "₹40",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 20x + 96 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 20x + 96 = 0।",
+      "options": [
+        "x = 8, 12",
+        "x = -8, 12",
+        "x = 8, -12",
+        "x = -8, -12"
+      ],
+      "correct": "x = 8, 12",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 8, 20, 32, 44, 60.",
+      "textHindi": "आंकड़ों 8, 20, 32, 44, 60 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "32",
+        "30",
+        "35",
+        "32.8"
+      ],
+      "correct": "32",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 40 positive even numbers?",
+      "textHindi": "प्रथम 40 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "1640",
+        "1600",
+        "1680",
+        "3280"
+      ],
+      "correct": "1640",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 8, 12 and 16 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 8, 12 और 16 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "75",
+        "74",
+        "76",
+        "150"
+      ],
+      "correct": "75",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹320, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹320 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹400",
+        "₹390",
+        "₹410",
+        "₹800"
+      ],
+      "correct": "₹400",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 40 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 40 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "40 m",
+        "40√3 m",
+        "40/√3 m",
+        "80 m"
+      ],
+      "correct": "40 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 5,
+  "title": "RRB NTPC Mathematics Mock Test - 5",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 5",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 5",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 5",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 50 and 150.",
+      "textHindi": "50 और 150 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "5000",
+        "4980",
+        "5024",
+        "4988"
+      ],
+      "correct": "5000",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/5 of a number is 200, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/5 भाग 200 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "500",
+        "490",
+        "515",
+        "530"
+      ],
+      "correct": "500",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 4 : 7. If their HCF is 9, find their LCM.",
+      "textHindi": "दो संख्याएँ 4 : 7 के अनुपात में हैं। यदि उनका म.स. (HCF) 9 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "252",
+        "243",
+        "261",
+        "504"
+      ],
+      "correct": "252",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹5000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹5000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹1500",
+        "₹1400",
+        "₹1600",
+        "₹3000"
+      ],
+      "correct": "₹1500",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 52% of the total votes and won by 200 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 52% मिला और उसने 200 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "5000",
+        "4500",
+        "5500",
+        "6000"
+      ],
+      "correct": "5000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 140 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 140 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "1200 sq.m",
+        "1180 sq.m",
+        "1240 sq.m",
+        "2400 sq.m"
+      ],
+      "correct": "1200 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 50 days and B in 75 days. A, B and C together can do it in 20 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 50 दिनों में और B उसे 75 दिनों में कर सकता है। A, B और C मिलकर इसे 20 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "60 days",
+        "58 days",
+        "64 days",
+        "120 days"
+      ],
+      "correct": "60 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 72 km/h crosses a pole in 15 seconds. Find the length of the train.",
+      "textHindi": "72 किमी/घंटा की गति से चलने वाली एक ट्रेन 15 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "300 m",
+        "280 m",
+        "350 m",
+        "400 m"
+      ],
+      "correct": "300 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹5000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹5000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹1050",
+        "₹1000",
+        "₹1150",
+        "₹1250"
+      ],
+      "correct": "₹1050",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹900 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹900 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹1100",
+        "₹1060",
+        "₹1140",
+        "₹2200"
+      ],
+      "correct": "₹1100",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 4, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 4 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "14",
+        "12",
+        "16",
+        "16"
+      ],
+      "correct": "14",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 25, 60, 15, 95, 40, 120, 75.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 25, 60, 15, 95, 40, 120, 75।",
+      "options": [
+        "105",
+        "100",
+        "110",
+        "120"
+      ],
+      "correct": "105",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^25 is divided by 5?",
+      "textHindi": "जब 2^25 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "0",
+        "3"
+      ],
+      "correct": "2",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 15/20 as a decimal.",
+      "textHindi": "भिन्न 15/20 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 10/45 and 20/15.",
+      "textHindi": "भिन्नों 10/45 और 20/15 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 20 and 30.",
+      "textHindi": "20 और 30 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "45",
+        "43",
+        "48",
+        "90"
+      ],
+      "correct": "45",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 15 cm.",
+      "textHindi": "15 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "4500π cu.cm",
+        "4490π cu.cm",
+        "4524π cu.cm",
+        "9000π cu.cm"
+      ],
+      "correct": "4500π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 75 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 75 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "60 days",
+        "63 days",
+        "58 days",
+        "120 days"
+      ],
+      "correct": "60 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 150 km/h and returns at 300 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 150 किमी/घंटा की गति से तय करती है और 300 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "200 km/h",
+        "195 km/h",
+        "210 km/h",
+        "400 km/h"
+      ],
+      "correct": "200 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹5000 at 10% per annum for 2 years.",
+      "textHindi": "₹5000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹50",
+        "₹48",
+        "₹55",
+        "₹100"
+      ],
+      "correct": "₹50",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 25x + 150 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 25x + 150 = 0।",
+      "options": [
+        "x = 10, 15",
+        "x = -10, 15",
+        "x = 10, -15",
+        "x = -10, -15"
+      ],
+      "correct": "x = 10, 15",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 10, 25, 40, 55, 75.",
+      "textHindi": "आंकड़ों 10, 25, 40, 55, 75 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "40",
+        "38",
+        "43",
+        "41.0"
+      ],
+      "correct": "40",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 50 positive even numbers?",
+      "textHindi": "प्रथम 50 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "2550",
+        "2500",
+        "2600",
+        "5100"
+      ],
+      "correct": "2550",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 10, 15 and 20 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 10, 15 और 20 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "60",
+        "59",
+        "61",
+        "120"
+      ],
+      "correct": "60",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹400, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹400 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹500",
+        "₹490",
+        "₹510",
+        "₹1000"
+      ],
+      "correct": "₹500",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 50 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 50 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "50 m",
+        "50√3 m",
+        "50/√3 m",
+        "100 m"
+      ],
+      "correct": "50 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 6,
+  "title": "RRB NTPC Mathematics Mock Test - 6",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 6",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 6",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 6",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 60 and 180.",
+      "textHindi": "60 और 180 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "7200",
+        "7180",
+        "7224",
+        "7188"
+      ],
+      "correct": "7200",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/3 of a number is 240, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/3 भाग 240 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "360",
+        "350",
+        "375",
+        "390"
+      ],
+      "correct": "360",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 3 : 5. If their HCF is 10, find their LCM.",
+      "textHindi": "दो संख्याएँ 3 : 5 के अनुपात में हैं। यदि उनका म.स. (HCF) 10 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "150",
+        "140",
+        "160",
+        "300"
+      ],
+      "correct": "150",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹6000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹6000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹1800",
+        "₹1700",
+        "₹1900",
+        "₹3600"
+      ],
+      "correct": "₹1800",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 53% of the total votes and won by 360 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 53% मिला और उसने 360 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "6000",
+        "5500",
+        "6500",
+        "7000"
+      ],
+      "correct": "6000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 168 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 168 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "1728 sq.m",
+        "1708 sq.m",
+        "1768 sq.m",
+        "3456 sq.m"
+      ],
+      "correct": "1728 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 60 days and B in 90 days. A, B and C together can do it in 24 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 60 दिनों में और B उसे 90 दिनों में कर सकता है। A, B और C मिलकर इसे 24 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "72 days",
+        "70 days",
+        "76 days",
+        "144 days"
+      ],
+      "correct": "72 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 36 km/h crosses a pole in 16 seconds. Find the length of the train.",
+      "textHindi": "36 किमी/घंटा की गति से चलने वाली एक ट्रेन 16 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "160 m",
+        "140 m",
+        "210 m",
+        "260 m"
+      ],
+      "correct": "160 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹6000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹6000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹1260",
+        "₹1210",
+        "₹1360",
+        "₹1460"
+      ],
+      "correct": "₹1260",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹1080 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹1080 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹1320",
+        "₹1280",
+        "₹1360",
+        "₹2640"
+      ],
+      "correct": "₹1320",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 5, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 5 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "23",
+        "21",
+        "25",
+        "25"
+      ],
+      "correct": "23",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 30, 72, 18, 114, 48, 144, 90.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 30, 72, 18, 114, 48, 144, 90।",
+      "options": [
+        "126",
+        "121",
+        "131",
+        "144"
+      ],
+      "correct": "126",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^26 is divided by 5?",
+      "textHindi": "जब 2^26 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "0"
+      ],
+      "correct": "4",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 18/24 as a decimal.",
+      "textHindi": "भिन्न 18/24 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 12/54 and 24/18.",
+      "textHindi": "भिन्नों 12/54 और 24/18 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 24 and 36.",
+      "textHindi": "24 और 36 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "54",
+        "52",
+        "57",
+        "108"
+      ],
+      "correct": "54",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 18 cm.",
+      "textHindi": "18 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "7776π cu.cm",
+        "7766π cu.cm",
+        "7800π cu.cm",
+        "15552π cu.cm"
+      ],
+      "correct": "7776π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 90 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 90 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "72 days",
+        "75 days",
+        "70 days",
+        "144 days"
+      ],
+      "correct": "72 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 180 km/h and returns at 360 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 180 किमी/घंटा की गति से तय करती है और 360 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "240 km/h",
+        "235 km/h",
+        "250 km/h",
+        "480 km/h"
+      ],
+      "correct": "240 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹6000 at 10% per annum for 2 years.",
+      "textHindi": "₹6000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹60",
+        "₹58",
+        "₹65",
+        "₹120"
+      ],
+      "correct": "₹60",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 30x + 216 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 30x + 216 = 0।",
+      "options": [
+        "x = 12, 18",
+        "x = -12, 18",
+        "x = 12, -18",
+        "x = -12, -18"
+      ],
+      "correct": "x = 12, 18",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 12, 30, 48, 66, 90.",
+      "textHindi": "आंकड़ों 12, 30, 48, 66, 90 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "48",
+        "46",
+        "51",
+        "49.2"
+      ],
+      "correct": "48",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 60 positive even numbers?",
+      "textHindi": "प्रथम 60 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "3660",
+        "3600",
+        "3720",
+        "7320"
+      ],
+      "correct": "3660",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 12, 18 and 24 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 12, 18 और 24 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "50",
+        "49",
+        "51",
+        "100"
+      ],
+      "correct": "50",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹480, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹480 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹600",
+        "₹590",
+        "₹610",
+        "₹1200"
+      ],
+      "correct": "₹600",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 60 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 60 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "60 m",
+        "60√3 m",
+        "60/√3 m",
+        "120 m"
+      ],
+      "correct": "60 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 7,
+  "title": "RRB NTPC Mathematics Mock Test - 7",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 7",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 7",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 7",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 70 and 210.",
+      "textHindi": "70 और 210 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "9800",
+        "9780",
+        "9824",
+        "9788"
+      ],
+      "correct": "9800",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/4 of a number is 280, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/4 भाग 280 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "560",
+        "550",
+        "575",
+        "590"
+      ],
+      "correct": "560",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 4 : 6. If their HCF is 11, find their LCM.",
+      "textHindi": "दो संख्याएँ 4 : 6 के अनुपात में हैं। यदि उनका म.स. (HCF) 11 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "264",
+        "253",
+        "275",
+        "528"
+      ],
+      "correct": "264",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹7000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹7000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹2100",
+        "₹2000",
+        "₹2200",
+        "₹4200"
+      ],
+      "correct": "₹2100",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 54% of the total votes and won by 560 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 54% मिला और उसने 560 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "7000",
+        "6500",
+        "7500",
+        "8000"
+      ],
+      "correct": "7000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 196 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 196 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "2352 sq.m",
+        "2332 sq.m",
+        "2392 sq.m",
+        "4704 sq.m"
+      ],
+      "correct": "2352 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 70 days and B in 105 days. A, B and C together can do it in 28 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 70 दिनों में और B उसे 105 दिनों में कर सकता है। A, B और C मिलकर इसे 28 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "84 days",
+        "82 days",
+        "88 days",
+        "168 days"
+      ],
+      "correct": "84 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 54 km/h crosses a pole in 17 seconds. Find the length of the train.",
+      "textHindi": "54 किमी/घंटा की गति से चलने वाली एक ट्रेन 17 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "255 m",
+        "235 m",
+        "305 m",
+        "355 m"
+      ],
+      "correct": "255 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹7000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹7000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹1470",
+        "₹1420",
+        "₹1570",
+        "₹1670"
+      ],
+      "correct": "₹1470",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹1260 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹1260 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹1540",
+        "₹1500",
+        "₹1580",
+        "₹3080"
+      ],
+      "correct": "₹1540",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 6, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 6 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "34",
+        "32",
+        "36",
+        "36"
+      ],
+      "correct": "34",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 35, 84, 21, 133, 56, 168, 105.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 35, 84, 21, 133, 56, 168, 105।",
+      "options": [
+        "147",
+        "142",
+        "152",
+        "168"
+      ],
+      "correct": "147",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^27 is divided by 5?",
+      "textHindi": "जब 2^27 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "4",
+        "0",
+        "1",
+        "3"
+      ],
+      "correct": "3",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 21/28 as a decimal.",
+      "textHindi": "भिन्न 21/28 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 14/63 and 28/21.",
+      "textHindi": "भिन्नों 14/63 और 28/21 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 28 and 42.",
+      "textHindi": "28 और 42 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "63",
+        "61",
+        "66",
+        "126"
+      ],
+      "correct": "63",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 21 cm.",
+      "textHindi": "21 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "12348π cu.cm",
+        "12338π cu.cm",
+        "12372π cu.cm",
+        "24696π cu.cm"
+      ],
+      "correct": "12348π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 105 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 105 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "84 days",
+        "87 days",
+        "82 days",
+        "168 days"
+      ],
+      "correct": "84 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 210 km/h and returns at 420 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 210 किमी/घंटा की गति से तय करती है और 420 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "280 km/h",
+        "275 km/h",
+        "290 km/h",
+        "560 km/h"
+      ],
+      "correct": "280 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹7000 at 10% per annum for 2 years.",
+      "textHindi": "₹7000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹70",
+        "₹68",
+        "₹75",
+        "₹140"
+      ],
+      "correct": "₹70",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 35x + 294 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 35x + 294 = 0।",
+      "options": [
+        "x = 14, 21",
+        "x = -14, 21",
+        "x = 14, -21",
+        "x = -14, -21"
+      ],
+      "correct": "x = 14, 21",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 14, 35, 56, 77, 105.",
+      "textHindi": "आंकड़ों 14, 35, 56, 77, 105 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "56",
+        "54",
+        "59",
+        "57.4"
+      ],
+      "correct": "56",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 70 positive even numbers?",
+      "textHindi": "प्रथम 70 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "4970",
+        "4900",
+        "5040",
+        "9940"
+      ],
+      "correct": "4970",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 14, 21 and 28 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 14, 21 और 28 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "42",
+        "41",
+        "43",
+        "84"
+      ],
+      "correct": "42",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹560, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹560 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹700",
+        "₹690",
+        "₹710",
+        "₹1400"
+      ],
+      "correct": "₹700",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 70 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 70 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "70 m",
+        "70√3 m",
+        "70/√3 m",
+        "140 m"
+      ],
+      "correct": "70 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 8,
+  "title": "RRB NTPC Mathematics Mock Test - 8",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 8",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 8",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 8",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 80 and 240.",
+      "textHindi": "80 और 240 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "12800",
+        "12780",
+        "12824",
+        "12788"
+      ],
+      "correct": "12800",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/5 of a number is 320, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/5 भाग 320 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "800",
+        "790",
+        "815",
+        "830"
+      ],
+      "correct": "800",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 3 : 7. If their HCF is 12, find their LCM.",
+      "textHindi": "दो संख्याएँ 3 : 7 के अनुपात में हैं। यदि उनका म.स. (HCF) 12 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "252",
+        "240",
+        "264",
+        "504"
+      ],
+      "correct": "252",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹8000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹8000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹2400",
+        "₹2300",
+        "₹2500",
+        "₹4800"
+      ],
+      "correct": "₹2400",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 55% of the total votes and won by 800 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 55% मिला और उसने 800 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "8000",
+        "7500",
+        "8500",
+        "9000"
+      ],
+      "correct": "8000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 224 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 224 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "3072 sq.m",
+        "3052 sq.m",
+        "3112 sq.m",
+        "6144 sq.m"
+      ],
+      "correct": "3072 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 80 days and B in 120 days. A, B and C together can do it in 32 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 80 दिनों में और B उसे 120 दिनों में कर सकता है। A, B और C मिलकर इसे 32 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "96 days",
+        "94 days",
+        "100 days",
+        "192 days"
+      ],
+      "correct": "96 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 72 km/h crosses a pole in 18 seconds. Find the length of the train.",
+      "textHindi": "72 किमी/घंटा की गति से चलने वाली एक ट्रेन 18 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "360 m",
+        "340 m",
+        "410 m",
+        "460 m"
+      ],
+      "correct": "360 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹8000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹8000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹1680",
+        "₹1630",
+        "₹1780",
+        "₹1880"
+      ],
+      "correct": "₹1680",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹1440 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹1440 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹1760",
+        "₹1720",
+        "₹1800",
+        "₹3520"
+      ],
+      "correct": "₹1760",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 3, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 3 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "7",
+        "5",
+        "9",
+        "9"
+      ],
+      "correct": "7",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 40, 96, 24, 152, 64, 192, 120.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 40, 96, 24, 152, 64, 192, 120।",
+      "options": [
+        "168",
+        "163",
+        "173",
+        "192"
+      ],
+      "correct": "168",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^28 is divided by 5?",
+      "textHindi": "जब 2^28 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "3"
+      ],
+      "correct": "1",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 24/32 as a decimal.",
+      "textHindi": "भिन्न 24/32 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 16/72 and 32/24.",
+      "textHindi": "भिन्नों 16/72 और 32/24 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 32 and 48.",
+      "textHindi": "32 और 48 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "72",
+        "70",
+        "75",
+        "144"
+      ],
+      "correct": "72",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 24 cm.",
+      "textHindi": "24 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "18432π cu.cm",
+        "18422π cu.cm",
+        "18456π cu.cm",
+        "36864π cu.cm"
+      ],
+      "correct": "18432π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 120 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 120 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "96 days",
+        "99 days",
+        "94 days",
+        "192 days"
+      ],
+      "correct": "96 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 240 km/h and returns at 480 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 240 किमी/घंटा की गति से तय करती है और 480 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "320 km/h",
+        "315 km/h",
+        "330 km/h",
+        "640 km/h"
+      ],
+      "correct": "320 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹8000 at 10% per annum for 2 years.",
+      "textHindi": "₹8000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹80",
+        "₹78",
+        "₹85",
+        "₹160"
+      ],
+      "correct": "₹80",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 40x + 384 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 40x + 384 = 0।",
+      "options": [
+        "x = 16, 24",
+        "x = -16, 24",
+        "x = 16, -24",
+        "x = -16, -24"
+      ],
+      "correct": "x = 16, 24",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 16, 40, 64, 88, 120.",
+      "textHindi": "आंकड़ों 16, 40, 64, 88, 120 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "64",
+        "62",
+        "67",
+        "65.6"
+      ],
+      "correct": "64",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 80 positive even numbers?",
+      "textHindi": "प्रथम 80 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "6480",
+        "6400",
+        "6560",
+        "12960"
+      ],
+      "correct": "6480",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 16, 24 and 32 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 16, 24 और 32 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "37",
+        "36",
+        "38",
+        "74"
+      ],
+      "correct": "37",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹640, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹640 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹800",
+        "₹790",
+        "₹810",
+        "₹1600"
+      ],
+      "correct": "₹800",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 80 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 80 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "80 m",
+        "80√3 m",
+        "80/√3 m",
+        "160 m"
+      ],
+      "correct": "80 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 9,
+  "title": "RRB NTPC Mathematics Mock Test - 9",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 9",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 9",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 9",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 90 and 270.",
+      "textHindi": "90 और 270 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "16200",
+        "16180",
+        "16224",
+        "16188"
+      ],
+      "correct": "16200",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/3 of a number is 360, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/3 भाग 360 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "540",
+        "530",
+        "555",
+        "570"
+      ],
+      "correct": "540",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 4 : 5. If their HCF is 13, find their LCM.",
+      "textHindi": "दो संख्याएँ 4 : 5 के अनुपात में हैं। यदि उनका म.स. (HCF) 13 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "260",
+        "247",
+        "273",
+        "520"
+      ],
+      "correct": "260",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹9000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹9000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹2700",
+        "₹2600",
+        "₹2800",
+        "₹5400"
+      ],
+      "correct": "₹2700",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 56% of the total votes and won by 1080 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 56% मिला और उसने 1080 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "9000",
+        "8500",
+        "9500",
+        "10000"
+      ],
+      "correct": "9000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 252 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 252 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "3888 sq.m",
+        "3868 sq.m",
+        "3928 sq.m",
+        "7776 sq.m"
+      ],
+      "correct": "3888 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 90 days and B in 135 days. A, B and C together can do it in 36 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 90 दिनों में और B उसे 135 दिनों में कर सकता है। A, B और C मिलकर इसे 36 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "108 days",
+        "106 days",
+        "112 days",
+        "216 days"
+      ],
+      "correct": "108 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 36 km/h crosses a pole in 19 seconds. Find the length of the train.",
+      "textHindi": "36 किमी/घंटा की गति से चलने वाली एक ट्रेन 19 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "190 m",
+        "170 m",
+        "240 m",
+        "290 m"
+      ],
+      "correct": "190 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹9000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹9000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹1890",
+        "₹1840",
+        "₹1990",
+        "₹2090"
+      ],
+      "correct": "₹1890",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹1620 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹1620 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹1980",
+        "₹1940",
+        "₹2020",
+        "₹3960"
+      ],
+      "correct": "₹1980",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 4, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 4 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "14",
+        "12",
+        "16",
+        "16"
+      ],
+      "correct": "14",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 45, 108, 27, 171, 72, 216, 135.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 45, 108, 27, 171, 72, 216, 135।",
+      "options": [
+        "189",
+        "184",
+        "194",
+        "216"
+      ],
+      "correct": "189",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^29 is divided by 5?",
+      "textHindi": "जब 2^29 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "0",
+        "3"
+      ],
+      "correct": "2",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 27/36 as a decimal.",
+      "textHindi": "भिन्न 27/36 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 18/81 and 36/27.",
+      "textHindi": "भिन्नों 18/81 और 36/27 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 36 and 54.",
+      "textHindi": "36 और 54 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "81",
+        "79",
+        "84",
+        "162"
+      ],
+      "correct": "81",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 27 cm.",
+      "textHindi": "27 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "26244π cu.cm",
+        "26234π cu.cm",
+        "26268π cu.cm",
+        "52488π cu.cm"
+      ],
+      "correct": "26244π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 135 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 135 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "108 days",
+        "111 days",
+        "106 days",
+        "216 days"
+      ],
+      "correct": "108 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 270 km/h and returns at 540 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 270 किमी/घंटा की गति से तय करती है और 540 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "360 km/h",
+        "355 km/h",
+        "370 km/h",
+        "720 km/h"
+      ],
+      "correct": "360 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹9000 at 10% per annum for 2 years.",
+      "textHindi": "₹9000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹90",
+        "₹88",
+        "₹95",
+        "₹180"
+      ],
+      "correct": "₹90",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 45x + 486 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 45x + 486 = 0।",
+      "options": [
+        "x = 18, 27",
+        "x = -18, 27",
+        "x = 18, -27",
+        "x = -18, -27"
+      ],
+      "correct": "x = 18, 27",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 18, 45, 72, 99, 135.",
+      "textHindi": "आंकड़ों 18, 45, 72, 99, 135 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "72",
+        "70",
+        "75",
+        "73.8"
+      ],
+      "correct": "72",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 90 positive even numbers?",
+      "textHindi": "प्रथम 90 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "8190",
+        "8100",
+        "8280",
+        "16380"
+      ],
+      "correct": "8190",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 18, 27 and 36 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 18, 27 और 36 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "33",
+        "32",
+        "34",
+        "66"
+      ],
+      "correct": "33",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹720, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹720 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹900",
+        "₹890",
+        "₹910",
+        "₹1800"
+      ],
+      "correct": "₹900",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 90 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 90 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "90 m",
+        "90√3 m",
+        "90/√3 m",
+        "180 m"
+      ],
+      "correct": "90 m",
+      "category": "Medium"
+    }
+  ]
+},
+{
+  "id": 10,
+  "title": "RRB NTPC Mathematics Mock Test - 10",
+  "titleHindi": "आरआरबी एनटीपीसी गणित मॉक टेस्ट - 10",
+  "description": "30 Questions | 45 Minutes | Bilingual Exam Practice Set 10",
+  "descriptionHindi": "30 प्रश्न | 45 मिनट | द्विभाषी परीक्षा अभ्यास सेट 10",
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Number System",
+      "text": "Find the sum of all odd numbers between 100 and 300.",
+      "textHindi": "100 और 300 के बीच की सभी विषम संख्याओं का योग ज्ञात कीजिए।",
+      "options": [
+        "20000",
+        "19980",
+        "20024",
+        "19988"
+      ],
+      "correct": "20000",
+      "category": "Medium"
+    },
+    {
+      "id": 2,
+      "topic": "Decimals & Fractions",
+      "text": "If 2/4 of a number is 400, find the number.",
+      "textHindi": "यदि किसी संख्या का 2/4 भाग 400 है, तो वह संख्या ज्ञात कीजिए।",
+      "options": [
+        "800",
+        "790",
+        "815",
+        "830"
+      ],
+      "correct": "800",
+      "category": "Easy"
+    },
+    {
+      "id": 3,
+      "topic": "LCM & HCF",
+      "text": "Two numbers are in the ratio 3 : 6. If their HCF is 14, find their LCM.",
+      "textHindi": "दो संख्याएँ 3 : 6 के अनुपात में हैं। यदि उनका म.स. (HCF) 14 है, तो उनका ल.स. (LCM) ज्ञात कीजिए।",
+      "options": [
+        "252",
+        "238",
+        "266",
+        "504"
+      ],
+      "correct": "252",
+      "category": "Easy"
+    },
+    {
+      "id": 4,
+      "topic": "Ratios & Proportions",
+      "text": "Divide ₹10000 among A, B and C in the ratio 2 : 3 : 5. What is B's share?",
+      "textHindi": "₹10000 को A, B और C में 2 : 3 : 5 के अनुपात में विभाजित करें। B का हिस्सा क्या है?",
+      "options": [
+        "₹3000",
+        "₹2900",
+        "₹3100",
+        "₹6000"
+      ],
+      "correct": "₹3000",
+      "category": "Medium"
+    },
+    {
+      "id": 5,
+      "topic": "Percentage",
+      "text": "In an election, a candidate got 52% of the total votes and won by 400 votes. Find the total number of votes polled.",
+      "textHindi": "एक चुनाव में, एक उम्मीदवार को कुल मतों का 52% मिला और उसने 400 मतों से जीत हासिल की। डाले गए कुल मतों की संख्या ज्ञात कीजिए।",
+      "options": [
+        "10000",
+        "9500",
+        "10500",
+        "11000"
+      ],
+      "correct": "10000",
+      "category": "Medium"
+    },
+    {
+      "id": 6,
+      "topic": "Mensuration",
+      "text": "The length and breadth of a rectangle are in the ratio 4 : 3. If its perimeter is 280 m, find its area.",
+      "textHindi": "एक आयत की लंबाई और चौड़ाई 4 : 3 के अनुपात में हैं। यदि इसका परिमाप 280 मीटर है, तो इसका क्षेत्रफल ज्ञात कीजिए।",
+      "options": [
+        "4800 sq.m",
+        "4780 sq.m",
+        "4840 sq.m",
+        "9600 sq.m"
+      ],
+      "correct": "4800 sq.m",
+      "category": "Medium"
+    },
+    {
+      "id": 7,
+      "topic": "Time and Work",
+      "text": "A can do a piece of work in 100 days and B in 150 days. A, B and C together can do it in 40 days. C alone can do it in how many days?",
+      "textHindi": "A किसी कार्य को 100 दिनों में और B उसे 150 दिनों में कर सकता है। A, B और C मिलकर इसे 40 दिनों में कर सकते हैं। C अकेला इसे कितने दिनों में कर सकता है?",
+      "options": [
+        "120 days",
+        "118 days",
+        "124 days",
+        "240 days"
+      ],
+      "correct": "120 days",
+      "category": "Medium"
+    },
+    {
+      "id": 8,
+      "topic": "Time and Distance",
+      "text": "A train running at 54 km/h crosses a pole in 20 seconds. Find the length of the train.",
+      "textHindi": "54 किमी/घंटा की गति से चलने वाली एक ट्रेन 20 सेकंड में एक खंभे को पार करती है। ट्रेन की लंबाई ज्ञात कीजिए।",
+      "options": [
+        "300 m",
+        "280 m",
+        "350 m",
+        "400 m"
+      ],
+      "correct": "300 m",
+      "category": "Easy"
+    },
+    {
+      "id": 9,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the compound interest on ₹10000 at 10% per annum for 2 years, compounded annually.",
+      "textHindi": "₹10000 पर 10% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज ज्ञात कीजिए, जो वार्षिक रूप से संयोजित होता है।",
+      "options": [
+        "₹2100",
+        "₹2050",
+        "₹2200",
+        "₹2300"
+      ],
+      "correct": "₹2100",
+      "category": "Medium"
+    },
+    {
+      "id": 10,
+      "topic": "Profit and Loss",
+      "text": "A man sells an article for ₹1800 at a loss of 10%. What should be the selling price to gain 10%?",
+      "textHindi": "एक व्यक्ति एक वस्तु को 10% की हानि पर ₹1800 में बेचता है। 10% का लाभ कमाने के लिए विक्रय मूल्य क्या होना चाहिए?",
+      "options": [
+        "₹2200",
+        "₹2160",
+        "₹2240",
+        "₹4400"
+      ],
+      "correct": "₹2200",
+      "category": "Medium"
+    },
+    {
+      "id": 11,
+      "topic": "Elementary Algebra",
+      "text": "If x + 1/x = 5, find the value of x² + 1/x².",
+      "textHindi": "यदि x + 1/x = 5 है, तो x² + 1/x² का मान ज्ञात कीजिए।",
+      "options": [
+        "23",
+        "21",
+        "25",
+        "25"
+      ],
+      "correct": "23",
+      "category": "Easy"
+    },
+    {
+      "id": 12,
+      "topic": "Geometry & Trigonometry",
+      "text": "In a triangle, the angles are in the ratio 2 : 3 : 4. Find the smallest angle of the triangle.",
+      "textHindi": "एक त्रिभुज में, कोण 2 : 3 : 4 के अनुपात में हैं। त्रिभुज का सबसे छोटा कोण ज्ञात कीजिए।",
+      "options": [
+        "40°",
+        "30°",
+        "50°",
+        "80°"
+      ],
+      "correct": "40°",
+      "category": "Easy"
+    },
+    {
+      "id": 13,
+      "topic": "Elementary Statistics",
+      "text": "Find the range of the given data: 50, 120, 30, 190, 80, 240, 150.",
+      "textHindi": "दिए गए आंकड़ों का परास (range) ज्ञात कीजिए: 50, 120, 30, 190, 80, 240, 150।",
+      "options": [
+        "210",
+        "205",
+        "215",
+        "240"
+      ],
+      "correct": "210",
+      "category": "Easy"
+    },
+    {
+      "id": 14,
+      "topic": "Number System",
+      "text": "What is the remainder when 2^30 is divided by 5?",
+      "textHindi": "जब 2^30 को 5 से विभाजित किया जाता है तो शेषफल क्या होगा?",
+      "options": [
+        "2",
+        "4",
+        "1",
+        "0"
+      ],
+      "correct": "4",
+      "category": "Medium"
+    },
+    {
+      "id": 15,
+      "topic": "Decimals & Fractions",
+      "text": "Express the fraction 30/40 as a decimal.",
+      "textHindi": "भिन्न 30/40 को दशमलव के रूप में व्यक्त करें।",
+      "options": [
+        "0.75",
+        "0.70",
+        "0.80",
+        "0.65"
+      ],
+      "correct": "0.75",
+      "category": "Easy"
+    },
+    {
+      "id": 16,
+      "topic": "LCM & HCF",
+      "text": "Find the HCF of the fractions 20/90 and 40/30.",
+      "textHindi": "भिन्नों 20/90 और 40/30 का म.स. (HCF) ज्ञात कीजिए।",
+      "options": [
+        "2/9",
+        "4/3",
+        "2/3",
+        "1/9"
+      ],
+      "correct": "2/9",
+      "category": "Medium"
+    },
+    {
+      "id": 17,
+      "topic": "Ratios & Proportions",
+      "text": "Find the third proportional to 40 and 60.",
+      "textHindi": "40 और 60 का तृतीय अनुपाती (third proportional) ज्ञात कीजिए।",
+      "options": [
+        "90",
+        "88",
+        "93",
+        "180"
+      ],
+      "correct": "90",
+      "category": "Medium"
+    },
+    {
+      "id": 18,
+      "topic": "Percentage",
+      "text": "If the price of petrol is increased by 25%, by how much percent should a user reduce his consumption so that his expenditure remains unchanged?",
+      "textHindi": "यदि पेट्रोल की कीमत में 25% की वृद्धि होती है, तो एक उपयोगकर्ता को अपनी खपत में कितने प्रतिशत की कमी करनी चाहिए ताकि उसका खर्च अपरिवर्तित रहे?",
+      "options": [
+        "20%",
+        "25%",
+        "15%",
+        "30%"
+      ],
+      "correct": "20%",
+      "category": "Medium"
+    },
+    {
+      "id": 19,
+      "topic": "Mensuration",
+      "text": "Find the volume of a sphere of radius 30 cm.",
+      "textHindi": "30 सेमी त्रिज्या वाले एक गोले का आयतन ज्ञात कीजिए।",
+      "options": [
+        "36000π cu.cm",
+        "35990π cu.cm",
+        "36024π cu.cm",
+        "72000π cu.cm"
+      ],
+      "correct": "36000π cu.cm",
+      "category": "Medium"
+    },
+    {
+      "id": 20,
+      "topic": "Time and Work",
+      "text": "A can complete a work in 150 days. B is 25% more efficient than A. In how many days can B complete the same work alone?",
+      "textHindi": "A किसी काम को 150 दिनों में पूरा कर सकता है। B, A से 25% अधिक कार्यकुशल है। B अकेला उसी काम को कितने दिनों में पूरा कर सकता है?",
+      "options": [
+        "120 days",
+        "123 days",
+        "118 days",
+        "240 days"
+      ],
+      "correct": "120 days",
+      "category": "Medium"
+    },
+    {
+      "id": 21,
+      "topic": "Time and Distance",
+      "text": "A car covers a certain distance at 300 km/h and returns at 600 km/h. Find the average speed of the car for the entire journey.",
+      "textHindi": "एक कार एक निश्चित दूरी 300 किमी/घंटा की गति से तय करती है और 600 किमी/घंटा की गति से वापस आती है। पूरी यात्रा के लिए कार की औसत गति ज्ञात कीजिए।",
+      "options": [
+        "400 km/h",
+        "395 km/h",
+        "410 km/h",
+        "800 km/h"
+      ],
+      "correct": "400 km/h",
+      "category": "Medium"
+    },
+    {
+      "id": 22,
+      "topic": "Simple & Compound Interest",
+      "text": "Find the difference between the compound interest and simple interest on ₹10000 at 10% per annum for 2 years.",
+      "textHindi": "₹10000 पर 10% वार्षिक दर से 2 वर्ष के चक्रवृद्धि ब्याज और साधारण ब्याज के बीच का अंतर ज्ञात कीजिए।",
+      "options": [
+        "₹100",
+        "₹98",
+        "₹105",
+        "₹200"
+      ],
+      "correct": "₹100",
+      "category": "Hard"
+    },
+    {
+      "id": 23,
+      "topic": "Profit and Loss",
+      "text": "Two successive discounts of 20% and 10% are equivalent to a single discount of how many percent?",
+      "textHindi": "20% और 10% की दो क्रमिक छूटें कितने प्रतिशत की एकल छूट के बराबर हैं?",
+      "options": [
+        "28%",
+        "30%",
+        "25%",
+        "32%"
+      ],
+      "correct": "28%",
+      "category": "Easy"
+    },
+    {
+      "id": 24,
+      "topic": "Elementary Algebra",
+      "text": "Solve the quadratic equation: x² - 50x + 600 = 0.",
+      "textHindi": "द्विघात समीकरण हल करें: x² - 50x + 600 = 0।",
+      "options": [
+        "x = 20, 30",
+        "x = -20, 30",
+        "x = 20, -30",
+        "x = -20, -30"
+      ],
+      "correct": "x = 20, 30",
+      "category": "Medium"
+    },
+    {
+      "id": 25,
+      "topic": "Geometry & Trigonometry",
+      "text": "If sin θ = 3/5, find the value of cos θ.",
+      "textHindi": "यदि sin θ = 3/5 है, तो cos θ का मान ज्ञात कीजिए।",
+      "options": [
+        "4/5",
+        "3/4",
+        "5/4",
+        "3/5"
+      ],
+      "correct": "4/5",
+      "category": "Easy"
+    },
+    {
+      "id": 26,
+      "topic": "Elementary Statistics",
+      "text": "Find the median of the data: 20, 50, 80, 110, 150.",
+      "textHindi": "आंकड़ों 20, 50, 80, 110, 150 का माध्यिका (median) ज्ञात कीजिए।",
+      "options": [
+        "80",
+        "78",
+        "83",
+        "82.0"
+      ],
+      "correct": "80",
+      "category": "Easy"
+    },
+    {
+      "id": 27,
+      "topic": "Number System",
+      "text": "What is the sum of the first 100 positive even numbers?",
+      "textHindi": "प्रथम 100 धनात्मक सम संख्याओं का योग क्या होगा?",
+      "options": [
+        "10100",
+        "10000",
+        "10200",
+        "20200"
+      ],
+      "correct": "10100",
+      "category": "Medium"
+    },
+    {
+      "id": 28,
+      "topic": "LCM & HCF",
+      "text": "Three bells toll together at intervals of 20, 30 and 40 seconds respectively. How many times will they toll together in 1 hour (excluding the start)?",
+      "textHindi": "तीन घंटियाँ क्रमशः 20, 30 और 40 सेकंड के अंतराल पर एक साथ बजती हैं। वे 1 घंटे में कितनी बार एक साथ बजेंगी (प्रारंभिक को छोड़कर)?",
+      "options": [
+        "30",
+        "29",
+        "31",
+        "60"
+      ],
+      "correct": "30",
+      "category": "Hard"
+    },
+    {
+      "id": 29,
+      "topic": "Profit and Loss",
+      "text": "By selling an item for ₹800, a shopkeeper suffers a loss of 20%. Find the cost price (CP) of the item.",
+      "textHindi": "एक वस्तु को ₹800 में बेचने पर, एक दुकानदार को 20% की हानि होती है। वस्तु का क्रय मूल्य (CP) ज्ञात कीजिए।",
+      "options": [
+        "₹1000",
+        "₹990",
+        "₹1010",
+        "₹2000"
+      ],
+      "correct": "₹1000",
+      "category": "Medium"
+    },
+    {
+      "id": 30,
+      "topic": "Geometry & Trigonometry",
+      "text": "Find the height of a tower if the angle of elevation of its top from a point 100 meters away from its foot is 45°.",
+      "textHindi": "एक मीनार की ऊंचाई ज्ञात कीजिए यदि उसके पाद से 100 मीटर दूर एक बिंदु से उसके शीर्ष का उन्नयन कोण 45° है।",
+      "options": [
+        "100 m",
+        "100√3 m",
+        "100/√3 m",
+        "200 m"
+      ],
+      "correct": "100 m",
+      "category": "Medium"
+    }
+  ]
+}
 ];
-
 export default function RrbNtpcMathTest() {
   const [activeTestId, setActiveTestId] = useState<number | null>(null);
   const [currentQNo, setCurrentQNo] = useState(1);
