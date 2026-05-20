@@ -228,6 +228,13 @@ export default function RrbNtpcPage() {
                           </button>
                         </Link>
                       )}
+                      {sub.subtitle.includes("General Awareness") && (
+                        <Link href="/exams/rrb-ntpc/test/general-awareness">
+                          <button className="px-3.5 py-1.5 text-xs font-bold bg-gradient-to-r from-emerald-400 to-teal-500 hover:scale-105 active:scale-95 text-slate-950 rounded-xl transition-all shadow-[0_0_12px_rgba(52,211,153,0.25)] hover:shadow-[0_0_18px_rgba(52,211,153,0.45)] flex items-center gap-1 cursor-pointer">
+                            🌍 Start GK Mock Test (सामान्य जागरूकता मॉक टेस्ट)
+                          </button>
+                        </Link>
+                      )}
                     </div>
                     <ul className="space-y-3">
                       {sub.topics.map((topic, tIdx) => {
