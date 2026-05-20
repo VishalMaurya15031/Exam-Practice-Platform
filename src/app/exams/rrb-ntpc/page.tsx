@@ -221,6 +221,13 @@ export default function RrbNtpcPage() {
                           </button>
                         </Link>
                       )}
+                      {sub.subtitle.includes("General Intelligence & Reasoning") && (
+                        <Link href="/exams/rrb-ntpc/test/reasoning">
+                          <button className="px-3.5 py-1.5 text-xs font-bold bg-gradient-to-r from-purple-400 to-indigo-500 hover:scale-105 active:scale-95 text-slate-950 rounded-xl transition-all shadow-[0_0_12px_rgba(168,85,247,0.25)] hover:shadow-[0_0_18px_rgba(168,85,247,0.45)] flex items-center gap-1 cursor-pointer">
+                            🧠 Start Reasoning Mock Test (तर्कशक्ति मॉक टेस्ट)
+                          </button>
+                        </Link>
+                      )}
                     </div>
                     <ul className="space-y-3">
                       {sub.topics.map((topic, tIdx) => {
