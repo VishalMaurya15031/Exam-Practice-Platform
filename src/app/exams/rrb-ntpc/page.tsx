@@ -189,10 +189,12 @@ export default function RrbNtpcPage() {
 
       {/* Action Buttons */}
       <div className="flex flex-wrap gap-4 mb-12">
-        <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg shadow-sky-500/25">
-          Start Mock Test
-        </button>
-        <button className="px-6 py-3 rounded-xl bg-slate-800 border border-white/10 text-slate-300 font-semibold hover:bg-slate-700 transition-colors">
+        <Link href="/exams/rrb-ntpc/test/mathematics">
+          <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold hover:scale-105 transition-transform shadow-lg shadow-sky-500/25 cursor-pointer">
+            Start Mock Test
+          </button>
+        </Link>
+        <button className="px-6 py-3 rounded-xl bg-slate-800 border border-white/10 text-slate-300 font-semibold hover:bg-slate-700 transition-colors cursor-pointer">
           Download PDF
         </button>
       </div>
@@ -210,7 +212,16 @@ export default function RrbNtpcPage() {
               <div className="space-y-8">
                 {section.subSections.map((sub, sIdx) => (
                   <div key={sIdx} className="space-y-4">
-                    <h3 className="text-lg font-medium text-sky-400 border-l-2 border-sky-500 pl-3">{sub.subtitle}</h3>
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/5 pb-2">
+                      <h3 className="text-lg font-medium text-sky-400 border-l-2 border-sky-500 pl-3">{sub.subtitle}</h3>
+                      {sub.subtitle.includes("Mathematics") && (
+                        <Link href="/exams/rrb-ntpc/test/mathematics">
+                          <button className="px-3.5 py-1.5 text-xs font-bold bg-gradient-to-r from-sky-400 to-blue-500 hover:scale-105 active:scale-95 text-slate-950 rounded-xl transition-all shadow-[0_0_12px_rgba(14,165,233,0.25)] hover:shadow-[0_0_18px_rgba(14,165,233,0.45)] flex items-center gap-1 cursor-pointer">
+                            📝 Start Mathematics Mock Test (गणित मॉक टेस्ट)
+                          </button>
+                        </Link>
+                      )}
+                    </div>
                     <ul className="space-y-3">
                       {sub.topics.map((topic, tIdx) => {
                         const isExpanded = expandedTopic === topic;
